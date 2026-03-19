@@ -1,0 +1,46 @@
+### Starting TaskPrologue of job 3254196 on a0224 at Sat Dec 27 01:41:27 CET 2025
+Running on cores 32-47 with governor ondemand
+Sat Dec 27 01:41:27 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 580.105.08             Driver Version: 580.105.08     CUDA Version: 13.0     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A40                     On  |   00000000:41:00.0 Off |                  Off |
+|  0%   33C    P8             21W /  300W |       0MiB /  49140MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+### Finished TaskPrologue
+
+=== JOB_STATISTICS ===
+=== current date     : Sat Dec 27 01:41:53 CET 2025
+= Job-ID             : 3254196 on alex
+= Job-Name           : db_fix_n50
+= Job-Command        : /home/hpc/v121ca/v121ca21/thesis_adapt/jobs/deberta_fixed_n50.sbatch
+= Initial workdir    : /home/hpc/v121ca/v121ca21
+= Queue/Partition    : a40
+= Slurm account      : v121ca with QOS=normal
+= Requested resources:  for 01:00:00
+= Elapsed runtime    : 00:00:28
+= Total RAM usage    : 1.2 GiB of assigned  GiB (%)
+= Node list          : a0224
+= Subm/Elig/Start/End: 2025-12-27T01:41:23 / 2025-12-27T01:41:23 / 2025-12-27T01:41:24 / 2025-12-27T01:41:52
+======================
+=== Quota infos ======
+    Path              Used     SoftQ    HardQ    Gracetime  Filec    FileQ    FiHaQ    FileGrace    
+    /home/hpc           52.4G   104.9G   209.7G        N/A     124K     500K   1,000K        N/A    
+    /home/vault         21.9G  1048.6G  2097.2G        N/A     145      200K     400K        N/A    
+    atuin.rrze.uni-erlangen.de:/srv/home     0.0K     0.0K     0.0K        N/A       1                           N/A    
+======================
+=== GPU utilization ==
+gpu_name, gpu_bus_id, pid, gpu_utilization [%], mem_utilization [%], max_memory_usage [MiB], time [ms]

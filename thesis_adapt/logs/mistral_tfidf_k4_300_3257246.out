@@ -1,0 +1,89 @@
+### Starting TaskPrologue of job 3257246 on a0228 at Tue Dec 30 04:52:30 CET 2025
+Running on cores 32-47 with governor ondemand
+Tue Dec 30 04:52:30 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 580.105.08             Driver Version: 580.105.08     CUDA Version: 13.0     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A40                     On  |   00000000:41:00.0 Off |                  Off |
+|  0%   40C    P8             21W /  300W |       0MiB /  49140MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+### Finished TaskPrologue
+
+=== START ===
+Tue Dec 30 04:52:31 CET 2025
+a0228.nhr.fau.de
+/home/hpc/v121ca/v121ca21
+SLURM_JOB_ID=3257246
+PYTHON=/home/hpc/v121ca/v121ca21/.conda/envs/thesis/bin/python
+Python 3.13.9
+torch: 2.9.1+cu128
+cuda available: True
+cuda devices: 1
+MODEL_DIR=/home/hpc/v121ca/v121ca21/.cache/huggingface/hub/models--mistralai--Mistral-7B-Instruct-v0.1
+SNAP=/home/hpc/v121ca/v121ca21/.cache/huggingface/hub/models--mistralai--Mistral-7B-Instruct-v0.1/snapshots/ec5deb64f2c6e6fa90c1abf74a91d5c93a9669ca
+=== RUN SCRIPT ===
+Device: cuda
+Mode: tfidf
+Model: /home/hpc/v121ca/v121ca21/.cache/huggingface/hub/models--mistralai--Mistral-7B-Instruct-v0.1/snapshots/ec5deb64f2c6e6fa90c1abf74a91d5c93a9669ca
+Cache dir: None
+Local files only: True
+Data: /home/hpc/v121ca/v121ca21/thesis_data/contarga_llm/contarga_emotion_subset_300.csv
+Train: /home/hpc/v121ca/v121ca21/thesis_adapt/data/contarga/train.csv
+Out: /home/hpc/v121ca/v121ca21/thesis_results/llm/mistral_tfidf_balanced_k2_300.csv
+Loaded rows: 300
+TF-IDF train rows (filtered to LABELS): 80
+TF-IDF k: 2 balance: True
+Loading tokenizer...
+Loading model...
+MODEL DEVICE: cuda:0
+Saved: /home/hpc/v121ca/v121ca21/thesis_results/llm/mistral_tfidf_balanced_k2_300.csv
+llm_pred
+unknown     114
+anger        47
+sadness      45
+joy          30
+relief       25
+fear         14
+pride        13
+disgust       9
+surprise      3
+Name: count, dtype: int64
+=== DONE ===
+Tue Dec 30 04:56:44 CET 2025
+-rw-r--r-- 1 v121ca21 v121ca 45K Dec 30 04:56 /home/hpc/v121ca/v121ca21/thesis_results/llm/mistral_tfidf_balanced_k2_300.csv
+=== JOB_STATISTICS ===
+=== current date     : Tue Dec 30 04:56:44 CET 2025
+= Job-ID             : 3257246 on alex
+= Job-Name           : mistral_tfidf_k2_300
+= Job-Command        : /home/hpc/v121ca/v121ca21/thesis_adapt/jobs/mistral_tfidf_k2_300.sbatch
+= Initial workdir    : /home/hpc/v121ca/v121ca21
+= Queue/Partition    : a40
+= Slurm account      : v121ca with QOS=normal
+= Requested resources:  for 00:20:00
+= Elapsed runtime    : 00:04:16
+= Total RAM usage    : 28.3 GiB of assigned  GiB (%)
+= Node list          : a0228
+= Subm/Elig/Start/End: 2025-12-30T04:52:03 / 2025-12-30T04:52:04 / 2025-12-30T04:52:28 / 2025-12-30T04:56:44
+======================
+=== Quota infos ======
+    Path              Used     SoftQ    HardQ    Gracetime  Filec    FileQ    FiHaQ    FileGrace    
+    /home/hpc           80.8G   104.9G   209.7G        N/A     125K     500K   1,000K        N/A    
+    /home/vault         23.5G  1048.6G  2097.2G        N/A     270      200K     400K        N/A    
+    atuin.rrze.uni-erlangen.de:/srv/home     0.0K     0.0K     0.0K        N/A       1                           N/A    
+======================
+=== GPU utilization ==
+gpu_name, gpu_bus_id, pid, gpu_utilization [%], mem_utilization [%], max_memory_usage [MiB], time [ms]
+NVIDIA A40, 00000000:41:00.0, 3121965, 76 %, 74 %, 14372 MiB, 161604 ms

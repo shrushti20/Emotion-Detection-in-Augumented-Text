@@ -1,0 +1,53 @@
+### Starting TaskPrologue of job 3254115 on a0321 at Fri Dec 26 23:15:42 CET 2025
+Running on cores 80-95 with governor ondemand
+Fri Dec 26 23:15:42 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 580.105.08             Driver Version: 580.105.08     CUDA Version: 13.0     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A40                     On  |   00000000:A1:00.0 Off |                  Off |
+|  0%   34C    P8             22W /  300W |       0MiB /  49140MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+### Finished TaskPrologue
+
+Traceback (most recent call last):
+  File "/home/hpc/v121ca/v121ca21/thesis_adapt/scripts/train_deberta_contarga_fewshot.py", line 170, in <module>
+    main()
+    ~~~~^^
+  File "/home/hpc/v121ca/v121ca21/thesis_adapt/scripts/train_deberta_contarga_fewshot.py", line 90, in main
+    raise FileNotFoundError(f"--model_path does not exist: {args.model_path}")
+FileNotFoundError: --model_path does not exist: PUT_YOUR_DEBERTA_CHECKPOINT_PATH_HERE
+=== JOB_STATISTICS ===
+=== current date     : Fri Dec 26 23:15:55 CET 2025
+= Job-ID             : 3254115 on alex
+= Job-Name           : db_fix_n50
+= Job-Command        : /home/hpc/v121ca/v121ca21/thesis_adapt/jobs/deberta_fixed_n50.sbatch
+= Initial workdir    : /home/hpc/v121ca/v121ca21
+= Queue/Partition    : a40
+= Slurm account      : v121ca with QOS=normal
+= Requested resources:  for 01:00:00
+= Elapsed runtime    : 00:00:13
+= Total RAM usage    : 1.2 GiB of assigned  GiB (%)
+= Node list          : a0321
+= Subm/Elig/Start/End: 2025-12-26T23:15:40 / 2025-12-26T23:15:40 / 2025-12-26T23:15:41 / 2025-12-26T23:15:54
+======================
+=== Quota infos ======
+    Path              Used     SoftQ    HardQ    Gracetime  Filec    FileQ    FiHaQ    FileGrace    
+!!! /home/hpc          165.9G   104.9G   209.7G  -29255days     129K     500K   1,000K        N/A !!!
+    /home/vault          0.0K  1048.6G  2097.2G        N/A       1      200K     400K        N/A    
+    atuin.rrze.uni-erlangen.de:/srv/home     0.0K     0.0K     0.0K        N/A       1                           N/A    
+======================
+=== GPU utilization ==
+gpu_name, gpu_bus_id, pid, gpu_utilization [%], mem_utilization [%], max_memory_usage [MiB], time [ms]

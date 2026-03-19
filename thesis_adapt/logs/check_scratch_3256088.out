@@ -1,0 +1,50 @@
+### Starting TaskPrologue of job 3256088 on a0428 at Mon Dec 29 02:31:13 CET 2025
+Running on cores 48-63 with governor ondemand
+Mon Dec 29 02:31:13 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 580.105.08             Driver Version: 580.105.08     CUDA Version: 13.0     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A40                     On  |   00000000:61:00.0 Off |                  Off |
+|  0%   35C    P8             21W /  300W |       0MiB /  49140MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+### Finished TaskPrologue
+
+a0428.nhr.fau.de
+USER=v121ca21
+ls: cannot access '/scratch/v121ca21': No such file or directory
+ls: cannot access '/scratch/v121ca21/hf/hub': No such file or directory
+=== JOB_STATISTICS ===
+=== current date     : Mon Dec 29 02:31:14 CET 2025
+= Job-ID             : 3256088 on alex
+= Job-Name           : wrap
+= Job-Command        : (null)
+= Initial workdir    : /home/hpc/v121ca/v121ca21
+= Queue/Partition    : a40
+= Slurm account      : v121ca with QOS=normal
+= Requested resources:  for 00:03:00
+= Elapsed runtime    : 00:00:01
+= Total RAM usage    : 0.0 GiB of assigned  GiB (%)
+= Node list          : a0428
+= Subm/Elig/Start/End: 2025-12-29T02:30:46 / 2025-12-29T02:30:46 / 2025-12-29T02:31:13 / 2025-12-29T02:31:14
+======================
+=== Quota infos ======
+    Path              Used     SoftQ    HardQ    Gracetime  Filec    FileQ    FiHaQ    FileGrace    
+    /home/hpc           80.9G   104.9G   209.7G        N/A     125K     500K   1,000K        N/A    
+    /home/vault         23.5G  1048.6G  2097.2G        N/A     270      200K     400K        N/A    
+    atuin.rrze.uni-erlangen.de:/srv/home     0.0K     0.0K     0.0K        N/A       1                           N/A    
+======================
+=== GPU utilization ==
+gpu_name, gpu_bus_id, pid, gpu_utilization [%], mem_utilization [%], max_memory_usage [MiB], time [ms]

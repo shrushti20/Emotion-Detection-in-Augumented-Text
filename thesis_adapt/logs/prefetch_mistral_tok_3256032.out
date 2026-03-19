@@ -1,0 +1,20 @@
+=== JOB_STATISTICS ===
+=== current date     : Mon Dec 29 00:41:39 CET 2025
+= Job-ID             : 3256032 on alex
+= Job-Name           : prefetch_mistral_tok
+= Job-Command        : /home/hpc/v121ca/v121ca21/thesis_adapt/jobs/prefetch_mistral_tokenizer_only.sbatch
+= Initial workdir    : /home/hpc/v121ca/v121ca21
+= Queue/Partition    : a40
+= Slurm account      : v121ca with QOS=normal
+= Requested resources:  for 00:10:00
+= Elapsed runtime    : 00:04:51
+= Total RAM usage    : 0.0 GiB of assigned  GiB (%)
+= Node list          : a0123
+= Subm/Elig/Start/End: 2025-12-29T00:33:44 / 2025-12-29T00:33:44 / 2025-12-29T00:34:04 / 2025-12-29T00:38:55
+======================
+=== Quota infos ======
+    Path              Used     SoftQ    HardQ    Gracetime  Filec    FileQ    FiHaQ    FileGrace    
+    /home/hpc           80.7G   104.9G   209.7G        N/A     125K     500K   1,000K        N/A    
+    /home/vault         23.5G  1048.6G  2097.2G        N/A     270      200K     400K        N/A    
+    atuin.rrze.uni-erlangen.de:/srv/home     0.0K     0.0K     0.0K        N/A       1                           N/A    
+======================

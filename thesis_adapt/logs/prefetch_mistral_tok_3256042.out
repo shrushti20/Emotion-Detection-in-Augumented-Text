@@ -1,0 +1,56 @@
+### Starting TaskPrologue of job 3256042 on a0321 at Mon Dec 29 00:39:28 CET 2025
+Running on cores 16-31 with governor ondemand
+Mon Dec 29 00:39:29 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 580.105.08             Driver Version: 580.105.08     CUDA Version: 13.0     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A40                     On  |   00000000:25:00.0 Off |                  Off |
+|  0%   33C    P8             22W /  300W |       0MiB /  49140MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+### Finished TaskPrologue
+
+=== START ===
+Mon Dec 29 00:39:29 CET 2025
+a0321.nhr.fau.de
+/home/hpc/v121ca/v121ca21
+SLURM_JOB_ID=3256042
+PYTHON=/home/hpc/v121ca/v121ca21/.conda/envs/thesis/bin/python
+Python 3.13.9
+HF_HOME=/scratch/v121ca21/hf
+HF_HUB_CACHE=/scratch/v121ca21/hf/hub
+Loading tokenizer: mistralai/Mistral-7B-Instruct-v0.1
+=== JOB_STATISTICS ===
+=== current date     : Mon Dec 29 00:46:37 CET 2025
+= Job-ID             : 3256042 on alex
+= Job-Name           : prefetch_mistral_tok
+= Job-Command        : /home/hpc/v121ca/v121ca21/thesis_adapt/jobs/prefetch_mistral_tokenizer_only.sbatch
+= Initial workdir    : /home/hpc/v121ca/v121ca21
+= Queue/Partition    : a40
+= Slurm account      : v121ca with QOS=normal
+= Requested resources:  for 00:10:00
+= Elapsed runtime    : 00:07:06
+= Total RAM usage    : 1.1 GiB of assigned  GiB (%)
+= Node list          : a0321
+= Subm/Elig/Start/End: 2025-12-29T00:39:07 / 2025-12-29T00:39:07 / 2025-12-29T00:39:28 / 2025-12-29T00:46:34
+======================
+=== Quota infos ======
+    Path              Used     SoftQ    HardQ    Gracetime  Filec    FileQ    FiHaQ    FileGrace    
+    /home/hpc           80.7G   104.9G   209.7G        N/A     125K     500K   1,000K        N/A    
+    /home/vault         23.5G  1048.6G  2097.2G        N/A     270      200K     400K        N/A    
+    atuin.rrze.uni-erlangen.de:/srv/home     0.0K     0.0K     0.0K        N/A       1                           N/A    
+======================
+=== GPU utilization ==
+gpu_name, gpu_bus_id, pid, gpu_utilization [%], mem_utilization [%], max_memory_usage [MiB], time [ms]

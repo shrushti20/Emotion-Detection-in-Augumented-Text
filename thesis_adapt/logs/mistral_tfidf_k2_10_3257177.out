@@ -1,0 +1,106 @@
+### Starting TaskPrologue of job 3257177 on a0424 at Tue Dec 30 01:49:09 CET 2025
+Running on cores 96-111 with governor ondemand
+Tue Dec 30 01:49:09 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 580.105.08             Driver Version: 580.105.08     CUDA Version: 13.0     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A40                     On  |   00000000:C1:00.0 Off |                  Off |
+|  0%   36C    P8             29W /  300W |       0MiB /  49140MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+### Finished TaskPrologue
+
+=== START ===
+Tue Dec 30 01:49:10 CET 2025
+a0424.nhr.fau.de
+/home/hpc/v121ca/v121ca21
+SLURM_JOB_ID=3257177
+PYTHON=/home/hpc/v121ca/v121ca21/.conda/envs/thesis/bin/python
+Python 3.13.9
+=== GPU CHECK ===
+Tue Dec 30 01:49:10 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 580.105.08             Driver Version: 580.105.08     CUDA Version: 13.0     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A40                     On  |   00000000:C1:00.0 Off |                  Off |
+|  0%   37C    P0             44W /  300W |       0MiB /  49140MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+torch: 2.9.1+cu128
+cuda available: True
+cuda devices: 1
+MODEL_DIR=/home/hpc/v121ca/v121ca21/.cache/huggingface/hub/models--mistralai--Mistral-7B-Instruct-v0.1
+SNAP=/home/hpc/v121ca/v121ca21/.cache/huggingface/hub/models--mistralai--Mistral-7B-Instruct-v0.1/snapshots/ec5deb64f2c6e6fa90c1abf74a91d5c93a9669ca
+=== RUN SCRIPT ===
+/home/hpc/v121ca/v121ca21/.conda/envs/thesis/lib/python3.13/site-packages/transformers/utils/hub.py:110: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+Device: cuda
+Mode: tfidf
+Model: /home/hpc/v121ca/v121ca21/.cache/huggingface/hub/models--mistralai--Mistral-7B-Instruct-v0.1/snapshots/ec5deb64f2c6e6fa90c1abf74a91d5c93a9669ca
+Cache dir: None
+Local files only: True
+Data: /home/hpc/v121ca/v121ca21/thesis_data/contarga_llm/contarga_emotion_subset_10.csv
+Train: /home/hpc/v121ca/v121ca21/thesis_adapt/data/contarga/train.csv
+Out: /home/hpc/v121ca/v121ca21/thesis_results/llm/mistral_tfidf_balanced_k2_10.csv
+Loaded rows: 10
+TF-IDF train rows (filtered to LABELS): 80
+TF-IDF k: 2 balance: True
+Loading tokenizer...
+Loading model...
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:13<00:13, 13.85s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:19<00:00,  8.83s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:19<00:00,  9.58s/it]
+MODEL DEVICE: cuda:0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:01<00:15,  1.76s/it] 20%|██        | 2/10 [00:02<00:08,  1.00s/it] 30%|███       | 3/10 [00:02<00:05,  1.32it/s] 40%|████      | 4/10 [00:03<00:03,  1.56it/s] 50%|█████     | 5/10 [00:03<00:02,  1.73it/s] 60%|██████    | 6/10 [00:04<00:02,  1.85it/s] 70%|███████   | 7/10 [00:04<00:01,  1.94it/s] 80%|████████  | 8/10 [00:05<00:00,  2.00it/s] 90%|█████████ | 9/10 [00:05<00:00,  2.05it/s]100%|██████████| 10/10 [00:05<00:00,  2.08it/s]100%|██████████| 10/10 [00:05<00:00,  1.68it/s]
+Saved: /home/hpc/v121ca/v121ca21/thesis_results/llm/mistral_tfidf_balanced_k2_10.csv
+llm_pred
+unknown    10
+Name: count, dtype: int64
+=== DONE ===
+Tue Dec 30 01:49:59 CET 2025
+-rw-r--r-- 1 v121ca21 v121ca 1.6K Dec 30 01:49 /home/hpc/v121ca/v121ca21/thesis_results/llm/mistral_tfidf_balanced_k2_10.csv
+=== JOB_STATISTICS ===
+=== current date     : Tue Dec 30 01:50:00 CET 2025
+= Job-ID             : 3257177 on alex
+= Job-Name           : mistral_tfidf_k2_10
+= Job-Command        : /home/hpc/v121ca/v121ca21/thesis_adapt/jobs/mistral_tfidf_k2_10.sbatch
+= Initial workdir    : /home/hpc/v121ca/v121ca21
+= Queue/Partition    : a40
+= Slurm account      : v121ca with QOS=normal
+= Requested resources:  for 00:20:00
+= Elapsed runtime    : 00:01:09
+= Total RAM usage    : 28.3 GiB of assigned  GiB (%)
+= Node list          : a0424
+= Subm/Elig/Start/End: 2025-12-30T01:48:34 / 2025-12-30T01:48:34 / 2025-12-30T01:48:51 / 2025-12-30T01:50:00
+======================
+=== Quota infos ======
+    Path              Used     SoftQ    HardQ    Gracetime  Filec    FileQ    FiHaQ    FileGrace    
+    /home/hpc           80.8G   104.9G   209.7G        N/A     125K     500K   1,000K        N/A    
+    /home/vault         23.5G  1048.6G  2097.2G        N/A     270      200K     400K        N/A    
+    atuin.rrze.uni-erlangen.de:/srv/home     0.0K     0.0K     0.0K        N/A       1                           N/A    
+======================
+=== GPU utilization ==
+gpu_name, gpu_bus_id, pid, gpu_utilization [%], mem_utilization [%], max_memory_usage [MiB], time [ms]
+NVIDIA A40, 00000000:C1:00.0, 3392527, 17 %, 14 %, 14340 MiB, 29050 ms

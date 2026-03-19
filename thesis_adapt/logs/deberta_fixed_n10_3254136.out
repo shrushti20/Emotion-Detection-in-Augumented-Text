@@ -1,0 +1,142 @@
+### Starting TaskPrologue of job 3254136 on a0522 at Fri Dec 26 23:35:42 CET 2025
+Running on cores 0-15 with governor ondemand
+Fri Dec 26 23:35:42 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 580.105.08             Driver Version: 580.105.08     CUDA Version: 13.0     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A40                     On  |   00000000:01:00.0 Off |                  Off |
+|  0%   32C    P8             22W /  300W |       0MiB /  49140MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+### Finished TaskPrologue
+
+/home/hpc/v121ca/v121ca21/.conda/envs/thesis/lib/python3.13/site-packages/transformers/convert_slow_tokenizer.py:566: UserWarning: The sentencepiece tokenizer that you are converting to a fast tokenizer uses the byte fallback option which is not implemented in the fast tokenizers. In practice this means that the fast version of the tokenizer can produce unknown tokens whereas the sentencepiece version would have converted these unknown tokens into a sequence of byte tokens matching the original piece of text.
+  warnings.warn(
+The tokenizer you are loading from '/home/hpc/v121ca/v121ca21/thesis_models/deberta_goemo/checkpoint-5000' with an incorrect regex pattern: https://huggingface.co/mistralai/Mistral-Small-3.1-24B-Instruct-2503/discussions/84#69121093e8b480e709447d5e. This will lead to incorrect tokenization. You should set the `fix_mistral_regex=True` flag when loading this tokenizer to fix this issue.
+Map:   0%|          | 0/80 [00:00<?, ? examples/s]Map: 100%|██████████| 80/80 [00:00<00:00, 8102.20 examples/s]
+Map:   0%|          | 0/226 [00:00<?, ? examples/s]Map: 100%|██████████| 226/226 [00:00<00:00, 21197.09 examples/s]
+Map:   0%|          | 0/2034 [00:00<?, ? examples/s]Map: 100%|██████████| 2034/2034 [00:00<00:00, 31921.63 examples/s]
+Some weights of DebertaV2ForSequenceClassification were not initialized from the model checkpoint at /home/hpc/v121ca/v121ca21/thesis_models/deberta_goemo/checkpoint-5000 and are newly initialized because the shapes did not match:
+- classifier.bias: found shape torch.Size([28]) in the checkpoint and torch.Size([8]) in the model instantiated
+- classifier.weight: found shape torch.Size([28, 768]) in the checkpoint and torch.Size([8, 768]) in the model instantiated
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+/home/hpc/v121ca/v121ca21/thesis_adapt/scripts/train_deberta_contarga_fewshot.py:146: FutureWarning: `tokenizer` is deprecated and will be removed in version 5.0.0 for `Trainer.__init__`. Use `processing_class` instead.
+  trainer = Trainer(
+Detected kernel version 4.18.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+  0%|          | 0/100 [00:00<?, ?it/s]  1%|          | 1/100 [00:00<00:41,  2.41it/s]  2%|▏         | 2/100 [00:00<00:24,  3.95it/s]  3%|▎         | 3/100 [00:00<00:19,  5.05it/s]  4%|▍         | 4/100 [00:00<00:21,  4.40it/s]  6%|▌         | 6/100 [00:01<00:13,  7.00it/s]  8%|▊         | 8/100 [00:01<00:10,  9.05it/s] 10%|█         | 10/100 [00:01<00:08, 10.53it/s]
+  0%|          | 0/15 [00:00<?, ?it/s][A
+ 47%|████▋     | 7/15 [00:00<00:00, 58.27it/s][A
+ 87%|████████▋ | 13/15 [00:00<00:00, 53.35it/s][A                                                
+                                               [A 10%|█         | 10/100 [00:01<00:08, 10.53it/s]
+100%|██████████| 15/15 [00:00<00:00, 53.35it/s][A
+                                               [A 12%|█▏        | 12/100 [00:05<01:09,  1.26it/s] 14%|█▍        | 14/100 [00:05<00:47,  1.81it/s] 16%|█▌        | 16/100 [00:05<00:33,  2.53it/s] 18%|█▊        | 18/100 [00:05<00:23,  3.43it/s] 20%|██        | 20/100 [00:06<00:17,  4.51it/s]                                                 20%|██        | 20/100 [00:06<00:17,  4.51it/s]{'eval_loss': 2.107534170150757, 'eval_acc': 0.09734513274336283, 'eval_macro_f1': 0.0307535307976264, 'eval_runtime': 0.3167, 'eval_samples_per_second': 713.559, 'eval_steps_per_second': 47.36, 'epoch': 1.0}
+{'loss': 2.2518, 'grad_norm': 14.301968574523926, 'learning_rate': 1.62e-05, 'epoch': 2.0}
+
+  0%|          | 0/15 [00:00<?, ?it/s][A
+ 47%|████▋     | 7/15 [00:00<00:00, 61.04it/s][A
+ 93%|█████████▎| 14/15 [00:00<00:00, 54.96it/s][A                                                
+                                               [A 20%|██        | 20/100 [00:06<00:17,  4.51it/s]
+100%|██████████| 15/15 [00:00<00:00, 54.96it/s][A
+                                               [A 22%|██▏       | 22/100 [00:09<00:57,  1.35it/s] 24%|██▍       | 24/100 [00:10<00:40,  1.87it/s] 26%|██▌       | 26/100 [00:10<00:29,  2.54it/s] 28%|██▊       | 28/100 [00:10<00:21,  3.39it/s] 30%|███       | 30/100 [00:10<00:15,  4.43it/s]{'eval_loss': 2.076176166534424, 'eval_acc': 0.12831858407079647, 'eval_macro_f1': 0.08695937090432504, 'eval_runtime': 0.2947, 'eval_samples_per_second': 766.846, 'eval_steps_per_second': 50.897, 'epoch': 2.0}
+
+  0%|          | 0/15 [00:00<?, ?it/s][A
+ 47%|████▋     | 7/15 [00:00<00:00, 60.15it/s][A
+ 93%|█████████▎| 14/15 [00:00<00:00, 54.64it/s][A                                                
+                                               [A 30%|███       | 30/100 [00:10<00:15,  4.43it/s]
+100%|██████████| 15/15 [00:00<00:00, 54.64it/s][A
+                                               [A 32%|███▏      | 32/100 [00:15<00:57,  1.18it/s] 34%|███▍      | 34/100 [00:15<00:40,  1.63it/s] 36%|███▌      | 36/100 [00:15<00:28,  2.22it/s] 38%|███▊      | 38/100 [00:15<00:20,  2.98it/s] 40%|████      | 40/100 [00:15<00:15,  3.93it/s]                                                 40%|████      | 40/100 [00:15<00:15,  3.93it/s]{'eval_loss': 2.0937414169311523, 'eval_acc': 0.09292035398230089, 'eval_macro_f1': 0.0614188922695515, 'eval_runtime': 0.3089, 'eval_samples_per_second': 731.688, 'eval_steps_per_second': 48.563, 'epoch': 3.0}
+{'loss': 2.015, 'grad_norm': 10.221686363220215, 'learning_rate': 1.22e-05, 'epoch': 4.0}
+
+  0%|          | 0/15 [00:00<?, ?it/s][A
+ 47%|████▋     | 7/15 [00:00<00:00, 61.65it/s][A
+ 93%|█████████▎| 14/15 [00:00<00:00, 55.15it/s][A                                                
+                                               [A 40%|████      | 40/100 [00:15<00:15,  3.93it/s]
+100%|██████████| 15/15 [00:00<00:00, 55.15it/s][A
+                                               [A 42%|████▏     | 42/100 [00:19<00:45,  1.28it/s] 44%|████▍     | 44/100 [00:19<00:31,  1.76it/s] 46%|████▌     | 46/100 [00:19<00:22,  2.39it/s] 48%|████▊     | 48/100 [00:19<00:16,  3.19it/s] 50%|█████     | 50/100 [00:20<00:11,  4.18it/s]{'eval_loss': 2.1077027320861816, 'eval_acc': 0.14601769911504425, 'eval_macro_f1': 0.12279255464630714, 'eval_runtime': 0.2933, 'eval_samples_per_second': 770.626, 'eval_steps_per_second': 51.148, 'epoch': 4.0}
+
+  0%|          | 0/15 [00:00<?, ?it/s][A
+ 47%|████▋     | 7/15 [00:00<00:00, 61.12it/s][A
+ 93%|█████████▎| 14/15 [00:00<00:00, 54.91it/s][A                                                
+                                               [A 50%|█████     | 50/100 [00:20<00:11,  4.18it/s]
+100%|██████████| 15/15 [00:00<00:00, 54.91it/s][A
+                                               [A 52%|█████▏    | 52/100 [00:24<00:38,  1.26it/s] 54%|█████▍    | 54/100 [00:24<00:26,  1.73it/s] 56%|█████▌    | 56/100 [00:24<00:18,  2.36it/s] 58%|█████▊    | 58/100 [00:24<00:13,  3.15it/s] 60%|██████    | 60/100 [00:24<00:09,  4.13it/s]                                                 60%|██████    | 60/100 [00:24<00:09,  4.13it/s]{'eval_loss': 2.0918097496032715, 'eval_acc': 0.18584070796460178, 'eval_macro_f1': 0.17372285425053258, 'eval_runtime': 0.3071, 'eval_samples_per_second': 735.936, 'eval_steps_per_second': 48.845, 'epoch': 5.0}
+{'loss': 1.8786, 'grad_norm': 10.109689712524414, 'learning_rate': 8.2e-06, 'epoch': 6.0}
+
+  0%|          | 0/15 [00:00<?, ?it/s][A
+ 47%|████▋     | 7/15 [00:00<00:00, 61.15it/s][A
+ 93%|█████████▎| 14/15 [00:00<00:00, 54.99it/s][A                                                
+                                               [A 60%|██████    | 60/100 [00:25<00:09,  4.13it/s]
+100%|██████████| 15/15 [00:00<00:00, 54.99it/s][A
+                                               [A 62%|██████▏   | 62/100 [00:28<00:29,  1.27it/s] 64%|██████▍   | 64/100 [00:29<00:20,  1.76it/s] 66%|██████▌   | 66/100 [00:29<00:14,  2.39it/s] 68%|██████▊   | 68/100 [00:29<00:09,  3.20it/s] 70%|███████   | 70/100 [00:29<00:07,  4.21it/s]{'eval_loss': 2.0847318172454834, 'eval_acc': 0.18584070796460178, 'eval_macro_f1': 0.1725935397360015, 'eval_runtime': 0.294, 'eval_samples_per_second': 768.653, 'eval_steps_per_second': 51.017, 'epoch': 6.0}
+
+  0%|          | 0/15 [00:00<?, ?it/s][A
+ 47%|████▋     | 7/15 [00:00<00:00, 61.74it/s][A
+ 93%|█████████▎| 14/15 [00:00<00:00, 55.42it/s][A                                                
+                                               [A 70%|███████   | 70/100 [00:29<00:07,  4.21it/s]
+100%|██████████| 15/15 [00:00<00:00, 55.42it/s][A
+                                               [A 72%|███████▏  | 72/100 [00:33<00:20,  1.35it/s] 74%|███████▍  | 74/100 [00:33<00:14,  1.86it/s] 76%|███████▌  | 76/100 [00:33<00:09,  2.52it/s] 78%|███████▊  | 78/100 [00:33<00:06,  3.37it/s] 80%|████████  | 80/100 [00:33<00:04,  4.41it/s]                                                 80%|████████  | 80/100 [00:33<00:04,  4.41it/s]{'eval_loss': 2.088085174560547, 'eval_acc': 0.21238938053097345, 'eval_macro_f1': 0.1702751353325812, 'eval_runtime': 0.3052, 'eval_samples_per_second': 740.522, 'eval_steps_per_second': 49.15, 'epoch': 7.0}
+{'loss': 1.6919, 'grad_norm': 10.470683097839355, 'learning_rate': 4.2000000000000004e-06, 'epoch': 8.0}
+
+  0%|          | 0/15 [00:00<?, ?it/s][A
+ 47%|████▋     | 7/15 [00:00<00:00, 61.59it/s][A
+ 93%|█████████▎| 14/15 [00:00<00:00, 55.39it/s][A                                                
+                                               [A 80%|████████  | 80/100 [00:34<00:04,  4.41it/s]
+100%|██████████| 15/15 [00:00<00:00, 55.39it/s][A
+                                               [A 82%|████████▏ | 82/100 [00:37<00:13,  1.30it/s] 84%|████████▍ | 84/100 [00:38<00:08,  1.79it/s] 86%|████████▌ | 86/100 [00:38<00:05,  2.43it/s] 88%|████████▊ | 88/100 [00:38<00:03,  3.26it/s] 90%|█████████ | 90/100 [00:38<00:02,  4.28it/s]{'eval_loss': 2.1051013469696045, 'eval_acc': 0.18584070796460178, 'eval_macro_f1': 0.16028390034943743, 'eval_runtime': 0.2925, 'eval_samples_per_second': 772.641, 'eval_steps_per_second': 51.282, 'epoch': 8.0}
+
+  0%|          | 0/15 [00:00<?, ?it/s][A
+ 47%|████▋     | 7/15 [00:00<00:00, 61.70it/s][A
+ 93%|█████████▎| 14/15 [00:00<00:00, 55.46it/s][A                                                
+                                               [A 90%|█████████ | 90/100 [00:38<00:02,  4.28it/s]
+100%|██████████| 15/15 [00:00<00:00, 55.46it/s][A
+                                               [A 92%|█████████▏| 92/100 [00:42<00:05,  1.33it/s] 94%|█████████▍| 94/100 [00:42<00:03,  1.84it/s] 96%|█████████▌| 96/100 [00:42<00:01,  2.50it/s] 98%|█████████▊| 98/100 [00:42<00:00,  3.34it/s]100%|██████████| 100/100 [00:42<00:00,  4.38it/s]                                                 100%|██████████| 100/100 [00:42<00:00,  4.38it/s]{'eval_loss': 2.1089255809783936, 'eval_acc': 0.20353982300884957, 'eval_macro_f1': 0.1785695435451589, 'eval_runtime': 0.3049, 'eval_samples_per_second': 741.216, 'eval_steps_per_second': 49.196, 'epoch': 9.0}
+{'loss': 1.6065, 'grad_norm': 15.771528244018555, 'learning_rate': 2.0000000000000002e-07, 'epoch': 10.0}
+
+  0%|          | 0/15 [00:00<?, ?it/s][A
+ 47%|████▋     | 7/15 [00:00<00:00, 61.48it/s][A
+ 93%|█████████▎| 14/15 [00:00<00:00, 55.33it/s][A                                                 
+                                               [A100%|██████████| 100/100 [00:43<00:00,  4.38it/s]
+100%|██████████| 15/15 [00:00<00:00, 55.33it/s][A
+                                               [A                                                 100%|██████████| 100/100 [00:46<00:00,  4.38it/s]100%|██████████| 100/100 [00:46<00:00,  2.14it/s]
+{'eval_loss': 2.111468553543091, 'eval_acc': 0.20353982300884957, 'eval_macro_f1': 0.17764107446417507, 'eval_runtime': 0.2924, 'eval_samples_per_second': 772.809, 'eval_steps_per_second': 51.293, 'epoch': 10.0}
+{'train_runtime': 46.634, 'train_samples_per_second': 17.155, 'train_steps_per_second': 2.144, 'train_loss': 1.888741455078125, 'epoch': 10.0}
+  0%|          | 0/15 [00:00<?, ?it/s] 47%|████▋     | 7/15 [00:00<00:00, 62.23it/s] 93%|█████████▎| 14/15 [00:00<00:00, 55.97it/s]100%|██████████| 15/15 [00:00<00:00, 56.62it/s]
+  0%|          | 0/128 [00:00<?, ?it/s]  5%|▌         | 7/128 [00:00<00:01, 61.25it/s] 11%|█         | 14/128 [00:00<00:01, 57.42it/s] 16%|█▌        | 20/128 [00:00<00:01, 55.45it/s] 20%|██        | 26/128 [00:00<00:01, 54.75it/s] 25%|██▌       | 32/128 [00:00<00:01, 52.70it/s] 30%|██▉       | 38/128 [00:00<00:01, 53.07it/s] 34%|███▍      | 44/128 [00:00<00:01, 53.15it/s] 39%|███▉      | 50/128 [00:00<00:01, 52.04it/s] 44%|████▍     | 56/128 [00:01<00:01, 52.60it/s] 48%|████▊     | 62/128 [00:01<00:01, 52.10it/s] 53%|█████▎    | 68/128 [00:01<00:01, 52.63it/s] 58%|█████▊    | 74/128 [00:01<00:01, 52.01it/s] 62%|██████▎   | 80/128 [00:01<00:00, 50.86it/s] 67%|██████▋   | 86/128 [00:01<00:00, 51.37it/s] 72%|███████▏  | 92/128 [00:01<00:00, 49.91it/s] 77%|███████▋  | 98/128 [00:01<00:00, 49.66it/s] 81%|████████▏ | 104/128 [00:01<00:00, 50.04it/s] 86%|████████▌ | 110/128 [00:02<00:00, 50.53it/s] 91%|█████████ | 116/128 [00:02<00:00, 51.24it/s] 95%|█████████▌| 122/128 [00:02<00:00, 51.24it/s]100%|██████████| 128/128 [00:02<00:00, 52.14it/s]100%|██████████| 128/128 [00:02<00:00, 52.09it/s]
+Best model eval on DEV: {'eval_loss': 2.1089255809783936, 'eval_acc': 0.20353982300884957, 'eval_macro_f1': 0.1785695435451589, 'eval_runtime': 0.2905, 'eval_samples_per_second': 777.946, 'eval_steps_per_second': 51.634, 'epoch': 10.0}
+Final eval on TEST: {'eval_loss': 2.1808035373687744, 'eval_acc': 0.18436578171091444, 'eval_macro_f1': 0.15187176672626948, 'eval_runtime': 2.4802, 'eval_samples_per_second': 820.079, 'eval_steps_per_second': 51.608, 'epoch': 10.0}
+Saved adapted model to: /home/hpc/v121ca/v121ca21/thesis_adapt/models/deberta_fixed_n10
+=== JOB_STATISTICS ===
+=== current date     : Fri Dec 26 23:36:58 CET 2025
+= Job-ID             : 3254136 on alex
+= Job-Name           : db_fix_n10
+= Job-Command        : /home/hpc/v121ca/v121ca21/thesis_adapt/jobs/deberta_fixed_n10.sbatch
+= Initial workdir    : /home/hpc/v121ca/v121ca21
+= Queue/Partition    : a40
+= Slurm account      : v121ca with QOS=normal
+= Requested resources:  for 01:00:00
+= Elapsed runtime    : 00:01:16
+= Total RAM usage    : 8.0 GiB of assigned  GiB (%)
+= Node list          : a0522
+= Subm/Elig/Start/End: 2025-12-26T23:35:41 / 2025-12-26T23:35:41 / 2025-12-26T23:35:42 / 2025-12-26T23:36:58
+======================
+=== Quota infos ======
+    Path              Used     SoftQ    HardQ    Gracetime  Filec    FileQ    FiHaQ    FileGrace    
+!!! /home/hpc          201.1G   104.9G   209.7G  -29255days     129K     500K   1,000K        N/A !!!
+    /home/vault          0.0K  1048.6G  2097.2G        N/A       1      200K     400K        N/A    
+    atuin.rrze.uni-erlangen.de:/srv/home     0.0K     0.0K     0.0K        N/A       1                           N/A    
+======================
+=== GPU utilization ==
+gpu_name, gpu_bus_id, pid, gpu_utilization [%], mem_utilization [%], max_memory_usage [MiB], time [ms]
+NVIDIA A40, 00000000:01:00.0, 2196375, 16 %, 10 %, 4242 MiB, 53417 ms

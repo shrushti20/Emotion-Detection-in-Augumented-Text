@@ -1,0 +1,48 @@
+### Starting TaskPrologue of job 3255737 on a0122 at Sun Dec 28 18:12:30 CET 2025
+Running on cores 112-127 with governor ondemand
+Sun Dec 28 18:12:30 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 580.105.08             Driver Version: 580.105.08     CUDA Version: 13.0     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A40                     On  |   00000000:E1:00.0 Off |                  Off |
+|  0%   33C    P8             23W /  300W |       0MiB /  49140MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+### Finished TaskPrologue
+
+trainable params: 890,888 || all params: 185,319,184 || trainable%: 0.4807
+=== JOB_STATISTICS ===
+=== current date     : Sun Dec 28 18:12:54 CET 2025
+= Job-ID             : 3255737 on alex
+= Job-Name           : db_lora_n10
+= Job-Command        : /home/hpc/v121ca/v121ca21/thesis_adapt/jobs/deberta_lora_fixed_n10.sbatch
+= Initial workdir    : /home/hpc/v121ca/v121ca21
+= Queue/Partition    : a40
+= Slurm account      : v121ca with QOS=normal
+= Requested resources:  for 01:00:00
+= Elapsed runtime    : 00:00:58
+= Total RAM usage    : 2.7 GiB of assigned  GiB (%)
+= Node list          : a0122
+= Subm/Elig/Start/End: 2025-12-28T18:11:43 / 2025-12-28T18:11:43 / 2025-12-28T18:11:56 / 2025-12-28T18:12:54
+======================
+=== Quota infos ======
+    Path              Used     SoftQ    HardQ    Gracetime  Filec    FileQ    FiHaQ    FileGrace    
+    /home/hpc           52.4G   104.9G   209.7G        N/A     125K     500K   1,000K        N/A    
+    /home/vault         23.4G  1048.6G  2097.2G        N/A     155      200K     400K        N/A    
+    atuin.rrze.uni-erlangen.de:/srv/home     0.0K     0.0K     0.0K        N/A       1                           N/A    
+======================
+=== GPU utilization ==
+gpu_name, gpu_bus_id, pid, gpu_utilization [%], mem_utilization [%], max_memory_usage [MiB], time [ms]
+NVIDIA A40, 00000000:E1:00.0, 3634817, 1 %, 0 %, 1838 MiB, 4705 ms

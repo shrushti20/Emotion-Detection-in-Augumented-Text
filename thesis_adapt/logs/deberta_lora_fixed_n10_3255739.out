@@ -1,0 +1,66 @@
+### Starting TaskPrologue of job 3255739 on a0122 at Sun Dec 28 18:15:59 CET 2025
+Running on cores 0-15 with governor ondemand
+Sun Dec 28 18:15:59 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 580.105.08             Driver Version: 580.105.08     CUDA Version: 13.0     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A40                     On  |   00000000:01:00.0 Off |                  Off |
+|  0%   33C    P8             21W /  300W |       0MiB /  49140MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+### Finished TaskPrologue
+
+trainable params: 890,888 || all params: 185,319,184 || trainable%: 0.4807
+{'eval_loss': 2.2292070388793945, 'eval_acc': 0.1504424778761062, 'eval_macro_f1': 0.07340841997176228, 'eval_runtime': 0.5587, 'eval_samples_per_second': 404.536, 'eval_steps_per_second': 26.85, 'epoch': 1.0}
+{'eval_loss': 2.107905864715576, 'eval_acc': 0.11504424778761062, 'eval_macro_f1': 0.10347903375396982, 'eval_runtime': 0.4927, 'eval_samples_per_second': 458.699, 'eval_steps_per_second': 30.445, 'epoch': 2.0}
+{'loss': 2.2066, 'grad_norm': 11.289877891540527, 'learning_rate': 0.000152, 'epoch': 2.5}
+{'eval_loss': 2.09206485748291, 'eval_acc': 0.13716814159292035, 'eval_macro_f1': 0.0992291446441881, 'eval_runtime': 0.4926, 'eval_samples_per_second': 458.836, 'eval_steps_per_second': 30.454, 'epoch': 3.0}
+{'eval_loss': 2.1323673725128174, 'eval_acc': 0.10619469026548672, 'eval_macro_f1': 0.08127551749286945, 'eval_runtime': 0.4928, 'eval_samples_per_second': 458.625, 'eval_steps_per_second': 30.44, 'epoch': 4.0}
+{'loss': 2.0971, 'grad_norm': 12.005509376525879, 'learning_rate': 0.00010200000000000001, 'epoch': 5.0}
+{'eval_loss': 2.131537675857544, 'eval_acc': 0.12389380530973451, 'eval_macro_f1': 0.0747820322840383, 'eval_runtime': 0.4948, 'eval_samples_per_second': 456.713, 'eval_steps_per_second': 30.313, 'epoch': 5.0}
+{'eval_loss': 2.1236259937286377, 'eval_acc': 0.13274336283185842, 'eval_macro_f1': 0.08779193443114776, 'eval_runtime': 0.5001, 'eval_samples_per_second': 451.932, 'eval_steps_per_second': 29.995, 'epoch': 6.0}
+{'eval_loss': 2.109785556793213, 'eval_acc': 0.1592920353982301, 'eval_macro_f1': 0.09477902304300412, 'eval_runtime': 0.5, 'eval_samples_per_second': 452.014, 'eval_steps_per_second': 30.001, 'epoch': 7.0}
+{'loss': 2.0321, 'grad_norm': 13.537256240844727, 'learning_rate': 5.2000000000000004e-05, 'epoch': 7.5}
+{'eval_loss': 2.118138074874878, 'eval_acc': 0.168141592920354, 'eval_macro_f1': 0.10204907161803714, 'eval_runtime': 0.5035, 'eval_samples_per_second': 448.848, 'eval_steps_per_second': 29.791, 'epoch': 8.0}
+{'eval_loss': 2.1165220737457275, 'eval_acc': 0.17256637168141592, 'eval_macro_f1': 0.10672749602992414, 'eval_runtime': 0.5001, 'eval_samples_per_second': 451.878, 'eval_steps_per_second': 29.992, 'epoch': 9.0}
+{'loss': 2.0084, 'grad_norm': 13.67137336730957, 'learning_rate': 2.0000000000000003e-06, 'epoch': 10.0}
+{'eval_loss': 2.116128921508789, 'eval_acc': 0.17256637168141592, 'eval_macro_f1': 0.10672749602992414, 'eval_runtime': 0.4936, 'eval_samples_per_second': 457.865, 'eval_steps_per_second': 30.389, 'epoch': 10.0}
+{'train_runtime': 16.8416, 'train_samples_per_second': 47.501, 'train_steps_per_second': 5.938, 'train_loss': 2.0860345458984373, 'epoch': 10.0}
+Best model eval on DEV: {'eval_loss': 2.1165220737457275, 'eval_acc': 0.17256637168141592, 'eval_macro_f1': 0.10672749602992414, 'eval_runtime': 0.499, 'eval_samples_per_second': 452.885, 'eval_steps_per_second': 30.059, 'epoch': 10.0}
+Final eval on TEST: {'eval_loss': 2.0930263996124268, 'eval_acc': 0.1583087512291052, 'eval_macro_f1': 0.09410350116833927, 'eval_runtime': 4.271, 'eval_samples_per_second': 476.232, 'eval_steps_per_second': 29.969, 'epoch': 10.0}
+Saved LoRA-adapted model to: thesis_adapt/models/deberta_lora_fixed_n10
+=== JOB_STATISTICS ===
+=== current date     : Sun Dec 28 18:16:42 CET 2025
+= Job-ID             : 3255739 on alex
+= Job-Name           : db_lora_n10
+= Job-Command        : /home/hpc/v121ca/v121ca21/thesis_adapt/jobs/deberta_lora_fixed_n10.sbatch
+= Initial workdir    : /home/hpc/v121ca/v121ca21
+= Queue/Partition    : a40
+= Slurm account      : v121ca with QOS=normal
+= Requested resources:  for 01:00:00
+= Elapsed runtime    : 00:00:45
+= Total RAM usage    : 2.9 GiB of assigned  GiB (%)
+= Node list          : a0122
+= Subm/Elig/Start/End: 2025-12-28T18:15:36 / 2025-12-28T18:15:36 / 2025-12-28T18:15:57 / 2025-12-28T18:16:42
+======================
+=== Quota infos ======
+    Path              Used     SoftQ    HardQ    Gracetime  Filec    FileQ    FiHaQ    FileGrace    
+    /home/hpc           52.5G   104.9G   209.7G        N/A     125K     500K   1,000K        N/A    
+    /home/vault         23.6G  1048.6G  2097.2G        N/A     178      200K     400K        N/A    
+    atuin.rrze.uni-erlangen.de:/srv/home     0.0K     0.0K     0.0K        N/A       1                           N/A    
+======================
+=== GPU utilization ==
+gpu_name, gpu_bus_id, pid, gpu_utilization [%], mem_utilization [%], max_memory_usage [MiB], time [ms]
+NVIDIA A40, 00000000:01:00.0, 3636345, 26 %, 16 %, 2418 MiB, 25071 ms

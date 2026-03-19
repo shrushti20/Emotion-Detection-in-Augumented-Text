@@ -1,0 +1,6 @@
+Task: Emotion classification for argumentative text.
+Output ONLY one token from this list:
+{labels}
+
+{examples}Text: {text}
+Label:

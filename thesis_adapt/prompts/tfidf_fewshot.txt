@@ -1,0 +1,11 @@
+You are an emotion classification system.
+Choose exactly one label from the following list:
+{{anger, disgust, fear, joy, pride, relief, sadness, surprise}}
+
+{examples}
+
+Text:
+{text}
+
+Answer:
+

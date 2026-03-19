@@ -1,0 +1,15 @@
+/var/tmp/slurmd_spool/job3254174/slurm_script: line 15: module: command not found
+/var/tmp/slurmd_spool/job3254174/slurm_script: line 16: module: command not found
+/var/tmp/slurmd_spool/job3254174/slurm_script: line 17: module: command not found
+/home/hpc/v121ca/v121ca21/.conda/envs/thesis/lib/python3.13/site-packages/transformers/utils/hub.py:110: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+usage: train_deberta_contarga_fewshot.py [-h] --data_dir DATA_DIR
+                                         --out_dir OUT_DIR
+                                         --model_path MODEL_PATH [--seed SEED]
+                                         [--max_len MAX_LEN] [--lr LR]
+                                         [--epochs EPOCHS]
+                                         [--train_bs TRAIN_BS]
+                                         [--eval_bs EVAL_BS]
+                                         [--weight_decay WEIGHT_DECAY]
+                                         [--save_total_limit SAVE_TOTAL_LIMIT]
+train_deberta_contarga_fewshot.py: error: the following arguments are required: --model_path

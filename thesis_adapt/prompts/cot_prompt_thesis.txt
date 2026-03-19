@@ -1,0 +1,10 @@
+You are an emotion classification system.
+Choose exactly one label from the following list:
+{labels}
+
+{examples}Text:
+{text}
+
+Think step by step about the emotional cues in the text. Then output your answer in EXACTLY this format:
+Reasoning: <short reasoning>
+Final label: <one label from the list>

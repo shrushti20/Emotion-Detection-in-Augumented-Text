@@ -1,0 +1,8 @@
+Device: cuda
+Mode: tfidf
+Model: mistralai/Mistral-7B-Instruct-v0.1
+Data: /home/hpc/v121ca/v121ca21/thesis_data/contarga_llm/contarga_emotion_subset_200.csv
+Out: /home/hpc/v121ca/v121ca21/thesis_results/llm/mistral_tfidf_balanced_k8_200.csv
+Loaded rows: 200
+TF-IDF train rows (filtered to 8 labels): 80
+TF-IDF k: 8 balance: True

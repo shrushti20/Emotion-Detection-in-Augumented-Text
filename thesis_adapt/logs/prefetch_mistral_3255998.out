@@ -1,0 +1,74 @@
+### Starting TaskPrologue of job 3255998 on a0321 at Mon Dec 29 00:05:01 CET 2025
+Running on cores 16-31 with governor ondemand
+Mon Dec 29 00:05:01 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 580.105.08             Driver Version: 580.105.08     CUDA Version: 13.0     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A40                     On  |   00000000:25:00.0 Off |                  Off |
+|  0%   33C    P8             21W /  300W |       0MiB /  49140MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+### Finished TaskPrologue
+
+=== PREFETCH START ===
+Mon Dec 29 00:05:01 CET 2025
+a0321.nhr.fau.de
+PYTHON=/home/hpc/v121ca/v121ca21/.conda/envs/thesis/bin/python
+Python 3.13.9
+HF_HOME=/home/vault/v121ca/v121ca21/hf_cache
+Mon Dec 29 00:05:01 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 580.105.08             Driver Version: 580.105.08     CUDA Version: 13.0     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A40                     On  |   00000000:25:00.0 Off |                  Off |
+|  0%   33C    P0             21W /  300W |       0MiB /  49140MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+HF_HOME: /home/vault/v121ca/v121ca21/hf_cache
+Downloading tokenizer...
+=== JOB_STATISTICS ===
+=== current date     : Mon Dec 29 00:29:59 CET 2025
+= Job-ID             : 3255998 on alex
+= Job-Name           : prefetch_mistral
+= Job-Command        : /home/hpc/v121ca/v121ca21/thesis_adapt/jobs/prefetch_mistral.sbatch
+= Initial workdir    : /home/hpc/v121ca/v121ca21
+= Queue/Partition    : a40
+= Slurm account      : v121ca with QOS=normal
+= Requested resources:  for 01:00:00
+= Elapsed runtime    : 00:24:58
+= Total RAM usage    : 1.2 GiB of assigned  GiB (%)
+= Node list          : a0321
+= Subm/Elig/Start/End: 2025-12-29T00:04:36 / 2025-12-29T00:04:36 / 2025-12-29T00:05:00 / 2025-12-29T00:29:58
+======================
+=== Quota infos ======
+    Path              Used     SoftQ    HardQ    Gracetime  Filec    FileQ    FiHaQ    FileGrace    
+    /home/hpc           80.7G   104.9G   209.7G        N/A     125K     500K   1,000K        N/A    
+    /home/vault         23.6G  1048.6G  2097.2G        N/A     270      200K     400K        N/A    
+    atuin.rrze.uni-erlangen.de:/srv/home     0.0K     0.0K     0.0K        N/A       1                           N/A    
+======================
+=== GPU utilization ==
+gpu_name, gpu_bus_id, pid, gpu_utilization [%], mem_utilization [%], max_memory_usage [MiB], time [ms]

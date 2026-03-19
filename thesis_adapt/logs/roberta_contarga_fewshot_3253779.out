@@ -1,0 +1,101 @@
+### Starting TaskPrologue of job 3253779 on a0126 at Fri Dec 26 16:09:56 CET 2025
+Running on cores 16-31 with governor ondemand
+Fri Dec 26 16:09:56 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 580.105.08             Driver Version: 580.105.08     CUDA Version: 13.0     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A40                     On  |   00000000:25:00.0 Off |                  Off |
+|  0%   31C    P8             22W /  300W |       0MiB /  49140MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+### Finished TaskPrologue
+
+Map:   0%|          | 0/80 [00:00<?, ? examples/s]Map: 100%|██████████| 80/80 [00:00<00:00, 3558.75 examples/s]
+Map:   0%|          | 0/294 [00:00<?, ? examples/s]Map: 100%|██████████| 294/294 [00:00<00:00, 10604.61 examples/s]
+Map:   0%|          | 0/2646 [00:00<?, ? examples/s]Map:  76%|███████▌  | 2000/2646 [00:00<00:00, 13341.30 examples/s]Map: 100%|██████████| 2646/2646 [00:00<00:00, 13436.41 examples/s]
+Some weights of RobertaForSequenceClassification were not initialized from the model checkpoint at /home/hpc/v121ca/v121ca21/thesis_models/goemo_roberta_base/checkpoint-1500 and are newly initialized because the shapes did not match:
+- classifier.out_proj.bias: found shape torch.Size([28]) in the checkpoint and torch.Size([8]) in the model instantiated
+- classifier.out_proj.weight: found shape torch.Size([28, 768]) in the checkpoint and torch.Size([8, 768]) in the model instantiated
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+/home/hpc/v121ca/v121ca21/thesis_adapt/scripts/train_roberta_contarga_fewshot.py:86: FutureWarning: `tokenizer` is deprecated and will be removed in version 5.0.0 for `Trainer.__init__`. Use `processing_class` instead.
+  trainer = Trainer(
+Detected kernel version 4.18.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+  0%|          | 0/100 [00:00<?, ?it/s]Traceback (most recent call last):
+  File "/home/hpc/v121ca/v121ca21/thesis_adapt/scripts/train_roberta_contarga_fewshot.py", line 95, in <module>
+    trainer.train()
+    ~~~~~~~~~~~~~^^
+  File "/home/hpc/v121ca/v121ca21/.conda/envs/thesis/lib/python3.13/site-packages/transformers/trainer.py", line 2325, in train
+    return inner_training_loop(
+        args=args,
+    ...<2 lines>...
+        ignore_keys_for_eval=ignore_keys_for_eval,
+    )
+  File "/home/hpc/v121ca/v121ca21/.conda/envs/thesis/lib/python3.13/site-packages/transformers/trainer.py", line 2674, in _inner_training_loop
+    tr_loss_step = self.training_step(model, inputs, num_items_in_batch)
+  File "/home/hpc/v121ca/v121ca21/.conda/envs/thesis/lib/python3.13/site-packages/transformers/trainer.py", line 4020, in training_step
+    loss = self.compute_loss(model, inputs, num_items_in_batch=num_items_in_batch)
+  File "/home/hpc/v121ca/v121ca21/.conda/envs/thesis/lib/python3.13/site-packages/transformers/trainer.py", line 4110, in compute_loss
+    outputs = model(**inputs)
+  File "/home/hpc/v121ca/v121ca21/.conda/envs/thesis/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/hpc/v121ca/v121ca21/.conda/envs/thesis/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/hpc/v121ca/v121ca21/.conda/envs/thesis/lib/python3.13/site-packages/transformers/models/roberta/modeling_roberta.py", line 1225, in forward
+    loss = loss_fct(logits, labels)
+  File "/home/hpc/v121ca/v121ca21/.conda/envs/thesis/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/hpc/v121ca/v121ca21/.conda/envs/thesis/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/hpc/v121ca/v121ca21/.conda/envs/thesis/lib/python3.13/site-packages/torch/nn/modules/loss.py", line 850, in forward
+    return F.binary_cross_entropy_with_logits(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        input,
+        ^^^^^^
+    ...<3 lines>...
+        reduction=self.reduction,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/hpc/v121ca/v121ca21/.conda/envs/thesis/lib/python3.13/site-packages/torch/nn/functional.py", line 3589, in binary_cross_entropy_with_logits
+    raise ValueError(
+        f"Target size ({target.size()}) must be the same as input size ({input.size()})"
+    )
+ValueError: Target size (torch.Size([8])) must be the same as input size (torch.Size([8, 8]))
+  0%|          | 0/100 [00:01<?, ?it/s]
+=== JOB_STATISTICS ===
+=== current date     : Fri Dec 26 16:10:22 CET 2025
+= Job-ID             : 3253779 on alex
+= Job-Name           : roberta_ctg_fs
+= Job-Command        : /home/hpc/v121ca/v121ca21/thesis_adapt/jobs/roberta_contarga_fewshot.sbatch
+= Initial workdir    : /home/hpc/v121ca/v121ca21
+= Queue/Partition    : a40
+= Slurm account      : v121ca with QOS=normal
+= Requested resources:  for 01:00:00
+= Elapsed runtime    : 00:00:27
+= Total RAM usage    : 2.1 GiB of assigned  GiB (%)
+= Node list          : a0126
+= Subm/Elig/Start/End: 2025-12-26T16:09:54 / 2025-12-26T16:09:54 / 2025-12-26T16:09:55 / 2025-12-26T16:10:22
+======================
+=== Quota infos ======
+    Path              Used     SoftQ    HardQ    Gracetime  Filec    FileQ    FiHaQ    FileGrace    
+    /home/hpc          104.3G   104.9G   209.7G        N/A     129K     500K   1,000K        N/A    
+    /home/vault          0.0K  1048.6G  2097.2G        N/A       1      200K     400K        N/A    
+    atuin.rrze.uni-erlangen.de:/srv/home     0.0K     0.0K     0.0K        N/A       1                           N/A    
+======================
+=== GPU utilization ==
+gpu_name, gpu_bus_id, pid, gpu_utilization [%], mem_utilization [%], max_memory_usage [MiB], time [ms]
+NVIDIA A40, 00000000:25:00.0, 3931855, 1 %, 0 %, 2084 MiB, 4049 ms

@@ -1,0 +1,100 @@
+### Starting TaskPrologue of job 3255742 on a0122 at Sun Dec 28 18:35:31 CET 2025
+Running on cores 0-15 with governor ondemand
+Sun Dec 28 18:35:31 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 580.105.08             Driver Version: 580.105.08     CUDA Version: 13.0     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A40                     On  |   00000000:01:00.0 Off |                  Off |
+|  0%   31C    P8             21W /  300W |       0MiB /  49140MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+### Finished TaskPrologue
+
+trainable params: 890,888 || all params: 185,319,184 || trainable%: 0.4807
+{'loss': 2.1889, 'grad_norm': 16.113067626953125, 'learning_rate': 0.00019494736842105265, 'epoch': 0.26}
+{'loss': 2.1314, 'grad_norm': 9.71127700805664, 'learning_rate': 0.0001896842105263158, 'epoch': 0.53}
+{'loss': 2.1321, 'grad_norm': 13.62308406829834, 'learning_rate': 0.00018442105263157896, 'epoch': 0.79}
+{'eval_loss': 2.0901288986206055, 'eval_acc': 0.168141592920354, 'eval_macro_f1': 0.09667745886808597, 'eval_runtime': 0.4352, 'eval_samples_per_second': 519.333, 'eval_steps_per_second': 34.469, 'epoch': 1.0}
+{'loss': 2.1075, 'grad_norm': 13.970977783203125, 'learning_rate': 0.00017915789473684212, 'epoch': 1.05}
+{'loss': 2.0886, 'grad_norm': 10.88882827758789, 'learning_rate': 0.00017389473684210527, 'epoch': 1.32}
+{'loss': 2.0945, 'grad_norm': 6.409274578094482, 'learning_rate': 0.00016863157894736843, 'epoch': 1.58}
+{'loss': 2.0994, 'grad_norm': 8.083758354187012, 'learning_rate': 0.0001633684210526316, 'epoch': 1.84}
+{'eval_loss': 2.0545666217803955, 'eval_acc': 0.1902654867256637, 'eval_macro_f1': 0.08819559899109305, 'eval_runtime': 0.4196, 'eval_samples_per_second': 538.637, 'eval_steps_per_second': 35.75, 'epoch': 2.0}
+{'loss': 2.0652, 'grad_norm': 6.313816547393799, 'learning_rate': 0.00015810526315789475, 'epoch': 2.11}
+{'loss': 2.0647, 'grad_norm': 8.591045379638672, 'learning_rate': 0.0001528421052631579, 'epoch': 2.37}
+{'loss': 2.0574, 'grad_norm': 6.297281742095947, 'learning_rate': 0.00014757894736842106, 'epoch': 2.63}
+{'loss': 2.069, 'grad_norm': 7.2388176918029785, 'learning_rate': 0.00014231578947368422, 'epoch': 2.89}
+{'eval_loss': 2.0356056690216064, 'eval_acc': 0.18584070796460178, 'eval_macro_f1': 0.1258403627085321, 'eval_runtime': 0.4161, 'eval_samples_per_second': 543.153, 'eval_steps_per_second': 36.05, 'epoch': 3.0}
+{'loss': 2.0379, 'grad_norm': 7.4103851318359375, 'learning_rate': 0.00013705263157894737, 'epoch': 3.16}
+{'loss': 2.0221, 'grad_norm': 4.764664173126221, 'learning_rate': 0.00013178947368421053, 'epoch': 3.42}
+{'loss': 1.9762, 'grad_norm': 7.449044704437256, 'learning_rate': 0.0001265263157894737, 'epoch': 3.68}
+{'loss': 2.0108, 'grad_norm': 6.812846660614014, 'learning_rate': 0.00012126315789473686, 'epoch': 3.95}
+{'eval_loss': 2.011448621749878, 'eval_acc': 0.20353982300884957, 'eval_macro_f1': 0.14759190697650265, 'eval_runtime': 0.4162, 'eval_samples_per_second': 542.99, 'eval_steps_per_second': 36.039, 'epoch': 4.0}
+{'loss': 1.9999, 'grad_norm': 8.615815162658691, 'learning_rate': 0.000116, 'epoch': 4.21}
+{'loss': 1.9392, 'grad_norm': 7.129521369934082, 'learning_rate': 0.00011073684210526316, 'epoch': 4.47}
+{'loss': 1.9894, 'grad_norm': 4.473781108856201, 'learning_rate': 0.00010547368421052633, 'epoch': 4.74}
+{'loss': 1.961, 'grad_norm': 9.207056045532227, 'learning_rate': 0.00010021052631578949, 'epoch': 5.0}
+{'eval_loss': 2.020017385482788, 'eval_acc': 0.18584070796460178, 'eval_macro_f1': 0.13583683083683085, 'eval_runtime': 0.4156, 'eval_samples_per_second': 543.755, 'eval_steps_per_second': 36.09, 'epoch': 5.0}
+{'loss': 1.9156, 'grad_norm': 8.830427169799805, 'learning_rate': 9.494736842105264e-05, 'epoch': 5.26}
+{'loss': 1.8724, 'grad_norm': 7.217851161956787, 'learning_rate': 8.96842105263158e-05, 'epoch': 5.53}
+{'loss': 1.9335, 'grad_norm': 9.82552719116211, 'learning_rate': 8.442105263157896e-05, 'epoch': 5.79}
+{'eval_loss': 2.063308000564575, 'eval_acc': 0.19911504424778761, 'eval_macro_f1': 0.1603264830337509, 'eval_runtime': 0.4159, 'eval_samples_per_second': 543.364, 'eval_steps_per_second': 36.064, 'epoch': 6.0}
+{'loss': 1.8583, 'grad_norm': 7.6186299324035645, 'learning_rate': 7.915789473684211e-05, 'epoch': 6.05}
+{'loss': 1.8602, 'grad_norm': 6.918013572692871, 'learning_rate': 7.389473684210527e-05, 'epoch': 6.32}
+{'loss': 1.84, 'grad_norm': 9.60705280303955, 'learning_rate': 6.863157894736843e-05, 'epoch': 6.58}
+{'loss': 1.8322, 'grad_norm': 9.988794326782227, 'learning_rate': 6.336842105263158e-05, 'epoch': 6.84}
+{'eval_loss': 2.0632669925689697, 'eval_acc': 0.18141592920353983, 'eval_macro_f1': 0.12635051918194146, 'eval_runtime': 0.4225, 'eval_samples_per_second': 534.867, 'eval_steps_per_second': 35.5, 'epoch': 7.0}
+{'loss': 1.8563, 'grad_norm': 7.843860149383545, 'learning_rate': 5.810526315789474e-05, 'epoch': 7.11}
+{'loss': 1.756, 'grad_norm': 9.529684066772461, 'learning_rate': 5.284210526315789e-05, 'epoch': 7.37}
+{'loss': 1.881, 'grad_norm': 5.079718112945557, 'learning_rate': 4.7578947368421054e-05, 'epoch': 7.63}
+{'loss': 1.7607, 'grad_norm': 8.934907913208008, 'learning_rate': 4.231578947368421e-05, 'epoch': 7.89}
+{'eval_loss': 2.0317416191101074, 'eval_acc': 0.20353982300884957, 'eval_macro_f1': 0.16535031778006015, 'eval_runtime': 0.4211, 'eval_samples_per_second': 536.672, 'eval_steps_per_second': 35.62, 'epoch': 8.0}
+{'loss': 1.8773, 'grad_norm': 5.935667037963867, 'learning_rate': 3.7052631578947375e-05, 'epoch': 8.16}
+{'loss': 1.7148, 'grad_norm': 8.747557640075684, 'learning_rate': 3.178947368421053e-05, 'epoch': 8.42}
+{'loss': 1.7834, 'grad_norm': 6.623321533203125, 'learning_rate': 2.652631578947369e-05, 'epoch': 8.68}
+{'loss': 1.7544, 'grad_norm': 8.216912269592285, 'learning_rate': 2.1263157894736842e-05, 'epoch': 8.95}
+{'eval_loss': 2.034191608428955, 'eval_acc': 0.2079646017699115, 'eval_macro_f1': 0.15409649826761396, 'eval_runtime': 0.421, 'eval_samples_per_second': 536.782, 'eval_steps_per_second': 35.627, 'epoch': 9.0}
+{'loss': 1.734, 'grad_norm': 9.540870666503906, 'learning_rate': 1.6000000000000003e-05, 'epoch': 9.21}
+{'loss': 1.7621, 'grad_norm': 8.300058364868164, 'learning_rate': 1.073684210526316e-05, 'epoch': 9.47}
+{'loss': 1.7924, 'grad_norm': 7.2712273597717285, 'learning_rate': 5.4736842105263165e-06, 'epoch': 9.74}
+{'loss': 1.7853, 'grad_norm': 9.615008354187012, 'learning_rate': 2.105263157894737e-07, 'epoch': 10.0}
+{'eval_loss': 2.038210153579712, 'eval_acc': 0.22123893805309736, 'eval_macro_f1': 0.17136910531313204, 'eval_runtime': 0.4247, 'eval_samples_per_second': 532.114, 'eval_steps_per_second': 35.317, 'epoch': 10.0}
+{'train_runtime': 66.8567, 'train_samples_per_second': 113.676, 'train_steps_per_second': 14.209, 'train_loss': 1.9369837710731908, 'epoch': 10.0}
+Best model eval on DEV: {'eval_loss': 2.038210153579712, 'eval_acc': 0.22123893805309736, 'eval_macro_f1': 0.17136910531313204, 'eval_runtime': 0.4176, 'eval_samples_per_second': 541.211, 'eval_steps_per_second': 35.921, 'epoch': 10.0}
+Final eval on TEST: {'eval_loss': 2.056511163711548, 'eval_acc': 0.2192723697148476, 'eval_macro_f1': 0.17229076943626925, 'eval_runtime': 3.5926, 'eval_samples_per_second': 566.165, 'eval_steps_per_second': 35.629, 'epoch': 10.0}
+Saved LoRA-adapted model to: thesis_adapt/models/deberta_lora_fixed_n95
+=== JOB_STATISTICS ===
+=== current date     : Sun Dec 28 18:37:05 CET 2025
+= Job-ID             : 3255742 on alex
+= Job-Name           : db_lora_n95
+= Job-Command        : /home/hpc/v121ca/v121ca21/thesis_adapt/jobs/deberta_lora_fixed_n95.sbatch
+= Initial workdir    : /home/hpc/v121ca/v121ca21
+= Queue/Partition    : a40
+= Slurm account      : v121ca with QOS=normal
+= Requested resources:  for 01:00:00
+= Elapsed runtime    : 00:01:35
+= Total RAM usage    : 3.0 GiB of assigned  GiB (%)
+= Node list          : a0122
+= Subm/Elig/Start/End: 2025-12-28T18:35:15 / 2025-12-28T18:35:15 / 2025-12-28T18:35:30 / 2025-12-28T18:37:05
+======================
+=== Quota infos ======
+    Path              Used     SoftQ    HardQ    Gracetime  Filec    FileQ    FiHaQ    FileGrace    
+    /home/hpc           52.5G   104.9G   209.7G        N/A     125K     500K   1,000K        N/A    
+    /home/vault         23.6G  1048.6G  2097.2G        N/A     194      200K     400K        N/A    
+    atuin.rrze.uni-erlangen.de:/srv/home     0.0K     0.0K     0.0K        N/A       1                           N/A    
+======================
+=== GPU utilization ==
+gpu_name, gpu_bus_id, pid, gpu_utilization [%], mem_utilization [%], max_memory_usage [MiB], time [ms]
+NVIDIA A40, 00000000:01:00.0, 3638265, 30 %, 17 %, 2966 MiB, 74283 ms

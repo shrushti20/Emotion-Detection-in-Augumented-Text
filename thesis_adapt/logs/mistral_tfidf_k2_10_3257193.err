@@ -1,0 +1,9 @@
+Unloading python/3.12-conda
+  Module ERROR: invalid command name "source-sh"
+        while executing
+    "source-sh bash $path/etc/profile.d/conda.sh"
+        (procedure "SetupConda" line 2)
+        invoked from within
+    "SetupConda $pkghome"
+        (file "/apps/modules/data/conda/python/3.12-conda" line 47)
+    Please contact <support-hpc@fau.de>

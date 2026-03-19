@@ -1,0 +1,56 @@
+/home/hpc/v121ca/v121ca21/.conda/envs/thesis/lib/python3.13/site-packages/huggingface_hub/file_download.py:942: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+Traceback (most recent call last):
+  File "/home/hpc/v121ca/v121ca21/.conda/envs/thesis/lib/python3.13/site-packages/huggingface_hub/file_download.py", line 399, in http_get
+    import hf_transfer  # type: ignore[no-redef]
+    ^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'hf_transfer'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "<stdin>", line 9, in <module>
+  File "/home/hpc/v121ca/v121ca21/.conda/envs/thesis/lib/python3.13/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+  File "/home/hpc/v121ca/v121ca21/.conda/envs/thesis/lib/python3.13/site-packages/huggingface_hub/_snapshot_download.py", line 330, in snapshot_download
+    _inner_hf_hub_download(file)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/hpc/v121ca/v121ca21/.conda/envs/thesis/lib/python3.13/site-packages/huggingface_hub/_snapshot_download.py", line 306, in _inner_hf_hub_download
+    return hf_hub_download(
+        repo_id,
+    ...<15 lines>...
+        headers=headers,
+    )
+  File "/home/hpc/v121ca/v121ca21/.conda/envs/thesis/lib/python3.13/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+  File "/home/hpc/v121ca/v121ca21/.conda/envs/thesis/lib/python3.13/site-packages/huggingface_hub/file_download.py", line 1007, in hf_hub_download
+    return _hf_hub_download_to_cache_dir(
+        # Destination
+    ...<14 lines>...
+        force_download=force_download,
+    )
+  File "/home/hpc/v121ca/v121ca21/.conda/envs/thesis/lib/python3.13/site-packages/huggingface_hub/file_download.py", line 1168, in _hf_hub_download_to_cache_dir
+    _download_to_tmp_and_move(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        incomplete_path=Path(blob_path + ".incomplete"),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<8 lines>...
+        xet_file_data=xet_file_data,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/hpc/v121ca/v121ca21/.conda/envs/thesis/lib/python3.13/site-packages/huggingface_hub/file_download.py", line 1735, in _download_to_tmp_and_move
+    http_get(
+    ~~~~~~~~^
+        url_to_download,
+        ^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+        expected_size=expected_size,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/hpc/v121ca/v121ca21/.conda/envs/thesis/lib/python3.13/site-packages/huggingface_hub/file_download.py", line 401, in http_get
+    raise ValueError(
+    ...<3 lines>...
+    )
+ValueError: Fast download using 'hf_transfer' is enabled (HF_HUB_ENABLE_HF_TRANSFER=1) but 'hf_transfer' package is not available in your environment. Try `pip install hf_transfer`.

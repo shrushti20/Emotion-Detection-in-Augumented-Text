@@ -1,0 +1,49 @@
+### Starting TaskPrologue of job 3253963 on a0522 at Fri Dec 26 20:08:58 CET 2025
+Running on cores 32-47 with governor ondemand
+Fri Dec 26 20:08:58 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 580.105.08             Driver Version: 580.105.08     CUDA Version: 13.0     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A40                     On  |   00000000:41:00.0 Off |                  Off |
+|  0%   34C    P8             29W /  300W |       0MiB /  49140MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+### Finished TaskPrologue
+
+  File "/home/hpc/v121ca/v121ca21/thesis_adapt/scripts/train_roberta_contarga_fewshot.py", line 121
+    os.makedirs(out_dir, exist_ok=True)
+IndentationError: unexpected indent
+=== JOB_STATISTICS ===
+=== current date     : Fri Dec 26 20:08:59 CET 2025
+= Job-ID             : 3253963 on alex
+= Job-Name           : rb_bal_n50
+= Job-Command        : /home/hpc/v121ca/v121ca21/thesis_adapt/jobs/roberta_bal_n50.sbatch
+= Initial workdir    : /home/hpc/v121ca/v121ca21
+= Queue/Partition    : a40
+= Slurm account      : v121ca with QOS=normal
+= Requested resources:  for 01:00:00
+= Elapsed runtime    : 00:00:02
+= Total RAM usage    : 0.0 GiB of assigned  GiB (%)
+= Node list          : a0522
+= Subm/Elig/Start/End: 2025-12-26T20:08:56 / 2025-12-26T20:08:56 / 2025-12-26T20:08:57 / 2025-12-26T20:08:59
+======================
+=== Quota infos ======
+    Path              Used     SoftQ    HardQ    Gracetime  Filec    FileQ    FiHaQ    FileGrace    
+!!! /home/hpc          111.1G   104.9G   209.7G  -29255days     129K     500K   1,000K        N/A !!!
+    /home/vault          0.0K  1048.6G  2097.2G        N/A       1      200K     400K        N/A    
+    atuin.rrze.uni-erlangen.de:/srv/home     0.0K     0.0K     0.0K        N/A       1                           N/A    
+======================
+=== GPU utilization ==
+gpu_name, gpu_bus_id, pid, gpu_utilization [%], mem_utilization [%], max_memory_usage [MiB], time [ms]

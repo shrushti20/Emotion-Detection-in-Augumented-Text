@@ -1,0 +1,52 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.venv/
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Data and model artifacts
+data/
+datasets/
+models/
+checkpoints/
+outputs/
+results/
+runs/
+wandb/
+
+# Hugging Face / PyTorch / safetensors
+*.bin
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.h5
+*.onnx
+
+# Archives
+*.zip
+*.tar
+*.gz
+*.7z
+
+# Large exports
+*.csv
+*.tsv
+*.jsonl
+
+thesis_adapt/models/
