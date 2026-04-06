@@ -9,7 +9,7 @@ ROBERTA_MAPPED_PATH = os.path.join(
 )
 LLM_PATH = os.path.join(
     BASE_DIR,
-    "thesis_results/llm/gemma_contarga_eval.csv"
+    "thesis_results/llm/mistral_contarga_multilabel_eval.csv"
 )
 OUT_DIR = os.path.join(BASE_DIR, "thesis_results/mapped")
 OUT_PATH = os.path.join(OUT_DIR, "roberta_vs_llm_contarga_mapped.csv")

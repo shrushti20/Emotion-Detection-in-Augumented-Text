@@ -2,7 +2,7 @@ import pandas as pd
 from sklearn.metrics import f1_score, accuracy_score, classification_report
 
 BASE = "/home/hpc/v121ca/v121ca21"
-IN_PATH = f"{BASE}/thesis_results/llm/gemma_contarga_eval.csv"
+IN_PATH = f"{BASE}/thesis_results/llm/mistral_contarga_multilabel_eval.csv"
 OUT_PATH = f"{BASE}/thesis_results/llm/gemma_contarga_metrics.txt"
 
 df = pd.read_csv(IN_PATH)

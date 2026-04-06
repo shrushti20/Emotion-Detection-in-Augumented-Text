@@ -13,4 +13,4 @@ conda activate thesis
 
 cd /home/hpc/v121ca/v121ca21
 
-python thesis_scripts/contarga_llm_gemma.py
+python thesis_scripts/contarga_llm_mistral_multilabel.py

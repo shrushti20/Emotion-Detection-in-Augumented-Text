@@ -5,7 +5,7 @@ BASE = "/home/hpc/v121ca/v121ca21"
 
 # CORRECT paths
 ROBERTA_PATH = f"{BASE}/thesis_data/contarga_llm/roberta_contarga_eval_with_labels.csv"
-LLM_PATH     = f"{BASE}/thesis_results/llm/gemma_contarga_eval.csv"
+LLM_PATH     = f"{BASE}/thesis_results/llm/mistral_contarga_multilabel_eval.csv"
 OUT_DIR      = f"{BASE}/thesis_results/combined"
 OUT_PATH     = f"{OUT_DIR}/roberta_vs_llm_contarga.csv"
 

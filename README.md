@@ -2,13 +2,21 @@
 
 Repository for a master's thesis project on **emotion recognition in argumentative text under domain shift**. The work studies how emotion classifiers trained on general-domain corpora transfer to the argumentative **CONTARGA** setting, and compares those supervised models with prompt-based large language model inference. The thesis motivation and scope center on benchmarking cross-domain emotion recognition, analyzing errors, and relating predicted emotions to convincingness in arguments.
 
+## Scope of final thesis experiments
+
+The final experiments reported in the thesis focus on RoBERTa, DeBERTa, and prompt-based large language model approaches on the CONTARGA dataset.
+
+The repository also contains additional exploratory experiments (e.g., XLM-R-based models), which were part of early experimentation but are **not included in the final thesis evaluation**.
+
 ## Project goals
 
 This repository supports a thesis workflow with three main aims:
 
 1. **Supervised transfer learning** for emotion recognition, using models trained on external datasets such as **GoEmotions** and **TweetEval Emotion**.
-2. **Prompt-based inference** with instruction-tuned LLMs such as **Mistral** and **Gemma** on argumentative text.
+2. **Prompt-based inference** with instruction-tuned LLMs such as **Mistral** and **Zephyr** on argumentative text.
 3. **Evaluation and analysis** on CONTARGA, including metrics, mapping between label spaces, model agreement, and convincingness correlations.
+
+Final results in the thesis are based on RoBERTa, DeBERTa, and LLM-based approaches.
 
 ## Repository structure
 
@@ -42,6 +50,8 @@ Core supervised training and zero-shot transfer scripts.
 - `01_train_goemotions_roberta.py` — trains **RoBERTa-base** for multi-label emotion classification on **GoEmotions**
 - `02_train_tweeteval_roberta.py` — trains **RoBERTa-base** on **TweetEval Emotion**
 - `03_eval_goemotions_on_contarga.py` — evaluates the GoEmotions-trained RoBERTa model on **CONTARGA**, exports probabilities, computes overlap-label metrics, and estimates correlations with convincingness
+### `thesis_training/experimental/`
+Exploratory training scripts (not part of final thesis results):
 - `04_train_goemotions_xlmr.py` — trains **XLM-R** on GoEmotions
 - `05_train_tweeteval_xlmr.py` — trains **XLM-R** on TweetEval Emotion
 - `train_deberta_goemo.py` — trains **DeBERTa** on GoEmotions
@@ -51,7 +61,7 @@ Main research scripts used for downstream experimentation and thesis artifact ge
 
 #### LLM inference
 - `contarga_llm_mistral_modes.py` — runs **Mistral** on CONTARGA in `zero`, `few`, `cot`, or `tfidf` retrieval-augmented few-shot modes
-- `contarga_llm_gemma.py` — Gemma-based LLM inference on CONTARGA
+- `contarga_llm_mistral_multilabel.py` — Mistral-based LLM inference on CONTARGA using a multi-label prompting setup
 - `tweets_llm_mistral.py` — Mistral inference on TweetEval-style data
 
 #### Supervised evaluation and label augmentation
@@ -189,6 +199,12 @@ pip install -r requirements.txt
 - Python **3.10+**
 - CUDA-enabled GPU for training and large-model inference
 - Linux / HPC environment for SLURM jobs
+
+## Reproducibility note
+
+Some initial model training was conducted in Google Colab, while large-scale evaluation, inference, and analysis were performed on an HPC environment.
+
+Notebook-based code was converted into Python scripts, and trained checkpoints were reused across environments. The repository reflects the final consolidated experimental pipeline used in the thesis.
 
 ## Example usage
 

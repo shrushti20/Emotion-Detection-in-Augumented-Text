@@ -3,7 +3,7 @@ import pandas as pd
 
 BASE = "/home/hpc/v121ca/v121ca21"
 DEB  = f"{BASE}/thesis_results/mapped/deberta_contarga_eval_mapped.csv"
-LLM  = f"{BASE}/thesis_results/llm/gemma_contarga_eval.csv"
+LLM  = f"{BASE}/thesis_results/llm/mistral_contarga_multilabel_eval.csv"
 
 OUTD = f"{BASE}/thesis_results/combined"
 OUT  = f"{OUTD}/deberta_vs_llm_contarga_mapped.csv"

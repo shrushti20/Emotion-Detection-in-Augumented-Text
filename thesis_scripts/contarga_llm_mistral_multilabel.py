@@ -9,7 +9,7 @@ from transformers import AutoTokenizer, AutoModelForCausalLM
 BASE_DIR  = "/home/hpc/v121ca/v121ca21"  # <-- replace with the pwd you saw
 DATA_PATH = f"{BASE_DIR}/thesis_data/contarga_llm/contarga_emotion_subset.csv"
 RESULTS_DIR = f"{BASE_DIR}/thesis_results/llm"
-OUT_PATH = f"{RESULTS_DIR}/gemma_contarga_eval.csv"
+OUT_PATH = f"{RESULTS_DIR}/mistral_contarga_multilabel_eval.csv"
 
 MODEL_DIR = f"{BASE_DIR}/thesis_models/goemo_roberta_base"  # or your actual model folder
 
