@@ -1,3 +1,21 @@
+"""
+Script: 01_train_goemotions_roberta.py
+
+Purpose:
+Train RoBERTa-base on the GoEmotions simplified dataset for multi-label
+emotion classification.
+
+Dataset:
+    GoEmotions (simplified configuration)
+
+Task type:
+    Multi-label classification
+
+Outputs:
+    - trained model checkpoints
+    - final saved model and tokenizer in OUTPUT_DIR
+"""
+
 import os
 os.environ["WANDB_DISABLED"] = "true"
 
@@ -12,16 +30,20 @@ from transformers import (
     TrainingArguments,
 )
 
+# ---------------- CONFIG ----------------
 MODEL_NAME = "roberta-base"
 OUTPUT_DIR = "./goemo_roberta_base"
 MAX_LENGTH = 128
 BATCH_SIZE = 16
 LEARNING_RATE = 5e-5
 NUM_EPOCHS = 3
+# ----------------------------------------
 
 
 def main():
+    # Load the simplified GoEmotions dataset
     ds = load_dataset("go_emotions", "simplified")
+
     label_names = ds["train"].features["labels"].feature.names
     num_labels = len(label_names)
 
@@ -31,6 +53,10 @@ def main():
     tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME)
 
     def encode_batch(batch):
+        """
+        Tokenize input text and convert label lists into multi-hot vectors.
+        This is required for multi-label classification.
+        """
         enc = tokenizer(
             batch["text"],
             truncation=True,
@@ -48,11 +74,15 @@ def main():
         enc["labels"] = mh
         return enc
 
+    # Tokenize dataset and remove raw text after encoding
     encoded = ds.map(encode_batch, batched=True, remove_columns=["text"])
     encoded.set_format(type="torch")
     print(encoded)
 
     def compute_metrics(eval_pred):
+        """
+        Compute macro-F1 and micro-F1 for multi-label predictions.
+        """
         logits, labels = eval_pred
         probs = torch.sigmoid(torch.tensor(logits))
         preds = (probs > 0.5).int().numpy()
@@ -62,16 +92,22 @@ def main():
         return {"macro_f1": macro_f1, "micro_f1": micro_f1}
 
     class MultiLabelTrainer(Trainer):
+        """
+        Custom Trainer that replaces the default loss with BCEWithLogitsLoss
+        for multi-label classification.
+        """
         def compute_loss(self, model, inputs, return_outputs=False, **kwargs):
             labels = inputs["labels"].to(model.device).float()
             model_inputs = {k: v for k, v in inputs.items() if k != "labels"}
             outputs = model(**model_inputs)
             logits = outputs.logits
             loss = torch.nn.BCEWithLogitsLoss()(logits, labels)
+
             if return_outputs:
                 return loss, outputs
             return loss
 
+    # Load RoBERTa model for multi-label classification
     model = AutoModelForSequenceClassification.from_pretrained(
         MODEL_NAME,
         num_labels=num_labels,
@@ -99,13 +135,16 @@ def main():
         compute_metrics=compute_metrics,
     )
 
+    print("Starting training...")
     trainer.train()
+
+    print("Evaluating on test set...")
     test_results = trainer.evaluate(encoded["test"])
     print("Test results:", test_results)
 
+    print(f"Saving model and tokenizer to {OUTPUT_DIR}")
     trainer.save_model(OUTPUT_DIR)
     tokenizer.save_pretrained(OUTPUT_DIR)
-    print(f"Saved model and tokenizer to {OUTPUT_DIR}")
 
 
 if __name__ == "__main__":

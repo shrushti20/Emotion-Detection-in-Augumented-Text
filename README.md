@@ -207,6 +207,7 @@ Parts of the model training were initially developed and executed in Google Cola
 For the final experimental pipeline, the code was consolidated into standalone Python scripts and executed on an HPC environment for large-scale training, inference, and evaluation. Pretrained checkpoints obtained during earlier runs were reused where appropriate.
 
 The repository therefore contains the final Python-based implementation used for all reported experiments.
+Pretrained model checkpoints were generated during earlier training runs and reused for downstream evaluation and analysis.
 
 ## Example usage
 
