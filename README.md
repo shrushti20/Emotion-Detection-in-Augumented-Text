@@ -202,9 +202,11 @@ pip install -r requirements.txt
 
 ## Reproducibility note
 
-Some initial model training was conducted in Google Colab, while large-scale evaluation, inference, and analysis were performed on an HPC environment.
+Parts of the model training were initially developed and executed in Google Colab for rapid prototyping.
 
-Notebook-based code was converted into Python scripts, and trained checkpoints were reused across environments. The repository reflects the final consolidated experimental pipeline used in the thesis.
+For the final experimental pipeline, the code was consolidated into standalone Python scripts and executed on an HPC environment for large-scale training, inference, and evaluation. Pretrained checkpoints obtained during earlier runs were reused where appropriate.
+
+The repository therefore contains the final Python-based implementation used for all reported experiments.
 
 ## Example usage
 
