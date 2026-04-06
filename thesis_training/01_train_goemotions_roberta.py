@@ -84,7 +84,7 @@ def main():
         per_device_eval_batch_size=BATCH_SIZE,
         learning_rate=LEARNING_RATE,
         num_train_epochs=NUM_EPOCHS,
-        evaluation_strategy="epoch",
+        eval_strategy="epoch",
         save_strategy="epoch",
         load_best_model_at_end=False,
         logging_steps=100,
