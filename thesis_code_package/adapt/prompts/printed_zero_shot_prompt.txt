@@ -1,0 +1,27 @@
+Device: cpu
+Mode: tfidf
+Model: mistralai/Mistral-7B-Instruct-v0.1
+Cache dir: None
+Local files only: False
+Data: /home/hpc/v121ca/v121ca21/thesis_data/contarga_llm/contarga_emotion_subset_300.csv
+Train: /home/hpc/v121ca/v121ca21/thesis_adapt/data/contarga/train.csv
+Out: /tmp/out_zero.csv
+Prompt file: /home/hpc/v121ca/v121ca21/thesis_adapt/prompts/base_prompt_thesis.txt
+Loaded rows: 300
+TF-IDF train rows (filtered to LABELS): 80
+TF-IDF k: 0 balance: False
+Loading tokenizer...
+Loading model...
+MODEL DEVICE: cpu
+
+========================================
+PROMPT #0
+========================================
+You are an emotion classification system.
+Choose exactly one label from the following list:
+anger, disgust, fear, joy, pride, relief, sadness, surprise
+
+Text:
+it could be considered that holocaust denial is a hate crime, laws should be in place to protect  the memory of those who have perished in unspeakable crimes such as the holocaust.
+Answer:
+

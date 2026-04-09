@@ -1,0 +1,25 @@
+Final verification performed on April 9, 2026.
+
+Checks completed:
+- Python syntax compilation for all .py files
+- Core dependency imports: torch, transformers, datasets, pandas, numpy, sklearn
+- CLI/help checks for thesis-relevant scripts
+- Path existence checks for data, results, and model directories
+- Successful regeneration of:
+  - contarga_summary_table.csv
+  - contarga_per_class_table.csv
+  - thesis tables (.csv and .tex)
+  - thesis plots (.pdf and .png)
+  - wide per-class tables
+  - few-shot example files
+- Successful runtime smoke test:
+  - thesis_scripts/eval_tweeteval_to_contarga.py
+  - model_dir: /home/hpc/v121ca/v121ca21/thesis_models/roberta_tweeteval
+  - output: audit_out/final_checks/roberta_tweeteval_to_contarga.csv
+
+Reference summary metrics:
+- RoBERTa (GoEmo→CONTARGA): macro_f1 = 0.016142181630929404
+- DeBERTa (GoEmo→CONTARGA): macro_f1 = 0.009392887589818537
+- Mistral zero-shot: macro_f1 = 0.14976167028367676
+- Mistral few-shot: macro_f1 = 0.16915863765289432
+- Mistral cot: macro_f1 = 0.15339896331308614

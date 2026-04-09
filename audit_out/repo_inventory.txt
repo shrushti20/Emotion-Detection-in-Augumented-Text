@@ -1,0 +1,998 @@
+=== TOP LEVEL ===
+.
+./audit_out
+./audit_out/repo_inventory.txt
+./.git
+./.git/branches
+./.git/COMMIT_EDITMSG
+./.git/config
+./.git/description
+./.git/FETCH_HEAD
+./.git/HEAD
+./.git/hooks
+./.gitignore
+./.git/index
+./.git/info
+./.git/logs
+./.git/objects
+./.git/ORIG_HEAD
+./.git/refs
+./jobs
+./jobs/deberta_goemo_base_debug.sbatch
+./jobs/deberta_goemo.sbatch
+./jobs/deberta_train_goemo.sbatch
+./jobs/eval_tweeteval_to_contarga.sbatch
+./jobs/mistral_contarga_cot.sbatch
+./jobs/mistral_contarga_few.sbatch
+./jobs/mistral_contarga_zero.sbatch
+./jobs/mistral_llm_contarga.sbatch
+./jobs/mistral_llm_tweets.sbatch
+./jobs/train_deberta_tweeteval.sbatch
+./jobs/train_roberta_tweeteval.sbatch
+./jobs/zephyr_cot_contarga.sbatch
+./jobs/zephyr_few_contarga.sbatch
+./jobs/zephyr_zero_contarga.sbatch
+./prompts
+./prompts/contarga_base_prompt.txt
+./prompts/contarga_emotion_prompts.txt
+./README.md
+./requirements.txt
+./thesis_adapt
+./thesis_adapt/data_bal_n95,
+./thesis_adapt/jobs
+./thesis_adapt/logs
+./thesis_adapt/prompts
+./thesis_adapt/scripts
+./thesis_code_package
+./thesis_code_package/adapt
+./thesis_code_package/jobs
+./thesis_code_package/meta
+./thesis_code_package/prompts
+./thesis_code_package/root_files
+./thesis_code_package/scripts
+./thesis_code_package/training
+./thesis_code_package.zip
+./thesis_scripts
+./thesis_scripts/combine_roberta_llm.py
+./thesis_scripts/contarga_llm_mistral_modes.py
+./thesis_scripts/contarga_llm_mistral_multilabel.py
+./thesis_scripts/deberta_contarga_add_labels.py
+./thesis_scripts/deberta_contarga_eval.py
+./thesis_scripts/download_tweeteval.py
+./thesis_scripts/eval_contarga_28labels.py
+./thesis_scripts/eval_tweeteval_to_contarga.py
+./thesis_scripts/llm_contarga_metrics.py
+./thesis_scripts/make_contarga_fewshot_8labels.py
+./thesis_scripts/make_contarga_fewshot_unique_k8.py
+./thesis_scripts/make_metrics_table.py
+./thesis_scripts/make_thesis_plots.py
+./thesis_scripts/make_thesis_tables.py
+./thesis_scripts/make_wide_tables.py
+./thesis_scripts/mapping
+./thesis_scripts/model_agreement.py
+./thesis_scripts/notebooks
+./thesis_scripts/prompts
+./thesis_scripts/roberta_contarga_add_labels.py
+./thesis_scripts/roberta_contarga_eval.py
+./thesis_scripts/roberta_tweets_eval.py
+./thesis_scripts/rq3_convincingness_corr.py
+./thesis_scripts/train_deberta_contarga.py
+./thesis_scripts/train_deberta_goemo.py
+./thesis_scripts/train_deberta_tweets.py
+./thesis_scripts/train_roberta_tweets.py
+./thesis_scripts/tweets_llm_mistral.py
+./thesis_training
+./thesis_training/01_train_goemotions_roberta.py
+./thesis_training/02_train_tweeteval_roberta.py
+./thesis_training/03_eval_goemotions_on_contarga.py
+./thesis_training/04_train_goemotions_deberta.py
+./thesis_training/05_train_tweeteval_deberta.py
+./thesis_training/experimental
+./thesis_training/train_deberta_goemo.py
+
+=== PYTHON / NOTEBOOK / CONFIG FILES ===
+./README.md
+./thesis_adapt/scripts/contarga_llm_mistral_tfidf.py
+./thesis_adapt/scripts/contarga_llm_tfidf_promptfile.py
+./thesis_adapt/scripts/eval_roberta_contarga_fewshot.py
+./thesis_adapt/scripts/make_contarga_balanced.py
+./thesis_adapt/scripts/make_contarga_fewshot.py
+./thesis_adapt/scripts/make_prompt_from_fewshot.py
+./thesis_adapt/scripts/prompt_utils.py
+./thesis_adapt/scripts/train_deberta_contarga_fewshot.py
+./thesis_adapt/scripts/train_deberta_contarga_lora.py
+./thesis_adapt/scripts/train_roberta_contarga_fewshot.py
+./thesis_code_package/adapt/scripts/contarga_llm_mistral_tfidf.py
+./thesis_code_package/adapt/scripts/contarga_llm_tfidf_promptfile.py
+./thesis_code_package/adapt/scripts/eval_roberta_contarga_fewshot.py
+./thesis_code_package/adapt/scripts/make_contarga_balanced.py
+./thesis_code_package/adapt/scripts/make_contarga_fewshot.py
+./thesis_code_package/adapt/scripts/make_prompt_from_fewshot.py
+./thesis_code_package/adapt/scripts/prompt_utils.py
+./thesis_code_package/adapt/scripts/train_deberta_contarga_fewshot.py
+./thesis_code_package/adapt/scripts/train_deberta_contarga_lora.py
+./thesis_code_package/adapt/scripts/train_roberta_contarga_fewshot.py
+./thesis_code_package/meta/audit_out/runtime_checks/eval_tweeteval_roberta_smoke.csv
+./thesis_code_package/root_files/README.md
+./thesis_code_package/scripts/thesis_scripts/combine_roberta_llm.py
+./thesis_code_package/scripts/thesis_scripts/contarga_llm_mistral_modes.py
+./thesis_code_package/scripts/thesis_scripts/contarga_llm_mistral_multilabel.py
+./thesis_code_package/scripts/thesis_scripts/deberta_contarga_add_labels.py
+./thesis_code_package/scripts/thesis_scripts/deberta_contarga_eval.py
+./thesis_code_package/scripts/thesis_scripts/download_tweeteval.py
+./thesis_code_package/scripts/thesis_scripts/eval_contarga_28labels.py
+./thesis_code_package/scripts/thesis_scripts/eval_tweeteval_to_contarga.py
+./thesis_code_package/scripts/thesis_scripts/llm_contarga_metrics.py
+./thesis_code_package/scripts/thesis_scripts/make_contarga_fewshot_8labels.py
+./thesis_code_package/scripts/thesis_scripts/make_contarga_fewshot_unique_k8.py
+./thesis_code_package/scripts/thesis_scripts/make_metrics_table.py
+./thesis_code_package/scripts/thesis_scripts/make_thesis_plots.py
+./thesis_code_package/scripts/thesis_scripts/make_thesis_tables.py
+./thesis_code_package/scripts/thesis_scripts/make_wide_tables.py
+./thesis_code_package/scripts/thesis_scripts/mapping/agreement_deberta_llm_mapped.py
+./thesis_code_package/scripts/thesis_scripts/mapping/combine_deberta_llm_mapped.py
+./thesis_code_package/scripts/thesis_scripts/mapping/combine_roberta_llm_mapped.py
+./thesis_code_package/scripts/thesis_scripts/mapping/map_deberta_to_8labels.py
+./thesis_code_package/scripts/thesis_scripts/mapping/mapping_dict.py
+./thesis_code_package/scripts/thesis_scripts/mapping/model_agreement_mapped.py
+./thesis_code_package/scripts/thesis_scripts/mapping/roberta_contarga_eval_mapped.py
+./thesis_code_package/scripts/thesis_scripts/model_agreement.py
+./thesis_code_package/scripts/thesis_scripts/roberta_contarga_add_labels.py
+./thesis_code_package/scripts/thesis_scripts/roberta_contarga_eval.py
+./thesis_code_package/scripts/thesis_scripts/roberta_tweets_eval.py
+./thesis_code_package/scripts/thesis_scripts/rq3_convincingness_corr.py
+./thesis_code_package/scripts/thesis_scripts/train_deberta_contarga.py
+./thesis_code_package/scripts/thesis_scripts/train_deberta_goemo.py
+./thesis_code_package/scripts/thesis_scripts/train_deberta_tweets.py
+./thesis_code_package/scripts/thesis_scripts/train_roberta_tweets.py
+./thesis_code_package/training/thesis_training/01_train_goemotions_roberta.py
+./thesis_code_package/training/thesis_training/02_train_tweeteval_roberta.py
+./thesis_code_package/training/thesis_training/03_eval_goemotions_on_contarga.py
+./thesis_code_package/training/thesis_training/04_train_goemotions_deberta.py
+./thesis_code_package/training/thesis_training/05_train_tweeteval_deberta.py
+./thesis_code_package/training/thesis_training/train_deberta_goemo.py
+./thesis_scripts/combine_roberta_llm.py
+./thesis_scripts/contarga_llm_mistral_modes.py
+./thesis_scripts/contarga_llm_mistral_multilabel.py
+./thesis_scripts/deberta_contarga_add_labels.py
+./thesis_scripts/deberta_contarga_eval.py
+./thesis_scripts/download_tweeteval.py
+./thesis_scripts/eval_contarga_28labels.py
+./thesis_scripts/eval_tweeteval_to_contarga.py
+./thesis_scripts/llm_contarga_metrics.py
+./thesis_scripts/make_contarga_fewshot_8labels.py
+./thesis_scripts/make_contarga_fewshot_unique_k8.py
+./thesis_scripts/make_metrics_table.py
+./thesis_scripts/make_thesis_plots.py
+./thesis_scripts/make_thesis_tables.py
+./thesis_scripts/make_wide_tables.py
+./thesis_scripts/mapping/agreement_deberta_llm_mapped.py
+./thesis_scripts/mapping/combine_deberta_llm_mapped.py
+./thesis_scripts/mapping/combine_roberta_llm_mapped.py
+./thesis_scripts/mapping/map_deberta_to_8labels.py
+./thesis_scripts/mapping/mapping_dict.py
+./thesis_scripts/mapping/model_agreement_mapped.py
+./thesis_scripts/mapping/roberta_contarga_eval_mapped.py
+./thesis_scripts/model_agreement.py
+./thesis_scripts/notebooks/deberta_v3_large_goemo.ipynb
+./thesis_scripts/roberta_contarga_add_labels.py
+./thesis_scripts/roberta_contarga_eval.py
+./thesis_scripts/roberta_tweets_eval.py
+./thesis_scripts/rq3_convincingness_corr.py
+./thesis_scripts/train_deberta_contarga.py
+./thesis_scripts/train_deberta_goemo.py
+./thesis_scripts/train_deberta_tweets.py
+./thesis_scripts/train_roberta_tweets.py
+./thesis_scripts/tweets_llm_mistral.py
+./thesis_training/01_train_goemotions_roberta.py
+./thesis_training/02_train_tweeteval_roberta.py
+./thesis_training/03_eval_goemotions_on_contarga.py
+./thesis_training/04_train_goemotions_deberta.py
+./thesis_training/05_train_tweeteval_deberta.py
+./thesis_training/experimental/06_train_goemotions_xlmr.py
+./thesis_training/experimental/07_train_tweeteval_xlmr.py
+./thesis_training/train_deberta_goemo.py
+
+=== KEYWORDS ===
+./thesis_code_package/adapt/scripts/prompt_utils.py:3:FEWSHOT_PATH = "/home/hpc/v121ca/v121ca21/thesis_data/contarga_llm/fewshot_examples_static.csv"
+./thesis_code_package/adapt/scripts/prompt_utils.py:17:            f"[Example | source: CONTARGA subset row {row_id} | label: {label}]\n"
+./thesis_code_package/adapt/scripts/make_prompt_from_fewshot.py:3:FEWSHOT_PATH = "/home/hpc/v121ca/v121ca21/thesis_data/contarga_llm/fewshot_examples_static.csv"
+./thesis_code_package/adapt/scripts/make_prompt_from_fewshot.py:17:            f"[Example | source: CONTARGA subset row {row_id} | label: {label}]\n"
+./thesis_code_package/adapt/scripts/contarga_llm_tfidf_promptfile.py:42:    Load fixed few-shot examples from a CSV.
+./thesis_code_package/adapt/scripts/contarga_llm_tfidf_promptfile.py:91:def parse_final_label(decoded_text: str, cot: bool = False) -> str:
+./thesis_code_package/adapt/scripts/contarga_llm_tfidf_promptfile.py:95:    If cot=True, we first try to parse a strict line:
+./thesis_code_package/adapt/scripts/contarga_llm_tfidf_promptfile.py:101:    if cot:
+./thesis_code_package/adapt/scripts/contarga_llm_tfidf_promptfile.py:184:    ap.add_argument("--model_id", default="mistralai/Mistral-7B-Instruct-v0.1")
+./thesis_code_package/adapt/scripts/contarga_llm_tfidf_promptfile.py:202:        "--cot",
+./thesis_code_package/adapt/scripts/contarga_llm_tfidf_promptfile.py:204:        help="Enable CoT parsing. Expects model output to contain a 'Final label: <label>' line.",
+./thesis_code_package/adapt/scripts/contarga_llm_tfidf_promptfile.py:207:    # NEW: fixed/traceable few-shot examples from CSV
+./thesis_code_package/adapt/scripts/contarga_llm_tfidf_promptfile.py:212:        help="Optional CSV with fixed few-shot examples (columns: text,label; optional row_id). If set, overrides TF-IDF retrieval.",
+./thesis_code_package/adapt/scripts/contarga_llm_tfidf_promptfile.py:217:    # Load static few-shot blocks once (if provided)
+./thesis_code_package/adapt/scripts/contarga_llm_tfidf_promptfile.py:234:    print("CoT:", args.cot, flush=True)
+./thesis_code_package/adapt/scripts/contarga_llm_tfidf_promptfile.py:235:    print("Static few-shot:", args.static_fewshot_file or "<none>", flush=True)
+./thesis_code_package/adapt/scripts/contarga_llm_tfidf_promptfile.py:282:            # 1) static fixed few-shot if provided
+./thesis_code_package/adapt/scripts/contarga_llm_tfidf_promptfile.py:284:            # 3) else zero-shot
+./thesis_code_package/adapt/scripts/contarga_llm_tfidf_promptfile.py:338:            pred = parse_final_label(full, cot=args.cot)
+./thesis_code_package/adapt/scripts/make_contarga_fewshot.py:4:IN_PATH  = "/home/hpc/v121ca/v121ca21/thesis_data/contarga_llm/contarga_emotion_subset.csv"
+./thesis_code_package/adapt/scripts/make_contarga_fewshot.py:36:train.to_csv(OUT_DIR / "contarga_8_train.csv", index=False)
+./thesis_code_package/adapt/scripts/make_contarga_fewshot.py:37:dev.to_csv(OUT_DIR / "contarga_8_dev.csv", index=False)
+./thesis_code_package/adapt/scripts/make_contarga_fewshot.py:38:test.to_csv(OUT_DIR / "contarga_8_test.csv", index=False)
+./thesis_code_package/adapt/scripts/make_contarga_fewshot.py:41:print(" train:", train.shape, OUT_DIR / "contarga_8_train.csv")
+./thesis_code_package/adapt/scripts/make_contarga_fewshot.py:42:print(" dev  :", dev.shape, OUT_DIR / "contarga_8_dev.csv")
+./thesis_code_package/adapt/scripts/make_contarga_fewshot.py:43:print(" test :", test.shape, OUT_DIR / "contarga_8_test.csv")
+./thesis_code_package/adapt/scripts/train_deberta_contarga_lora.py:16:from sklearn.metrics import f1_score, accuracy_score
+./thesis_code_package/adapt/scripts/train_deberta_contarga_lora.py:18:from peft import LoraConfig, get_peft_model, TaskType
+./thesis_code_package/adapt/scripts/train_deberta_contarga_lora.py:44:    macro_f1 = f1_score(labels, preds, average="macro", zero_division=0)
+./thesis_code_package/adapt/scripts/train_deberta_contarga_lora.py:45:    return {"acc": acc, "macro_f1": macro_f1}
+./thesis_code_package/adapt/scripts/train_deberta_contarga_lora.py:52:    ap.add_argument("--out_dir", required=True, help="Where to save LoRA-adapted model")
+./thesis_code_package/adapt/scripts/train_deberta_contarga_lora.py:55:    ap.add_argument("--lr", type=float, default=2e-4)  # LoRA often uses higher LR
+./thesis_code_package/adapt/scripts/train_deberta_contarga_lora.py:89:    # ---- LoRA config (works well for DeBERTa family in practice)
+./thesis_code_package/adapt/scripts/train_deberta_contarga_lora.py:90:    lora_cfg = LoraConfig(
+./thesis_code_package/adapt/scripts/train_deberta_contarga_lora.py:93:        lora_alpha=32,
+./thesis_code_package/adapt/scripts/train_deberta_contarga_lora.py:94:        lora_dropout=0.1,
+./thesis_code_package/adapt/scripts/train_deberta_contarga_lora.py:99:    model = get_peft_model(base, lora_cfg)
+./thesis_code_package/adapt/scripts/train_deberta_contarga_lora.py:114:        metric_for_best_model="macro_f1",
+./thesis_code_package/adapt/scripts/train_deberta_contarga_lora.py:143:    print("Saved LoRA-adapted model to:", args.out_dir)
+./thesis_code_package/adapt/scripts/train_roberta_contarga_fewshot.py:3:Few-shot / balanced adaptation:
+./thesis_code_package/adapt/scripts/train_roberta_contarga_fewshot.py:4:Fine-tune a GoEmotions-trained RoBERTa checkpoint on CONTARGA (8 labels),
+./thesis_code_package/adapt/scripts/train_roberta_contarga_fewshot.py:28:from sklearn.metrics import f1_score, accuracy_score
+./thesis_code_package/adapt/scripts/train_roberta_contarga_fewshot.py:75:        "macro_f1": float(f1_score(labels, y_pred, average="macro")),
+./thesis_code_package/adapt/scripts/train_roberta_contarga_fewshot.py:138:        metric_for_best_model="macro_f1",
+./thesis_code_package/adapt/scripts/contarga_llm_mistral_tfidf.py:116:    ap.add_argument("--model_id", default="mistralai/Mistral-7B-Instruct-v0.1")
+./thesis_code_package/adapt/scripts/eval_roberta_contarga_fewshot.py:13:from sklearn.metrics import classification_report, accuracy_score, f1_score
+./thesis_code_package/adapt/scripts/eval_roberta_contarga_fewshot.py:25:        default="/home/hpc/v121ca/v121ca21/thesis_adapt/data/contarga/test.csv",
+./thesis_code_package/adapt/scripts/eval_roberta_contarga_fewshot.py:26:        help="Path to CONTARGA test split CSV (expects columns: text, emotion)",
+./thesis_code_package/adapt/scripts/eval_roberta_contarga_fewshot.py:48:    # Label space (CONTARGA-8)
+./thesis_code_package/adapt/scripts/eval_roberta_contarga_fewshot.py:99:    macro_f1 = f1_score(y_true, y_pred, average="macro")
+./thesis_code_package/adapt/scripts/eval_roberta_contarga_fewshot.py:105:        f.write(f"Macro-F1:  {macro_f1:.6f}\n\n")
+./thesis_code_package/adapt/scripts/eval_roberta_contarga_fewshot.py:111:    print(f"Macro-F1:  {macro_f1:.6f}")
+./thesis_code_package/adapt/scripts/train_deberta_contarga_fewshot.py:3:Few-shot / balanced adaptation for DeBERTa:
+./thesis_code_package/adapt/scripts/train_deberta_contarga_fewshot.py:4:Fine-tune a GoEmotions-trained DeBERTa checkpoint on CONTARGA (8 labels),
+./thesis_code_package/adapt/scripts/train_deberta_contarga_fewshot.py:28:from sklearn.metrics import f1_score, accuracy_score
+./thesis_code_package/adapt/scripts/train_deberta_contarga_fewshot.py:38:    ap.add_argument("--model_path", required=True, help="GoEmotions-trained DeBERTa checkpoint path")
+./thesis_code_package/adapt/scripts/train_deberta_contarga_fewshot.py:74:        "macro_f1": float(f1_score(labels, y_pred, average="macro")),
+./thesis_code_package/adapt/scripts/train_deberta_contarga_fewshot.py:136:        metric_for_best_model="macro_f1",
+./thesis_code_package/root_files/README.md:3:Repository for a master's thesis project on **emotion recognition in argumentative text under domain shift**. The work studies how emotion classifiers trained on general-domain corpora transfer to the argumentative **CONTARGA** setting, and compares those supervised models with prompt-based large language model inference. The thesis motivation and scope center on benchmarking cross-domain emotion recognition, analyzing errors, and relating predicted emotions to convincingness in arguments.
+./thesis_code_package/root_files/README.md:7:The final experiments reported in the thesis focus on RoBERTa, DeBERTa, and prompt-based large language model approaches on the CONTARGA dataset.
+./thesis_code_package/root_files/README.md:9:The repository also contains additional exploratory experiments (e.g., XLM-R-based models), which were part of early experimentation but are **not included in the final thesis evaluation**.
+./thesis_code_package/root_files/README.md:15:1. **Supervised transfer learning** for emotion recognition, using models trained on external datasets such as **GoEmotions** and **TweetEval Emotion**.
+./thesis_code_package/root_files/README.md:16:2. **Prompt-based inference** with instruction-tuned LLMs such as **Mistral** and **Zephyr** on argumentative text.
+./thesis_code_package/root_files/README.md:17:3. **Evaluation and analysis** on CONTARGA, including metrics, mapping between label spaces, model agreement, and convincingness correlations.
+./thesis_code_package/root_files/README.md:26:├── prompts/               # Prompt templates for CONTARGA / emotion prompting
+./thesis_code_package/root_files/README.md:37:- DeBERTa on GoEmotions / TweetEval
+./thesis_code_package/root_files/README.md:38:- RoBERTa transfer evaluation on CONTARGA
+./thesis_code_package/root_files/README.md:39:- Mistral and Zephyr prompt-based runs in zero-shot, few-shot, and chain-of-thought configurations
+./thesis_code_package/root_files/README.md:44:- `contarga_base_prompt.txt`
+./thesis_code_package/root_files/README.md:45:- `contarga_emotion_prompts.txt`
+./thesis_code_package/root_files/README.md:48:Core supervised training and zero-shot transfer scripts.
+./thesis_code_package/root_files/README.md:50:- `01_train_goemotions_roberta.py` — trains **RoBERTa-base** for multi-label emotion classification on **GoEmotions**
+./thesis_code_package/root_files/README.md:51:- `02_train_tweeteval_roberta.py` — trains **RoBERTa-base** on **TweetEval Emotion**
+./thesis_code_package/root_files/README.md:52:- `03_eval_goemotions_on_contarga.py` — evaluates the GoEmotions-trained RoBERTa model on **CONTARGA**, exports probabilities, computes overlap-label metrics, and estimates correlations with convincingness
+./thesis_code_package/root_files/README.md:54:Exploratory training scripts (not part of final thesis results):
+./thesis_code_package/root_files/README.md:55:- `04_train_goemotions_xlmr.py` — trains **XLM-R** on GoEmotions
+./thesis_code_package/root_files/README.md:56:- `05_train_tweeteval_xlmr.py` — trains **XLM-R** on TweetEval Emotion
+./thesis_code_package/root_files/README.md:57:- `train_deberta_goemo.py` — trains **DeBERTa** on GoEmotions
+./thesis_code_package/root_files/README.md:63:- `contarga_llm_mistral_modes.py` — runs **Mistral** on CONTARGA in `zero`, `few`, `cot`, or `tfidf` retrieval-augmented few-shot modes
+./thesis_code_package/root_files/README.md:64:- `contarga_llm_mistral_multilabel.py` — Mistral-based LLM inference on CONTARGA using a multi-label prompting setup
+./thesis_code_package/root_files/README.md:65:- `tweets_llm_mistral.py` — Mistral inference on TweetEval-style data
+./thesis_code_package/root_files/README.md:68:- `deberta_contarga_add_labels.py`
+./thesis_code_package/root_files/README.md:69:- `deberta_contarga_eval.py`
+./thesis_code_package/root_files/README.md:70:- `roberta_contarga_add_labels.py`
+./thesis_code_package/root_files/README.md:71:- `roberta_contarga_eval.py`
+./thesis_code_package/root_files/README.md:73:- `eval_contarga_28labels.py`
+./thesis_code_package/root_files/README.md:74:- `eval_tweeteval_to_contarga.py`
+./thesis_code_package/root_files/README.md:79:- `train_deberta_contarga.py` — fine-tunes **DeBERTa-v3-base** on an 8-label CONTARGA setup
+./thesis_code_package/root_files/README.md:86:- `llm_contarga_metrics.py` — computes accuracy and macro-F1 for LLM predictions
+./thesis_code_package/root_files/README.md:92:- `make_contarga_fewshot_8labels.py` / `make_contarga_fewshot_unique_k8.py` — prepares few-shot examples for LLM prompting
+./thesis_code_package/root_files/README.md:93:- `download_tweeteval.py` — dataset retrieval helper
+./thesis_code_package/root_files/README.md:97:- `notebooks/` — exploratory notebooks and intermediate experiments
+./thesis_code_package/root_files/README.md:117:- **XLM-R**
+./thesis_code_package/root_files/README.md:122:- **GoEmotions** for fine-grained multi-label emotion recognition
+./thesis_code_package/root_files/README.md:123:- **TweetEval Emotion** for single-label emotion classification
+./thesis_code_package/root_files/README.md:126:Trained models are evaluated on **CONTARGA**, where the core challenge is domain shift from social / general text to argumentative discourse.
+./thesis_code_package/root_files/README.md:131:- running batch inference over CONTARGA text
+./thesis_code_package/root_files/README.md:133:- aligning source labels with CONTARGA labels
+./thesis_code_package/root_files/README.md:134:- computing macro-F1, accuracy, precision, recall, and threshold-based analyses
+./thesis_code_package/root_files/README.md:139:- **zero-shot**
+./thesis_code_package/root_files/README.md:140:- **few-shot**
+./thesis_code_package/root_files/README.md:141:- **chain-of-thought** (`cot`)
+./thesis_code_package/root_files/README.md:142:- **TF-IDF retrieved few-shot prompting**
+./thesis_code_package/root_files/README.md:160:- **GoEmotions** — fine-grained Reddit emotion dataset
+./thesis_code_package/root_files/README.md:161:- **TweetEval Emotion** — tweet-based single-label emotion dataset
+./thesis_code_package/root_files/README.md:162:- **CONTARGA** — argumentative text target dataset used for downstream evaluation and analysis
+./thesis_code_package/root_files/README.md:165:Several scripts map or restrict predictions to an **8-label CONTARGA-compatible emotion subset**:
+./thesis_code_package/root_files/README.md:176:Other scripts retain broader source-domain label spaces, including the 28-label GoEmotions setup.
+./thesis_code_package/root_files/README.md:214:### Train RoBERTa on GoEmotions
+./thesis_code_package/root_files/README.md:216:python thesis_training/01_train_goemotions_roberta.py
+./thesis_code_package/root_files/README.md:219:### Train RoBERTa on TweetEval Emotion
+./thesis_code_package/root_files/README.md:221:python thesis_training/02_train_tweeteval_roberta.py
+./thesis_code_package/root_files/README.md:224:### Evaluate GoEmotions-trained RoBERTa on CONTARGA
+./thesis_code_package/root_files/README.md:226:python thesis_training/03_eval_goemotions_on_contarga.py
+./thesis_code_package/root_files/README.md:229:### Fine-tune DeBERTa on an 8-label CONTARGA split
+./thesis_code_package/root_files/README.md:231:python thesis_scripts/train_deberta_contarga.py \
+./thesis_code_package/root_files/README.md:232:  --train data/contarga_train.csv \
+./thesis_code_package/root_files/README.md:233:  --valid data/contarga_valid.csv \
+./thesis_code_package/root_files/README.md:234:  --test data/contarga_test.csv \
+./thesis_code_package/root_files/README.md:235:  --out_dir outputs/deberta_contarga
+./thesis_code_package/root_files/README.md:238:### Run Mistral in zero-shot mode on CONTARGA
+./thesis_code_package/root_files/README.md:240:python thesis_scripts/contarga_llm_mistral_modes.py \
+./thesis_code_package/root_files/README.md:242:  --data data/contarga_eval.csv \
+./thesis_code_package/root_files/README.md:243:  --out outputs/mistral_zero_contarga.csv
+./thesis_code_package/root_files/README.md:246:### Run Mistral with TF-IDF retrieved few-shot examples
+./thesis_code_package/root_files/README.md:248:python thesis_scripts/contarga_llm_mistral_modes.py \
+./thesis_code_package/root_files/README.md:250:  --data data/contarga_eval.csv \
+./thesis_code_package/root_files/README.md:251:  --train_data data/contarga_train.csv \
+./thesis_code_package/root_files/README.md:252:  --out outputs/mistral_tfidf_contarga.csv \
+./thesis_code_package/root_files/README.md:296:- separate final experiments from exploratory notebooks,
+./thesis_code_package/scripts/thesis_scripts/make_metrics_table.py:13:    p, r, f1, _ = precision_recall_fscore_support(
+./thesis_code_package/scripts/thesis_scripts/make_metrics_table.py:16:    return acc, p, r, f1
+./thesis_code_package/scripts/thesis_scripts/make_metrics_table.py:19:    # returns dict with per-class precision/recall/f1/support
+./thesis_code_package/scripts/thesis_scripts/make_metrics_table.py:30:            "f1": rep[lab]["f1-score"],
+./thesis_code_package/scripts/thesis_scripts/make_metrics_table.py:71:        ("RoBERTa (GoEmo→CONTARGA)", "supervised-transfer",
+./thesis_code_package/scripts/thesis_scripts/make_metrics_table.py:72:         f"{BASE}/thesis_results/mapped/roberta_contarga_eval_mapped.csv"),
+./thesis_code_package/scripts/thesis_scripts/make_metrics_table.py:73:        ("DeBERTa (GoEmo→CONTARGA)", "supervised-transfer",
+./thesis_code_package/scripts/thesis_scripts/make_metrics_table.py:74:         f"{BASE}/thesis_results/mapped/deberta_contarga_eval_mapped.csv"),
+./thesis_code_package/scripts/thesis_scripts/make_metrics_table.py:78:        ("Mistral-7B-Instruct", "zero-shot", f"{BASE}/thesis_results/llm/contarga/mistral_zero.csv"),
+./thesis_code_package/scripts/thesis_scripts/make_metrics_table.py:79:        ("Mistral-7B-Instruct", "few-shot",  f"{BASE}/thesis_results/llm/contarga/mistral_few.csv"),
+./thesis_code_package/scripts/thesis_scripts/make_metrics_table.py:80:        ("Mistral-7B-Instruct", "cot",       f"{BASE}/thesis_results/llm/contarga/mistral_cot.csv"),
+./thesis_code_package/scripts/thesis_scripts/make_metrics_table.py:90:        acc, mp, mr, mf1 = compute_summary(y_true, y_pred)
+./thesis_code_package/scripts/thesis_scripts/make_metrics_table.py:94:            "acc": acc, "macro_p": mp, "macro_r": mr, "macro_f1": mf1
+./thesis_code_package/scripts/thesis_scripts/make_metrics_table.py:109:        acc, mp, mr, mf1 = compute_summary(y_true, y_pred)
+./thesis_code_package/scripts/thesis_scripts/make_metrics_table.py:113:            "acc": acc, "macro_p": mp, "macro_r": mr, "macro_f1": mf1
+./thesis_code_package/scripts/thesis_scripts/make_metrics_table.py:127:    summary_path = f"{out_dir}/contarga_summary_table.csv"
+./thesis_code_package/scripts/thesis_scripts/make_metrics_table.py:128:    perclass_path = f"{out_dir}/contarga_per_class_table.csv"
+./thesis_code_package/scripts/thesis_scripts/make_contarga_fewshot_8labels.py:4:SRC = "/home/hpc/v121ca/v121ca21/thesis_data/contarga_llm/contarga_emotion_subset.csv"
+./thesis_code_package/scripts/thesis_scripts/make_contarga_fewshot_8labels.py:5:OUT = "/home/hpc/v121ca/v121ca21/thesis_results/llm/contarga/fewshot_balanced_k8.txt"
+./thesis_code_package/scripts/thesis_scripts/make_contarga_fewshot_unique_k8.py:4:SRC = "/home/hpc/v121ca/v121ca21/thesis_data/contarga_llm/contarga_emotion_subset.csv"
+./thesis_code_package/scripts/thesis_scripts/make_contarga_fewshot_unique_k8.py:5:OUT = "/home/hpc/v121ca/v121ca21/thesis_results/llm/contarga/fewshot_unique_k8.txt"
+./thesis_code_package/scripts/thesis_scripts/rq3_convincingness_corr.py:31:    ap.add_argument("--setting", required=True, help="e.g., supervised, mistral_zero, zephyr_cot, tfidf_k8")
+./thesis_code_package/scripts/thesis_scripts/rq3_convincingness_corr.py:33:    ap.add_argument("--labels", default="8", choices=["8"], help="label set (fixed to 8-label CONTARGA here)")
+./thesis_code_package/scripts/thesis_scripts/make_thesis_tables.py:16:df["macro_f1"] = df["macro_f1"].astype(float)
+./thesis_code_package/scripts/thesis_scripts/make_thesis_tables.py:19:# ---- Table 1: GoEmotions -> CONTARGA (8-label mapped) ----
+./thesis_code_package/scripts/thesis_scripts/make_thesis_tables.py:20:t1 = df[(df["source"]=="GoEmotions") & (df["target"]=="CONTARGA") & (df["eval_labels"]=="8-label CONTARGA (mapped)")].copy()
+./thesis_code_package/scripts/thesis_scripts/make_thesis_tables.py:21:t1 = t1[["model","accuracy","macro_f1","n_eval"]].sort_values("model")
+./thesis_code_package/scripts/thesis_scripts/make_thesis_tables.py:23:t1["macro_f1"] = t1["macro_f1"].map(fmt)
+./thesis_code_package/scripts/thesis_scripts/make_thesis_tables.py:25:t1_csv = OUT_DIR / "table_goemotions_to_contarga_8label.csv"
+./thesis_code_package/scripts/thesis_scripts/make_thesis_tables.py:28:# ---- Table 2: TweetEval -> CONTARGA (aligned labels) ----
+./thesis_code_package/scripts/thesis_scripts/make_thesis_tables.py:29:t2 = df[(df["source"]=="TweetEval") & (df["target"]=="CONTARGA")].copy()
+./thesis_code_package/scripts/thesis_scripts/make_thesis_tables.py:30:t2 = t2[["model","eval_labels","accuracy","macro_f1","n_eval"]].sort_values("model")
+./thesis_code_package/scripts/thesis_scripts/make_thesis_tables.py:32:t2["macro_f1"] = t2["macro_f1"].map(fmt)
+./thesis_code_package/scripts/thesis_scripts/make_thesis_tables.py:34:t2_csv = OUT_DIR / "table_tweeteval_to_contarga_aligned.csv"
+./thesis_code_package/scripts/thesis_scripts/make_thesis_tables.py:42:t1_tex = OUT_DIR / "table_goemotions_to_contarga_8label.tex"
+./thesis_code_package/scripts/thesis_scripts/make_thesis_tables.py:43:t1_tex.write_text(to_latex(t1, "GoEmotions → CONTARGA (8-label mapped).", "tab:goemotions_contarga_8"))
+./thesis_code_package/scripts/thesis_scripts/make_thesis_tables.py:45:t2_tex = OUT_DIR / "table_tweeteval_to_contarga_aligned.tex"
+./thesis_code_package/scripts/thesis_scripts/make_thesis_tables.py:46:t2_tex.write_text(to_latex(t2, "TweetEval → CONTARGA (aligned labels: anger,fear,joy,pride; love→{joy,pride}).", "tab:tweeteval_contarga_aligned"))
+./thesis_code_package/scripts/thesis_scripts/eval_tweeteval_to_contarga.py:8:from sklearn.metrics import accuracy_score, f1_score
+./thesis_code_package/scripts/thesis_scripts/eval_tweeteval_to_contarga.py:12:TWEETEVAL_LABELS = ["anger", "fear", "joy", "love"]
+./thesis_code_package/scripts/thesis_scripts/eval_tweeteval_to_contarga.py:13:CONTARGA_EVAL_LABELS = ["anger", "fear", "joy", "pride"]
+./thesis_code_package/scripts/thesis_scripts/eval_tweeteval_to_contarga.py:14:contarga_label2id = {l: i for i, l in enumerate(CONTARGA_EVAL_LABELS)}
+./thesis_code_package/scripts/thesis_scripts/eval_tweeteval_to_contarga.py:24:    For metrics, we must output a single CONTARGA label.
+./thesis_code_package/scripts/thesis_scripts/eval_tweeteval_to_contarga.py:44:    ap.add_argument("--model_dir", required=True, help="Path to TweetEval-trained model directory")
+./thesis_code_package/scripts/thesis_scripts/eval_tweeteval_to_contarga.py:45:    ap.add_argument("--contarga_csv", required=True, help="Filtered CONTARGA CSV (anger/fear/joy/pride)")
+./thesis_code_package/scripts/thesis_scripts/eval_tweeteval_to_contarga.py:54:    df = pd.read_csv(args.contarga_csv)
+./thesis_code_package/scripts/thesis_scripts/eval_tweeteval_to_contarga.py:56:    df = df[df["emotion"].isin(CONTARGA_EVAL_LABELS)].copy()
+./thesis_code_package/scripts/thesis_scripts/eval_tweeteval_to_contarga.py:87:    pred_te = [TWEETEVAL_LABELS[i] for i in all_pred_ids]
+./thesis_code_package/scripts/thesis_scripts/eval_tweeteval_to_contarga.py:92:    y_true = [contarga_label2id[g] for g in gold_ct]
+./thesis_code_package/scripts/thesis_scripts/eval_tweeteval_to_contarga.py:93:    y_pred = [contarga_label2id[m] for m in mapped_pred]
+./thesis_code_package/scripts/thesis_scripts/eval_tweeteval_to_contarga.py:96:    macro_f1 = f1_score(y_true, y_pred, average="macro", zero_division=0)
+./thesis_code_package/scripts/thesis_scripts/eval_tweeteval_to_contarga.py:98:    print({"accuracy": float(acc), "macro_f1": float(macro_f1), "n": int(len(df))}, flush=True)
+./thesis_code_package/scripts/thesis_scripts/eval_tweeteval_to_contarga.py:101:    out_df["pred_tweeteval"] = pred_te
+./thesis_code_package/scripts/thesis_scripts/eval_tweeteval_to_contarga.py:102:    out_df["pred_mapped_contarga"] = mapped_pred
+./thesis_code_package/scripts/thesis_scripts/eval_tweeteval_to_contarga.py:103:    out_df["correct_soft"] = (out_df["pred_mapped_contarga"] == out_df["emotion"]).astype(int)
+./thesis_code_package/scripts/thesis_scripts/eval_tweeteval_to_contarga.py:107:    for j, lab in enumerate(TWEETEVAL_LABELS):
+./thesis_code_package/scripts/thesis_scripts/roberta_tweets_eval.py:9:DATA_PATH = f"{BASE}/thesis_data/tweeteval_emotion/tweets_test.csv"
+./thesis_code_package/scripts/thesis_scripts/roberta_tweets_eval.py:28:print("Running RoBERTa on TweetEval test set...")
+./thesis_code_package/scripts/thesis_scripts/deberta_contarga_add_labels.py:12:IN_PATH = f"{BASE_DIR}/thesis_results/deberta/contarga_eval_probs.csv"
+./thesis_code_package/scripts/thesis_scripts/deberta_contarga_add_labels.py:13:OUT_PATH = f"{BASE_DIR}/thesis_results/deberta/deberta_contarga_eval_with_labels.csv"
+./thesis_code_package/scripts/thesis_scripts/train_deberta_goemo.py:5:Train DeBERTa on the GoEmotions dataset for multi-label emotion classification.
+./thesis_code_package/scripts/thesis_scripts/train_deberta_goemo.py:8:- This version uses a reduced subset of GoEmotions for faster experimentation.
+./thesis_code_package/scripts/thesis_scripts/train_deberta_goemo.py:13:    GoEmotions
+./thesis_code_package/scripts/thesis_scripts/train_deberta_goemo.py:33:from sklearn.metrics import f1_score
+./thesis_code_package/scripts/thesis_scripts/train_deberta_goemo.py:60:print("Loading GoEmotions dataset...")
+./thesis_code_package/scripts/thesis_scripts/train_deberta_goemo.py:116:    Compute macro-F1 for multi-label predictions.
+./thesis_code_package/scripts/thesis_scripts/train_deberta_goemo.py:121:    return {"macro_f1": f1_score(labels, preds, average="macro", zero_division=0)}
+./thesis_code_package/scripts/thesis_scripts/train_deberta_goemo.py:137:    metric_for_best_model="macro_f1",
+./thesis_code_package/scripts/thesis_scripts/train_deberta_contarga.py:2:Script: train_deberta_contarga.py
+./thesis_code_package/scripts/thesis_scripts/train_deberta_contarga.py:5:Fine-tune a DeBERTa model directly on the CONTARGA dataset for
+./thesis_code_package/scripts/thesis_scripts/train_deberta_contarga.py:12:- fine-tunes DeBERTa on CONTARGA
+./thesis_code_package/scripts/thesis_scripts/train_deberta_contarga.py:17:    --train      Path to CONTARGA training CSV
+./thesis_code_package/scripts/thesis_scripts/train_deberta_contarga.py:18:    --valid      Path to CONTARGA validation CSV
+./thesis_code_package/scripts/thesis_scripts/train_deberta_contarga.py:19:    --test       Path to CONTARGA test CSV
+./thesis_code_package/scripts/thesis_scripts/train_deberta_contarga.py:47:# Fixed CONTARGA label space used in thesis experiments
+./thesis_code_package/scripts/thesis_scripts/train_deberta_contarga.py:83:    - macro F1
+./thesis_code_package/scripts/thesis_scripts/train_deberta_contarga.py:88:    macro_p, macro_r, macro_f1, _ = precision_recall_fscore_support(
+./thesis_code_package/scripts/thesis_scripts/train_deberta_contarga.py:100:        "macro_f1": macro_f1,
+./thesis_code_package/scripts/thesis_scripts/train_deberta_contarga.py:114:    print("MAIN STARTED (DeBERTa CONTARGA)", flush=True)
+./thesis_code_package/scripts/thesis_scripts/train_deberta_contarga.py:214:        metric_for_best_model="macro_f1",
+./thesis_code_package/scripts/thesis_scripts/train_deberta_contarga.py:231:    print("=== TRAINING DeBERTa on CONTARGA ===", flush=True)
+./thesis_code_package/scripts/thesis_scripts/download_tweeteval.py:5:OUT_DIR = "/home/hpc/v121ca/v121ca21/thesis_data/tweeteval_emotion"
+./thesis_code_package/scripts/thesis_scripts/download_tweeteval.py:8:print("Loading TweetEval Emotion dataset...")
+./thesis_code_package/scripts/thesis_scripts/download_tweeteval.py:31:print("Saved TweetEval CSV files to:", OUT_DIR)
+./thesis_code_package/scripts/thesis_scripts/train_roberta_tweets.py:10:from sklearn.metrics import accuracy_score, f1_score
+./thesis_code_package/scripts/thesis_scripts/train_roberta_tweets.py:22:        "macro_f1": f1_score(labels, preds, average="macro", zero_division=0),
+./thesis_code_package/scripts/thesis_scripts/train_roberta_tweets.py:91:        metric_for_best_model="macro_f1",
+./thesis_code_package/scripts/thesis_scripts/train_roberta_tweets.py:118:    print("=== TRAINING RoBERTa on TweetEval ===", flush=True)
+./thesis_code_package/scripts/thesis_scripts/train_roberta_tweets.py:121:    print("=== EVALUATING on TweetEval test ===", flush=True)
+./thesis_code_package/scripts/thesis_scripts/make_thesis_plots.py:11:df["macro_f1"] = df["macro_f1"].astype(float)
+./thesis_code_package/scripts/thesis_scripts/make_thesis_plots.py:17:    plt.bar(x, sub["macro_f1"])
+./thesis_code_package/scripts/thesis_scripts/make_thesis_plots.py:19:    plt.ylabel("Macro-F1")
+./thesis_code_package/scripts/thesis_scripts/make_thesis_plots.py:26:# GoEmotions -> CONTARGA (8-label)
+./thesis_code_package/scripts/thesis_scripts/make_thesis_plots.py:27:g = df[(df["source"]=="GoEmotions") & (df["target"]=="CONTARGA") & (df["eval_labels"]=="8-label CONTARGA (mapped)")].copy()
+./thesis_code_package/scripts/thesis_scripts/make_thesis_plots.py:30:    "GoEmotions → CONTARGA (8-label mapped)",
+./thesis_code_package/scripts/thesis_scripts/make_thesis_plots.py:31:    OUT_DIR / "goemotions_to_contarga_8label_macro_f1.png",
+./thesis_code_package/scripts/thesis_scripts/make_thesis_plots.py:32:    OUT_DIR / "goemotions_to_contarga_8label_macro_f1.pdf",
+./thesis_code_package/scripts/thesis_scripts/make_thesis_plots.py:35:# TweetEval -> CONTARGA (aligned)
+./thesis_code_package/scripts/thesis_scripts/make_thesis_plots.py:36:t = df[(df["source"]=="TweetEval") & (df["target"]=="CONTARGA")].copy()
+./thesis_code_package/scripts/thesis_scripts/make_thesis_plots.py:39:    "TweetEval → CONTARGA (aligned labels)",
+./thesis_code_package/scripts/thesis_scripts/make_thesis_plots.py:40:    OUT_DIR / "tweeteval_to_contarga_aligned_macro_f1.png",
+./thesis_code_package/scripts/thesis_scripts/make_thesis_plots.py:41:    OUT_DIR / "tweeteval_to_contarga_aligned_macro_f1.pdf",
+./thesis_code_package/scripts/thesis_scripts/roberta_contarga_add_labels.py:7:IN_PATH    = f"{BASE_DIR}/thesis_data/contarga_llm/roberta_contarga_eval_hpc.csv"
+./thesis_code_package/scripts/thesis_scripts/roberta_contarga_add_labels.py:9:OUT_PATH = f"{RESULTS_DIR}/contarga_eval_with_labels.csv"
+./thesis_code_package/scripts/thesis_scripts/roberta_contarga_add_labels.py:13:# GoEmotions label names in correct order
+./thesis_code_package/scripts/thesis_scripts/make_wide_tables.py:5:INP  = f"{BASE}/thesis_results/tables/contarga_per_class_table.csv"
+./thesis_code_package/scripts/thesis_scripts/make_wide_tables.py:35:make_wide("f1",        "contarga_per_class_wide_f1.csv")
+./thesis_code_package/scripts/thesis_scripts/make_wide_tables.py:36:make_wide("precision", "contarga_per_class_wide_precision.csv")
+./thesis_code_package/scripts/thesis_scripts/make_wide_tables.py:37:make_wide("recall",    "contarga_per_class_wide_recall.csv")
+./thesis_code_package/scripts/thesis_scripts/eval_contarga_28labels.py:3:from sklearn.metrics import accuracy_score, f1_score, classification_report, confusion_matrix
+./thesis_code_package/scripts/thesis_scripts/eval_contarga_28labels.py:6:IN_PATH = "/home/hpc/v121ca/v121ca21/thesis_results/deberta/deberta_contarga_eval_with_labels.csv"
+./thesis_code_package/scripts/thesis_scripts/eval_contarga_28labels.py:14:# gold = contarga emotion column
+./thesis_code_package/scripts/thesis_scripts/eval_contarga_28labels.py:17:# predicted (top1) in GoEmotions space
+./thesis_code_package/scripts/thesis_scripts/eval_contarga_28labels.py:22:macro_f1 = f1_score(y_true, y_pred, average="macro")
+./thesis_code_package/scripts/thesis_scripts/eval_contarga_28labels.py:23:weighted_f1 = f1_score(y_true, y_pred, average="weighted")
+./thesis_code_package/scripts/thesis_scripts/eval_contarga_28labels.py:27:print("Macro-F1:", round(macro_f1, 4))
+./thesis_code_package/scripts/thesis_scripts/eval_contarga_28labels.py:28:print("Weighted-F1:", round(weighted_f1, 4))
+./thesis_code_package/scripts/thesis_scripts/eval_contarga_28labels.py:46:    "macro_f1": macro_f1,
+./thesis_code_package/scripts/thesis_scripts/eval_contarga_28labels.py:47:    "weighted_f1": weighted_f1
+./thesis_code_package/scripts/thesis_scripts/model_agreement.py:4:PATH = f"{BASE}/thesis_results/combined/roberta_vs_llm_contarga.csv"
+./thesis_code_package/scripts/thesis_scripts/combine_roberta_llm.py:7:ROBERTA_PATH = f"{BASE}/thesis_data/contarga_llm/roberta_contarga_eval_with_labels.csv"
+./thesis_code_package/scripts/thesis_scripts/combine_roberta_llm.py:8:LLM_PATH     = f"{BASE}/thesis_results/llm/mistral_contarga_multilabel_eval.csv"
+./thesis_code_package/scripts/thesis_scripts/combine_roberta_llm.py:10:OUT_PATH     = f"{OUT_DIR}/roberta_vs_llm_contarga.csv"
+./thesis_code_package/scripts/thesis_scripts/combine_roberta_llm.py:52:    "emotion",               # gold CONTARGA emotion
+./thesis_code_package/scripts/thesis_scripts/combine_roberta_llm.py:54:    "pred_top1_emotion",     # RoBERTa top-1 (GoEmotions mapped)
+./thesis_code_package/scripts/thesis_scripts/contarga_llm_mistral_modes.py:3:Script: contarga_llm_mistral_modes.py
+./thesis_code_package/scripts/thesis_scripts/contarga_llm_mistral_modes.py:6:Run prompt-based emotion classification on the CONTARGA dataset using
+./thesis_code_package/scripts/thesis_scripts/contarga_llm_mistral_modes.py:10:    - zero-shot
+./thesis_code_package/scripts/thesis_scripts/contarga_llm_mistral_modes.py:11:    - few-shot (static examples)
+./thesis_code_package/scripts/thesis_scripts/contarga_llm_mistral_modes.py:12:    - chain-of-thought (cot)
+./thesis_code_package/scripts/thesis_scripts/contarga_llm_mistral_modes.py:13:    - tf-idf retrieval-based few-shot prompting
+./thesis_code_package/scripts/thesis_scripts/contarga_llm_mistral_modes.py:16:    Default: Mistral-7B-Instruct (can be changed via --model_id)
+./thesis_code_package/scripts/thesis_scripts/contarga_llm_mistral_modes.py:19:    - CONTARGA dataset (CSV with text column)
+./thesis_code_package/scripts/thesis_scripts/contarga_llm_mistral_modes.py:20:    - optional few-shot examples or training data (for tf-idf mode)
+./thesis_code_package/scripts/thesis_scripts/contarga_llm_mistral_modes.py:36:# TF-IDF retrieval for dynamic few-shot prompting
+./thesis_code_package/scripts/thesis_scripts/contarga_llm_mistral_modes.py:43:DATA_PATH_DEFAULT = f"{BASE_DIR}/thesis_data/contarga_llm/contarga_emotion_subset.csv"
+./thesis_code_package/scripts/thesis_scripts/contarga_llm_mistral_modes.py:45:# Target label space (CONTARGA-compatible)
+./thesis_code_package/scripts/thesis_scripts/contarga_llm_mistral_modes.py:59:    Format few-shot examples into prompt-ready text.
+./thesis_code_package/scripts/thesis_scripts/contarga_llm_mistral_modes.py:93:    # Add few-shot examples if needed
+./thesis_code_package/scripts/thesis_scripts/contarga_llm_mistral_modes.py:97:    # Add CoT instruction if enabled
+./thesis_code_package/scripts/thesis_scripts/contarga_llm_mistral_modes.py:98:    if mode == "cot":
+./thesis_code_package/scripts/thesis_scripts/contarga_llm_mistral_modes.py:139:    Prepare TF-IDF vectorizer for retrieval-based few-shot selection.
+./thesis_code_package/scripts/thesis_scripts/contarga_llm_mistral_modes.py:204:        choices=["zero", "few", "cot", "tfidf"],
+./thesis_code_package/scripts/thesis_scripts/contarga_llm_mistral_modes.py:206:        help="Prompting mode: zero-shot, few-shot, chain-of-thought, or TF-IDF retrieval",
+./thesis_code_package/scripts/thesis_scripts/contarga_llm_mistral_modes.py:211:        help="Path to static few-shot examples file",
+./thesis_code_package/scripts/thesis_scripts/contarga_llm_mistral_modes.py:221:        help="Path to input CONTARGA CSV file",
+./thesis_code_package/scripts/thesis_scripts/contarga_llm_mistral_modes.py:225:        default="mistralai/Mistral-7B-Instruct-v0.1",
+./thesis_code_package/scripts/thesis_scripts/contarga_llm_mistral_modes.py:292:    # Setup few-shot sources
+./thesis_code_package/scripts/thesis_scripts/train_deberta_tweets.py:10:from sklearn.metrics import accuracy_score, f1_score
+./thesis_code_package/scripts/thesis_scripts/train_deberta_tweets.py:22:        "macro_f1": f1_score(labels, preds, average="macro", zero_division=0),
+./thesis_code_package/scripts/thesis_scripts/train_deberta_tweets.py:91:        metric_for_best_model="macro_f1",
+./thesis_code_package/scripts/thesis_scripts/train_deberta_tweets.py:118:    print("=== TRAINING DeBERTa on TweetEval ===", flush=True)
+./thesis_code_package/scripts/thesis_scripts/train_deberta_tweets.py:121:    print("=== EVALUATING on TweetEval test ===", flush=True)
+./thesis_code_package/scripts/thesis_scripts/roberta_contarga_eval.py:12:DATA_PATH  = f"{BASE_DIR}/thesis_data/contarga_llm/contarga_emotion_subset.csv"
+./thesis_code_package/scripts/thesis_scripts/roberta_contarga_eval.py:14:OUT_PATH = f"{RESULTS_DIR}/contarga_eval_probs.csv"
+./thesis_code_package/scripts/thesis_scripts/mapping/map_deberta_to_8labels.py:5:INP  = f"{BASE}/thesis_results/deberta/deberta_contarga_eval_with_labels.csv"
+./thesis_code_package/scripts/thesis_scripts/mapping/map_deberta_to_8labels.py:7:OUT  = f"{OUTD}/deberta_contarga_eval_mapped.csv"
+./thesis_code_package/scripts/thesis_scripts/mapping/map_deberta_to_8labels.py:10:# Map GoEmotions -> CONTARGA 8 labels (simple baseline mapping)
+./thesis_code_package/scripts/thesis_scripts/mapping/combine_roberta_llm_mapped.py:8:    "thesis_results/mapped/roberta_contarga_eval_mapped.csv"
+./thesis_code_package/scripts/thesis_scripts/mapping/combine_roberta_llm_mapped.py:12:    "thesis_results/llm/mistral_contarga_multilabel_eval.csv"
+./thesis_code_package/scripts/thesis_scripts/mapping/combine_roberta_llm_mapped.py:15:OUT_PATH = os.path.join(OUT_DIR, "roberta_vs_llm_contarga_mapped.csv")
+./thesis_code_package/scripts/thesis_scripts/mapping/roberta_contarga_eval_mapped.py:3:from mapping_dict import GOEMO_TO_CONTARGA
+./thesis_code_package/scripts/thesis_scripts/mapping/roberta_contarga_eval_mapped.py:8:    "thesis_data/contarga_llm/roberta_contarga_eval_with_labels.csv"
+./thesis_code_package/scripts/thesis_scripts/mapping/roberta_contarga_eval_mapped.py:11:OUT_PATH = os.path.join(OUT_DIR, "roberta_contarga_eval_mapped.csv")
+./thesis_code_package/scripts/thesis_scripts/mapping/roberta_contarga_eval_mapped.py:16:def map_goemo_to_contarga(label: str) -> str:
+./thesis_code_package/scripts/thesis_scripts/mapping/roberta_contarga_eval_mapped.py:20:    return GOEMO_TO_CONTARGA.get(label, "neutral")
+./thesis_code_package/scripts/thesis_scripts/mapping/roberta_contarga_eval_mapped.py:29:        m = map_goemo_to_contarga(lab)
+./thesis_code_package/scripts/thesis_scripts/mapping/roberta_contarga_eval_mapped.py:51:    out["roberta_top1_8"] = out["pred_top1_emotion"].apply(map_goemo_to_contarga)
+./thesis_code_package/scripts/thesis_scripts/mapping/model_agreement_mapped.py:7:    "thesis_results/mapped/roberta_vs_llm_contarga_mapped.csv"
+./thesis_code_package/scripts/thesis_scripts/mapping/agreement_deberta_llm_mapped.py:3:P = "/home/hpc/v121ca/v121ca21/thesis_results/combined/deberta_vs_llm_contarga_mapped.csv"
+./thesis_code_package/scripts/thesis_scripts/mapping/combine_deberta_llm_mapped.py:5:DEB  = f"{BASE}/thesis_results/mapped/deberta_contarga_eval_mapped.csv"
+./thesis_code_package/scripts/thesis_scripts/mapping/combine_deberta_llm_mapped.py:6:LLM  = f"{BASE}/thesis_results/llm/mistral_contarga_multilabel_eval.csv"
+./thesis_code_package/scripts/thesis_scripts/mapping/combine_deberta_llm_mapped.py:9:OUT  = f"{OUTD}/deberta_vs_llm_contarga_mapped.csv"
+./thesis_code_package/scripts/thesis_scripts/mapping/mapping_dict.py:2:# Mapping from GoEmotions 28-label space → CONTARGA 8-label space.
+./thesis_code_package/scripts/thesis_scripts/mapping/mapping_dict.py:3:# Anything mapped to "neutral" is treated as "other / not in CONTARGA".
+./thesis_code_package/scripts/thesis_scripts/mapping/mapping_dict.py:5:GOEMO_TO_CONTARGA = {
+./thesis_code_package/scripts/thesis_scripts/mapping/mapping_dict.py:54:#Now we have an explicit mapping for all 28 GoEmotions labels into:
+./thesis_code_package/scripts/thesis_scripts/contarga_llm_mistral_multilabel.py:2:Script: contarga_llm_mistral_multilabel.py
+./thesis_code_package/scripts/thesis_scripts/contarga_llm_mistral_multilabel.py:5:Run multi-label emotion inference on a subset of the CONTARGA dataset
+./thesis_code_package/scripts/thesis_scripts/contarga_llm_mistral_multilabel.py:6:using Mistral-7B-Instruct.
+./thesis_code_package/scripts/thesis_scripts/contarga_llm_mistral_multilabel.py:12:- CONTARGA CSV file with a 'text' column
+./thesis_code_package/scripts/thesis_scripts/contarga_llm_mistral_multilabel.py:19:- It is intended as an exploratory multi-label prompting setup.
+./thesis_code_package/scripts/thesis_scripts/contarga_llm_mistral_multilabel.py:31:DATA_PATH = f"{BASE_DIR}/thesis_data/contarga_llm/contarga_emotion_subset.csv"
+./thesis_code_package/scripts/thesis_scripts/contarga_llm_mistral_multilabel.py:33:OUT_PATH = f"{RESULTS_DIR}/mistral_contarga_multilabel_eval.csv"
+./thesis_code_package/scripts/thesis_scripts/contarga_llm_mistral_multilabel.py:35:MODEL_ID = "mistralai/Mistral-7B-Instruct-v0.1"
+./thesis_code_package/scripts/thesis_scripts/llm_contarga_metrics.py:2:from sklearn.metrics import f1_score, accuracy_score, classification_report
+./thesis_code_package/scripts/thesis_scripts/llm_contarga_metrics.py:5:IN_PATH = f"{BASE}/thesis_results/llm/mistral_contarga_multilabel_eval.csv"
+./thesis_code_package/scripts/thesis_scripts/llm_contarga_metrics.py:6:OUT_PATH = f"{BASE}/thesis_results/llm/contarga_metrics.txt"
+./thesis_code_package/scripts/thesis_scripts/llm_contarga_metrics.py:20:f1 = f1_score(gold, preds, average="macro")
+./thesis_code_package/scripts/thesis_scripts/llm_contarga_metrics.py:25:    f.write(f"Macro-F1: {f1:.4f}\n\n")
+./thesis_code_package/scripts/thesis_scripts/deberta_contarga_eval.py:11:DATA_PATH  = f"{BASE_DIR}/thesis_data/contarga_llm/contarga_emotion_subset.csv"
+./thesis_code_package/scripts/thesis_scripts/deberta_contarga_eval.py:14:OUT_PATH    = f"{RESULTS_DIR}/contarga_eval_probs.csv"
+./thesis_code_package/training/thesis_training/05_train_tweeteval_deberta.py:2:05_train_tweeteval_deberta.py
+./thesis_code_package/training/thesis_training/05_train_tweeteval_deberta.py:4:Train DeBERTa-v3-large on the TweetEval Emotion dataset for single-label emotion classification.
+./thesis_code_package/training/thesis_training/05_train_tweeteval_deberta.py:7:    TweetEval Emotion
+./thesis_code_package/training/thesis_training/05_train_tweeteval_deberta.py:20:from sklearn.metrics import f1_score, accuracy_score
+./thesis_code_package/training/thesis_training/05_train_tweeteval_deberta.py:41:    """Create label lookup dictionaries from the TweetEval dataset."""
+./thesis_code_package/training/thesis_training/05_train_tweeteval_deberta.py:62:    """Compute accuracy and macro-F1 for single-label classification."""
+./thesis_code_package/training/thesis_training/05_train_tweeteval_deberta.py:65:    macro_f1 = f1_score(labels, preds, average="macro", zero_division=0)
+./thesis_code_package/training/thesis_training/05_train_tweeteval_deberta.py:67:    return {"accuracy": acc, "macro_f1": macro_f1}
+./thesis_code_package/training/thesis_training/05_train_tweeteval_deberta.py:71:    print("Loading TweetEval Emotion dataset...")
+./thesis_code_package/training/thesis_training/04_train_goemotions_deberta.py:2:04_train_goemotions_deberta.py
+./thesis_code_package/training/thesis_training/04_train_goemotions_deberta.py:4:Train DeBERTa-v3-large on the GoEmotions dataset for multi-label emotion classification.
+./thesis_code_package/training/thesis_training/04_train_goemotions_deberta.py:7:    GoEmotions
+./thesis_code_package/training/thesis_training/04_train_goemotions_deberta.py:20:from sklearn.metrics import f1_score
+./thesis_code_package/training/thesis_training/04_train_goemotions_deberta.py:39:    """Create label lookup dictionaries from the GoEmotions dataset."""
+./thesis_code_package/training/thesis_training/04_train_goemotions_deberta.py:50:    This is required because GoEmotions is a multi-label dataset.
+./thesis_code_package/training/thesis_training/04_train_goemotions_deberta.py:71:    """Compute macro-F1 for multi-label predictions."""
+./thesis_code_package/training/thesis_training/04_train_goemotions_deberta.py:75:    macro_f1 = f1_score(labels, preds, average="macro", zero_division=0)
+./thesis_code_package/training/thesis_training/04_train_goemotions_deberta.py:76:    return {"macro_f1": macro_f1}
+./thesis_code_package/training/thesis_training/04_train_goemotions_deberta.py:80:    print("Loading GoEmotions dataset...")
+./thesis_code_package/training/thesis_training/02_train_tweeteval_roberta.py:2:Script: 02_train_tweeteval_roberta.py
+./thesis_code_package/training/thesis_training/02_train_tweeteval_roberta.py:5:Train RoBERTa-base on the TweetEval Emotion dataset for single-label
+./thesis_code_package/training/thesis_training/02_train_tweeteval_roberta.py:9:    TweetEval Emotion
+./thesis_code_package/training/thesis_training/02_train_tweeteval_roberta.py:24:from sklearn.metrics import accuracy_score, f1_score
+./thesis_code_package/training/thesis_training/02_train_tweeteval_roberta.py:43:    # Load TweetEval Emotion dataset
+./thesis_code_package/training/thesis_training/02_train_tweeteval_roberta.py:81:        """Compute accuracy and macro-F1 for single-label classification."""
+./thesis_code_package/training/thesis_training/02_train_tweeteval_roberta.py:85:        macro_f1 = f1_score(labels, preds, average="macro")
+./thesis_code_package/training/thesis_training/02_train_tweeteval_roberta.py:86:        return {"accuracy": acc, "macro_f1": macro_f1}
+./thesis_code_package/training/thesis_training/train_deberta_goemo.py:4:from sklearn.metrics import f1_score
+./thesis_code_package/training/thesis_training/train_deberta_goemo.py:54:    macro_f1 = f1_score(labels, preds, average="macro", zero_division=0)
+./thesis_code_package/training/thesis_training/train_deberta_goemo.py:55:    return {"macro_f1": macro_f1}
+./thesis_code_package/training/thesis_training/train_deberta_goemo.py:59:    print("Loading GoEmotions dataset...")
+./thesis_code_package/training/thesis_training/01_train_goemotions_roberta.py:2:Script: 01_train_goemotions_roberta.py
+./thesis_code_package/training/thesis_training/01_train_goemotions_roberta.py:5:Train RoBERTa-base on the GoEmotions simplified dataset for multi-label
+./thesis_code_package/training/thesis_training/01_train_goemotions_roberta.py:9:    GoEmotions (simplified configuration)
+./thesis_code_package/training/thesis_training/01_train_goemotions_roberta.py:25:from sklearn.metrics import f1_score
+./thesis_code_package/training/thesis_training/01_train_goemotions_roberta.py:44:    # Load the simplified GoEmotions dataset
+./thesis_code_package/training/thesis_training/01_train_goemotions_roberta.py:84:        Compute macro-F1 and micro-F1 for multi-label predictions.
+./thesis_code_package/training/thesis_training/01_train_goemotions_roberta.py:90:        macro_f1 = f1_score(labels, preds, average="macro", zero_division=0)
+./thesis_code_package/training/thesis_training/01_train_goemotions_roberta.py:91:        micro_f1 = f1_score(labels, preds, average="micro", zero_division=0)
+./thesis_code_package/training/thesis_training/01_train_goemotions_roberta.py:92:        return {"macro_f1": macro_f1, "micro_f1": micro_f1}
+./thesis_code_package/training/thesis_training/03_eval_goemotions_on_contarga.py:2:Script: 03_eval_goemotions_on_contarga.py
+./thesis_code_package/training/thesis_training/03_eval_goemotions_on_contarga.py:5:Evaluate a RoBERTa model trained on GoEmotions when transferred to the
+./thesis_code_package/training/thesis_training/03_eval_goemotions_on_contarga.py:6:CONTARGA dataset.
+./thesis_code_package/training/thesis_training/03_eval_goemotions_on_contarga.py:9:- loads the trained GoEmotions RoBERTa checkpoint
+./thesis_code_package/training/thesis_training/03_eval_goemotions_on_contarga.py:10:- runs inference on CONTARGA arguments
+./thesis_code_package/training/thesis_training/03_eval_goemotions_on_contarga.py:13:- evaluates performance on the overlapping CONTARGA emotion labels
+./thesis_code_package/training/thesis_training/03_eval_goemotions_on_contarga.py:26:from sklearn.metrics import accuracy_score, f1_score, precision_score, recall_score
+./thesis_code_package/training/thesis_training/03_eval_goemotions_on_contarga.py:32:CONTARGA_PATH = "./contarga/contarga_800x5_public.csv"
+./thesis_code_package/training/thesis_training/03_eval_goemotions_on_contarga.py:34:OUTPUT_PROBS_CSV = "./contarga_roberta_goemo_probs.csv"
+./thesis_code_package/training/thesis_training/03_eval_goemotions_on_contarga.py:36:OUTPUT_EVAL_CSV = "./roberta_contarga_eval.csv"
+./thesis_code_package/training/thesis_training/03_eval_goemotions_on_contarga.py:44:# Full GoEmotions label space
+./thesis_code_package/training/thesis_training/03_eval_goemotions_on_contarga.py:45:GOEMOTIONS_LABELS = [
+./thesis_code_package/training/thesis_training/03_eval_goemotions_on_contarga.py:53:# Labels shared between GoEmotions and CONTARGA
+./thesis_code_package/training/thesis_training/03_eval_goemotions_on_contarga.py:82:    # Load CONTARGA dataset
+./thesis_code_package/training/thesis_training/03_eval_goemotions_on_contarga.py:83:    df = pd.read_csv(CONTARGA_PATH)
+./thesis_code_package/training/thesis_training/03_eval_goemotions_on_contarga.py:84:    print("Loaded CONTARGA:", df.shape)
+./thesis_code_package/training/thesis_training/03_eval_goemotions_on_contarga.py:91:    # Run batched inference on CONTARGA arguments
+./thesis_code_package/training/thesis_training/03_eval_goemotions_on_contarga.py:112:    # Add one probability column per GoEmotions label
+./thesis_code_package/training/thesis_training/03_eval_goemotions_on_contarga.py:113:    for j, label in enumerate(GOEMOTIONS_LABELS):
+./thesis_code_package/training/thesis_training/03_eval_goemotions_on_contarga.py:116:    # Merge probabilities back into the full CONTARGA dataframe
+./thesis_code_package/training/thesis_training/03_eval_goemotions_on_contarga.py:134:    # Restrict evaluation to emotions that overlap between GoEmotions and CONTARGA
+./thesis_code_package/training/thesis_training/03_eval_goemotions_on_contarga.py:138:    # Binarize CONTARGA ratings and compare against thresholded probabilities
+./thesis_code_package/training/thesis_training/03_eval_goemotions_on_contarga.py:143:    macro_f1 = f1_score(y_true, y_pred, average="macro", zero_division=0)
+./thesis_code_package/training/thesis_training/03_eval_goemotions_on_contarga.py:148:    print("\nRoBERTa (GoEmotions) zero-shot on CONTARGA (binarized ratings)")
+./thesis_code_package/training/thesis_training/03_eval_goemotions_on_contarga.py:153:    print(f"Macro-F1:  {macro_f1:.3f}")
+./thesis_code_package/training/thesis_training/03_eval_goemotions_on_contarga.py:158:        label_idx = GOEMOTIONS_LABELS.index(emo)
+./thesis_code_package/training/thesis_training/03_eval_goemotions_on_contarga.py:162:        best_f1 = 0.0
+./thesis_code_package/training/thesis_training/03_eval_goemotions_on_contarga.py:169:            f1 = f1_score(labels, preds, zero_division=0)
+./thesis_code_package/training/thesis_training/03_eval_goemotions_on_contarga.py:170:            if f1 > best_f1:
+./thesis_code_package/training/thesis_training/03_eval_goemotions_on_contarga.py:171:                best_f1 = f1
+./thesis_code_package/training/thesis_training/03_eval_goemotions_on_contarga.py:175:        best_rows.append([emo, best_thr, best_f1, support])
+./thesis_code_package/training/thesis_training/03_eval_goemotions_on_contarga.py:177:    df_eval = pd.DataFrame(best_rows, columns=["emotion", "best_threshold", "best_F1", "support"])
+./thesis_code_package/training/thesis_training/03_eval_goemotions_on_contarga.py:183:    print("from Reddit-style GoEmotions to argumentative texts in CONTARGA, confirming domain shift.")
+./thesis_training/05_train_tweeteval_deberta.py:2:05_train_tweeteval_deberta.py
+./thesis_training/05_train_tweeteval_deberta.py:4:Train DeBERTa-v3-large on the TweetEval Emotion dataset for single-label emotion classification.
+./thesis_training/05_train_tweeteval_deberta.py:7:    TweetEval Emotion
+./thesis_training/05_train_tweeteval_deberta.py:20:from sklearn.metrics import f1_score, accuracy_score
+./thesis_training/05_train_tweeteval_deberta.py:41:    """Create label lookup dictionaries from the TweetEval dataset."""
+./thesis_training/05_train_tweeteval_deberta.py:62:    """Compute accuracy and macro-F1 for single-label classification."""
+./thesis_training/05_train_tweeteval_deberta.py:65:    macro_f1 = f1_score(labels, preds, average="macro", zero_division=0)
+./thesis_training/05_train_tweeteval_deberta.py:67:    return {"accuracy": acc, "macro_f1": macro_f1}
+./thesis_training/05_train_tweeteval_deberta.py:71:    print("Loading TweetEval Emotion dataset...")
+./thesis_training/04_train_goemotions_deberta.py:2:04_train_goemotions_deberta.py
+./thesis_training/04_train_goemotions_deberta.py:4:Train DeBERTa-v3-large on the GoEmotions dataset for multi-label emotion classification.
+./thesis_training/04_train_goemotions_deberta.py:7:    GoEmotions
+./thesis_training/04_train_goemotions_deberta.py:20:from sklearn.metrics import f1_score
+./thesis_training/04_train_goemotions_deberta.py:39:    """Create label lookup dictionaries from the GoEmotions dataset."""
+./thesis_training/04_train_goemotions_deberta.py:50:    This is required because GoEmotions is a multi-label dataset.
+./thesis_training/04_train_goemotions_deberta.py:71:    """Compute macro-F1 for multi-label predictions."""
+./thesis_training/04_train_goemotions_deberta.py:75:    macro_f1 = f1_score(labels, preds, average="macro", zero_division=0)
+./thesis_training/04_train_goemotions_deberta.py:76:    return {"macro_f1": macro_f1}
+./thesis_training/04_train_goemotions_deberta.py:80:    print("Loading GoEmotions dataset...")
+./thesis_training/02_train_tweeteval_roberta.py:2:Script: 02_train_tweeteval_roberta.py
+./thesis_training/02_train_tweeteval_roberta.py:5:Train RoBERTa-base on the TweetEval Emotion dataset for single-label
+./thesis_training/02_train_tweeteval_roberta.py:9:    TweetEval Emotion
+./thesis_training/02_train_tweeteval_roberta.py:24:from sklearn.metrics import accuracy_score, f1_score
+./thesis_training/02_train_tweeteval_roberta.py:43:    # Load TweetEval Emotion dataset
+./thesis_training/02_train_tweeteval_roberta.py:81:        """Compute accuracy and macro-F1 for single-label classification."""
+./thesis_training/02_train_tweeteval_roberta.py:85:        macro_f1 = f1_score(labels, preds, average="macro")
+./thesis_training/02_train_tweeteval_roberta.py:86:        return {"accuracy": acc, "macro_f1": macro_f1}
+./thesis_training/train_deberta_goemo.py:4:from sklearn.metrics import f1_score
+./thesis_training/train_deberta_goemo.py:54:    macro_f1 = f1_score(labels, preds, average="macro", zero_division=0)
+./thesis_training/train_deberta_goemo.py:55:    return {"macro_f1": macro_f1}
+./thesis_training/train_deberta_goemo.py:59:    print("Loading GoEmotions dataset...")
+./thesis_training/experimental/07_train_tweeteval_xlmr.py:6:from sklearn.metrics import accuracy_score, f1_score
+./thesis_training/experimental/07_train_tweeteval_xlmr.py:28:    macro_f1 = f1_score(labels, preds, average="macro")
+./thesis_training/experimental/07_train_tweeteval_xlmr.py:29:    return {"accuracy": acc, "macro_f1": macro_f1}
+./thesis_training/experimental/07_train_tweeteval_xlmr.py:33:    model_name = "xlm-roberta-base"
+./thesis_training/experimental/07_train_tweeteval_xlmr.py:34:    output_dir = "./ait_xlmr_base"
+./thesis_training/experimental/07_train_tweeteval_xlmr.py:36:    print("Loading TweetEval Emotion dataset...")
+./thesis_training/experimental/06_train_goemotions_xlmr.py:6:from sklearn.metrics import accuracy_score, f1_score
+./thesis_training/experimental/06_train_goemotions_xlmr.py:37:    macro_f1 = f1_score(labels, preds, average="macro")
+./thesis_training/experimental/06_train_goemotions_xlmr.py:38:    return {"accuracy": acc, "macro_f1": macro_f1}
+./thesis_training/experimental/06_train_goemotions_xlmr.py:42:    model_name = "xlm-roberta-base"
+./thesis_training/experimental/06_train_goemotions_xlmr.py:43:    output_dir = "./goemo_xlmr_base"
+./thesis_training/experimental/06_train_goemotions_xlmr.py:45:    print("Loading GoEmotions dataset...")
+./thesis_training/01_train_goemotions_roberta.py:2:Script: 01_train_goemotions_roberta.py
+./thesis_training/01_train_goemotions_roberta.py:5:Train RoBERTa-base on the GoEmotions simplified dataset for multi-label
+./thesis_training/01_train_goemotions_roberta.py:9:    GoEmotions (simplified configuration)
+./thesis_training/01_train_goemotions_roberta.py:25:from sklearn.metrics import f1_score
+./thesis_training/01_train_goemotions_roberta.py:44:    # Load the simplified GoEmotions dataset
+./thesis_training/01_train_goemotions_roberta.py:84:        Compute macro-F1 and micro-F1 for multi-label predictions.
+./thesis_training/01_train_goemotions_roberta.py:90:        macro_f1 = f1_score(labels, preds, average="macro", zero_division=0)
+./thesis_training/01_train_goemotions_roberta.py:91:        micro_f1 = f1_score(labels, preds, average="micro", zero_division=0)
+./thesis_training/01_train_goemotions_roberta.py:92:        return {"macro_f1": macro_f1, "micro_f1": micro_f1}
+./thesis_training/03_eval_goemotions_on_contarga.py:2:Script: 03_eval_goemotions_on_contarga.py
+./thesis_training/03_eval_goemotions_on_contarga.py:5:Evaluate a RoBERTa model trained on GoEmotions when transferred to the
+./thesis_training/03_eval_goemotions_on_contarga.py:6:CONTARGA dataset.
+./thesis_training/03_eval_goemotions_on_contarga.py:9:- loads the trained GoEmotions RoBERTa checkpoint
+./thesis_training/03_eval_goemotions_on_contarga.py:10:- runs inference on CONTARGA arguments
+./thesis_training/03_eval_goemotions_on_contarga.py:13:- evaluates performance on the overlapping CONTARGA emotion labels
+./thesis_training/03_eval_goemotions_on_contarga.py:26:from sklearn.metrics import accuracy_score, f1_score, precision_score, recall_score
+./thesis_training/03_eval_goemotions_on_contarga.py:32:CONTARGA_PATH = "./contarga/contarga_800x5_public.csv"
+./thesis_training/03_eval_goemotions_on_contarga.py:34:OUTPUT_PROBS_CSV = "./contarga_roberta_goemo_probs.csv"
+./thesis_training/03_eval_goemotions_on_contarga.py:36:OUTPUT_EVAL_CSV = "./roberta_contarga_eval.csv"
+./thesis_training/03_eval_goemotions_on_contarga.py:44:# Full GoEmotions label space
+./thesis_training/03_eval_goemotions_on_contarga.py:45:GOEMOTIONS_LABELS = [
+./thesis_training/03_eval_goemotions_on_contarga.py:53:# Labels shared between GoEmotions and CONTARGA
+./thesis_training/03_eval_goemotions_on_contarga.py:82:    # Load CONTARGA dataset
+./thesis_training/03_eval_goemotions_on_contarga.py:83:    df = pd.read_csv(CONTARGA_PATH)
+./thesis_training/03_eval_goemotions_on_contarga.py:84:    print("Loaded CONTARGA:", df.shape)
+./thesis_training/03_eval_goemotions_on_contarga.py:91:    # Run batched inference on CONTARGA arguments
+./thesis_training/03_eval_goemotions_on_contarga.py:112:    # Add one probability column per GoEmotions label
+./thesis_training/03_eval_goemotions_on_contarga.py:113:    for j, label in enumerate(GOEMOTIONS_LABELS):
+./thesis_training/03_eval_goemotions_on_contarga.py:116:    # Merge probabilities back into the full CONTARGA dataframe
+./thesis_training/03_eval_goemotions_on_contarga.py:134:    # Restrict evaluation to emotions that overlap between GoEmotions and CONTARGA
+./thesis_training/03_eval_goemotions_on_contarga.py:138:    # Binarize CONTARGA ratings and compare against thresholded probabilities
+./thesis_training/03_eval_goemotions_on_contarga.py:143:    macro_f1 = f1_score(y_true, y_pred, average="macro", zero_division=0)
+./thesis_training/03_eval_goemotions_on_contarga.py:148:    print("\nRoBERTa (GoEmotions) zero-shot on CONTARGA (binarized ratings)")
+./thesis_training/03_eval_goemotions_on_contarga.py:153:    print(f"Macro-F1:  {macro_f1:.3f}")
+./thesis_training/03_eval_goemotions_on_contarga.py:158:        label_idx = GOEMOTIONS_LABELS.index(emo)
+./thesis_training/03_eval_goemotions_on_contarga.py:162:        best_f1 = 0.0
+./thesis_training/03_eval_goemotions_on_contarga.py:169:            f1 = f1_score(labels, preds, zero_division=0)
+./thesis_training/03_eval_goemotions_on_contarga.py:170:            if f1 > best_f1:
+./thesis_training/03_eval_goemotions_on_contarga.py:171:                best_f1 = f1
+./thesis_training/03_eval_goemotions_on_contarga.py:175:        best_rows.append([emo, best_thr, best_f1, support])
+./thesis_training/03_eval_goemotions_on_contarga.py:177:    df_eval = pd.DataFrame(best_rows, columns=["emotion", "best_threshold", "best_F1", "support"])
+./thesis_training/03_eval_goemotions_on_contarga.py:183:    print("from Reddit-style GoEmotions to argumentative texts in CONTARGA, confirming domain shift.")
+./thesis_adapt/scripts/prompt_utils.py:3:FEWSHOT_PATH = "/home/hpc/v121ca/v121ca21/thesis_data/contarga_llm/fewshot_examples_static.csv"
+./thesis_adapt/scripts/prompt_utils.py:17:            f"[Example | source: CONTARGA subset row {row_id} | label: {label}]\n"
+./thesis_adapt/scripts/make_prompt_from_fewshot.py:3:FEWSHOT_PATH = "/home/hpc/v121ca/v121ca21/thesis_data/contarga_llm/fewshot_examples_static.csv"
+./thesis_adapt/scripts/make_prompt_from_fewshot.py:17:            f"[Example | source: CONTARGA subset row {row_id} | label: {label}]\n"
+./thesis_adapt/scripts/contarga_llm_tfidf_promptfile.py:42:    Load fixed few-shot examples from a CSV.
+./thesis_adapt/scripts/contarga_llm_tfidf_promptfile.py:91:def parse_final_label(decoded_text: str, cot: bool = False) -> str:
+./thesis_adapt/scripts/contarga_llm_tfidf_promptfile.py:95:    If cot=True, we first try to parse a strict line:
+./thesis_adapt/scripts/contarga_llm_tfidf_promptfile.py:101:    if cot:
+./thesis_adapt/scripts/contarga_llm_tfidf_promptfile.py:184:    ap.add_argument("--model_id", default="mistralai/Mistral-7B-Instruct-v0.1")
+./thesis_adapt/scripts/contarga_llm_tfidf_promptfile.py:202:        "--cot",
+./thesis_adapt/scripts/contarga_llm_tfidf_promptfile.py:204:        help="Enable CoT parsing. Expects model output to contain a 'Final label: <label>' line.",
+./thesis_adapt/scripts/contarga_llm_tfidf_promptfile.py:207:    # NEW: fixed/traceable few-shot examples from CSV
+./thesis_adapt/scripts/contarga_llm_tfidf_promptfile.py:212:        help="Optional CSV with fixed few-shot examples (columns: text,label; optional row_id). If set, overrides TF-IDF retrieval.",
+./thesis_adapt/scripts/contarga_llm_tfidf_promptfile.py:217:    # Load static few-shot blocks once (if provided)
+./thesis_adapt/scripts/contarga_llm_tfidf_promptfile.py:234:    print("CoT:", args.cot, flush=True)
+./thesis_adapt/scripts/contarga_llm_tfidf_promptfile.py:235:    print("Static few-shot:", args.static_fewshot_file or "<none>", flush=True)
+./thesis_adapt/scripts/contarga_llm_tfidf_promptfile.py:282:            # 1) static fixed few-shot if provided
+./thesis_adapt/scripts/contarga_llm_tfidf_promptfile.py:284:            # 3) else zero-shot
+./thesis_adapt/scripts/contarga_llm_tfidf_promptfile.py:338:            pred = parse_final_label(full, cot=args.cot)
+./thesis_adapt/scripts/make_contarga_fewshot.py:4:IN_PATH  = "/home/hpc/v121ca/v121ca21/thesis_data/contarga_llm/contarga_emotion_subset.csv"
+./thesis_adapt/scripts/make_contarga_fewshot.py:36:train.to_csv(OUT_DIR / "contarga_8_train.csv", index=False)
+./thesis_adapt/scripts/make_contarga_fewshot.py:37:dev.to_csv(OUT_DIR / "contarga_8_dev.csv", index=False)
+./thesis_adapt/scripts/make_contarga_fewshot.py:38:test.to_csv(OUT_DIR / "contarga_8_test.csv", index=False)
+./thesis_adapt/scripts/make_contarga_fewshot.py:41:print(" train:", train.shape, OUT_DIR / "contarga_8_train.csv")
+./thesis_adapt/scripts/make_contarga_fewshot.py:42:print(" dev  :", dev.shape, OUT_DIR / "contarga_8_dev.csv")
+./thesis_adapt/scripts/make_contarga_fewshot.py:43:print(" test :", test.shape, OUT_DIR / "contarga_8_test.csv")
+./thesis_adapt/scripts/train_deberta_contarga_lora.py:16:from sklearn.metrics import f1_score, accuracy_score
+./thesis_adapt/scripts/train_deberta_contarga_lora.py:18:from peft import LoraConfig, get_peft_model, TaskType
+./thesis_adapt/scripts/train_deberta_contarga_lora.py:44:    macro_f1 = f1_score(labels, preds, average="macro", zero_division=0)
+./thesis_adapt/scripts/train_deberta_contarga_lora.py:45:    return {"acc": acc, "macro_f1": macro_f1}
+./thesis_adapt/scripts/train_deberta_contarga_lora.py:52:    ap.add_argument("--out_dir", required=True, help="Where to save LoRA-adapted model")
+./thesis_adapt/scripts/train_deberta_contarga_lora.py:55:    ap.add_argument("--lr", type=float, default=2e-4)  # LoRA often uses higher LR
+./thesis_adapt/scripts/train_deberta_contarga_lora.py:89:    # ---- LoRA config (works well for DeBERTa family in practice)
+./thesis_adapt/scripts/train_deberta_contarga_lora.py:90:    lora_cfg = LoraConfig(
+./thesis_adapt/scripts/train_deberta_contarga_lora.py:93:        lora_alpha=32,
+./thesis_adapt/scripts/train_deberta_contarga_lora.py:94:        lora_dropout=0.1,
+./thesis_adapt/scripts/train_deberta_contarga_lora.py:99:    model = get_peft_model(base, lora_cfg)
+./thesis_adapt/scripts/train_deberta_contarga_lora.py:114:        metric_for_best_model="macro_f1",
+./thesis_adapt/scripts/train_deberta_contarga_lora.py:143:    print("Saved LoRA-adapted model to:", args.out_dir)
+./thesis_adapt/scripts/train_roberta_contarga_fewshot.py:3:Few-shot / balanced adaptation:
+./thesis_adapt/scripts/train_roberta_contarga_fewshot.py:4:Fine-tune a GoEmotions-trained RoBERTa checkpoint on CONTARGA (8 labels),
+./thesis_adapt/scripts/train_roberta_contarga_fewshot.py:28:from sklearn.metrics import f1_score, accuracy_score
+./thesis_adapt/scripts/train_roberta_contarga_fewshot.py:75:        "macro_f1": float(f1_score(labels, y_pred, average="macro")),
+./thesis_adapt/scripts/train_roberta_contarga_fewshot.py:138:        metric_for_best_model="macro_f1",
+./thesis_adapt/scripts/contarga_llm_mistral_tfidf.py:116:    ap.add_argument("--model_id", default="mistralai/Mistral-7B-Instruct-v0.1")
+./thesis_adapt/scripts/eval_roberta_contarga_fewshot.py:13:from sklearn.metrics import classification_report, accuracy_score, f1_score
+./thesis_adapt/scripts/eval_roberta_contarga_fewshot.py:25:        default="/home/hpc/v121ca/v121ca21/thesis_adapt/data/contarga/test.csv",
+./thesis_adapt/scripts/eval_roberta_contarga_fewshot.py:26:        help="Path to CONTARGA test split CSV (expects columns: text, emotion)",
+./thesis_adapt/scripts/eval_roberta_contarga_fewshot.py:48:    # Label space (CONTARGA-8)
+./thesis_adapt/scripts/eval_roberta_contarga_fewshot.py:99:    macro_f1 = f1_score(y_true, y_pred, average="macro")
+./thesis_adapt/scripts/eval_roberta_contarga_fewshot.py:105:        f.write(f"Macro-F1:  {macro_f1:.6f}\n\n")
+./thesis_adapt/scripts/eval_roberta_contarga_fewshot.py:111:    print(f"Macro-F1:  {macro_f1:.6f}")
+./thesis_adapt/scripts/train_deberta_contarga_fewshot.py:3:Few-shot / balanced adaptation for DeBERTa:
+./thesis_adapt/scripts/train_deberta_contarga_fewshot.py:4:Fine-tune a GoEmotions-trained DeBERTa checkpoint on CONTARGA (8 labels),
+./thesis_adapt/scripts/train_deberta_contarga_fewshot.py:28:from sklearn.metrics import f1_score, accuracy_score
+./thesis_adapt/scripts/train_deberta_contarga_fewshot.py:38:    ap.add_argument("--model_path", required=True, help="GoEmotions-trained DeBERTa checkpoint path")
+./thesis_adapt/scripts/train_deberta_contarga_fewshot.py:74:        "macro_f1": float(f1_score(labels, y_pred, average="macro")),
+./thesis_adapt/scripts/train_deberta_contarga_fewshot.py:136:        metric_for_best_model="macro_f1",
+./README.md:3:Repository for a master's thesis project on **emotion recognition in argumentative text under domain shift**. The work studies how emotion classifiers trained on general-domain corpora transfer to the argumentative **CONTARGA** setting, and compares those supervised models with prompt-based large language model inference. The thesis motivation and scope center on benchmarking cross-domain emotion recognition, analyzing errors, and relating predicted emotions to convincingness in arguments.
+./README.md:7:The final experiments reported in the thesis focus on RoBERTa, DeBERTa, and prompt-based large language model approaches on the CONTARGA dataset.
+./README.md:9:The repository also contains additional exploratory experiments (e.g., XLM-R-based models), which were part of early experimentation but are **not included in the final thesis evaluation**.
+./README.md:15:1. **Supervised transfer learning** for emotion recognition, using models trained on external datasets such as **GoEmotions** and **TweetEval Emotion**.
+./README.md:16:2. **Prompt-based inference** with instruction-tuned LLMs such as **Mistral** and **Zephyr** on argumentative text.
+./README.md:17:3. **Evaluation and analysis** on CONTARGA, including metrics, mapping between label spaces, model agreement, and convincingness correlations.
+./README.md:26:├── prompts/               # Prompt templates for CONTARGA / emotion prompting
+./README.md:37:- DeBERTa on GoEmotions / TweetEval
+./README.md:38:- RoBERTa transfer evaluation on CONTARGA
+./README.md:39:- Mistral and Zephyr prompt-based runs in zero-shot, few-shot, and chain-of-thought configurations
+./README.md:44:- `contarga_base_prompt.txt`
+./README.md:45:- `contarga_emotion_prompts.txt`
+./README.md:48:Core supervised training and zero-shot transfer scripts.
+./README.md:50:- `01_train_goemotions_roberta.py` — trains **RoBERTa-base** for multi-label emotion classification on **GoEmotions**
+./README.md:51:- `02_train_tweeteval_roberta.py` — trains **RoBERTa-base** on **TweetEval Emotion**
+./README.md:52:- `03_eval_goemotions_on_contarga.py` — evaluates the GoEmotions-trained RoBERTa model on **CONTARGA**, exports probabilities, computes overlap-label metrics, and estimates correlations with convincingness
+./README.md:54:Exploratory training scripts (not part of final thesis results):
+./README.md:55:- `04_train_goemotions_xlmr.py` — trains **XLM-R** on GoEmotions
+./README.md:56:- `05_train_tweeteval_xlmr.py` — trains **XLM-R** on TweetEval Emotion
+./README.md:57:- `train_deberta_goemo.py` — trains **DeBERTa** on GoEmotions
+./README.md:63:- `contarga_llm_mistral_modes.py` — runs **Mistral** on CONTARGA in `zero`, `few`, `cot`, or `tfidf` retrieval-augmented few-shot modes
+./README.md:64:- `contarga_llm_mistral_multilabel.py` — Mistral-based LLM inference on CONTARGA using a multi-label prompting setup
+./README.md:65:- `tweets_llm_mistral.py` — Mistral inference on TweetEval-style data
+./README.md:68:- `deberta_contarga_add_labels.py`
+./README.md:69:- `deberta_contarga_eval.py`
+./README.md:70:- `roberta_contarga_add_labels.py`
+./README.md:71:- `roberta_contarga_eval.py`
+./README.md:73:- `eval_contarga_28labels.py`
+./README.md:74:- `eval_tweeteval_to_contarga.py`
+./README.md:79:- `train_deberta_contarga.py` — fine-tunes **DeBERTa-v3-base** on an 8-label CONTARGA setup
+./README.md:86:- `llm_contarga_metrics.py` — computes accuracy and macro-F1 for LLM predictions
+./README.md:92:- `make_contarga_fewshot_8labels.py` / `make_contarga_fewshot_unique_k8.py` — prepares few-shot examples for LLM prompting
+./README.md:93:- `download_tweeteval.py` — dataset retrieval helper
+./README.md:97:- `notebooks/` — exploratory notebooks and intermediate experiments
+./README.md:117:- **XLM-R**
+./README.md:122:- **GoEmotions** for fine-grained multi-label emotion recognition
+./README.md:123:- **TweetEval Emotion** for single-label emotion classification
+./README.md:126:Trained models are evaluated on **CONTARGA**, where the core challenge is domain shift from social / general text to argumentative discourse.
+./README.md:131:- running batch inference over CONTARGA text
+./README.md:133:- aligning source labels with CONTARGA labels
+./README.md:134:- computing macro-F1, accuracy, precision, recall, and threshold-based analyses
+./README.md:139:- **zero-shot**
+./README.md:140:- **few-shot**
+./README.md:141:- **chain-of-thought** (`cot`)
+./README.md:142:- **TF-IDF retrieved few-shot prompting**
+./README.md:160:- **GoEmotions** — fine-grained Reddit emotion dataset
+./README.md:161:- **TweetEval Emotion** — tweet-based single-label emotion dataset
+./README.md:162:- **CONTARGA** — argumentative text target dataset used for downstream evaluation and analysis
+./README.md:165:Several scripts map or restrict predictions to an **8-label CONTARGA-compatible emotion subset**:
+./README.md:176:Other scripts retain broader source-domain label spaces, including the 28-label GoEmotions setup.
+./README.md:214:### Train RoBERTa on GoEmotions
+./README.md:216:python thesis_training/01_train_goemotions_roberta.py
+./README.md:219:### Train RoBERTa on TweetEval Emotion
+./README.md:221:python thesis_training/02_train_tweeteval_roberta.py
+./README.md:224:### Evaluate GoEmotions-trained RoBERTa on CONTARGA
+./README.md:226:python thesis_training/03_eval_goemotions_on_contarga.py
+./README.md:229:### Fine-tune DeBERTa on an 8-label CONTARGA split
+./README.md:231:python thesis_scripts/train_deberta_contarga.py \
+./README.md:232:  --train data/contarga_train.csv \
+./README.md:233:  --valid data/contarga_valid.csv \
+./README.md:234:  --test data/contarga_test.csv \
+./README.md:235:  --out_dir outputs/deberta_contarga
+./README.md:238:### Run Mistral in zero-shot mode on CONTARGA
+./README.md:240:python thesis_scripts/contarga_llm_mistral_modes.py \
+./README.md:242:  --data data/contarga_eval.csv \
+./README.md:243:  --out outputs/mistral_zero_contarga.csv
+./README.md:246:### Run Mistral with TF-IDF retrieved few-shot examples
+./README.md:248:python thesis_scripts/contarga_llm_mistral_modes.py \
+./README.md:250:  --data data/contarga_eval.csv \
+./README.md:251:  --train_data data/contarga_train.csv \
+./README.md:252:  --out outputs/mistral_tfidf_contarga.csv \
+./README.md:296:- separate final experiments from exploratory notebooks,
+./thesis_scripts/make_metrics_table.py:13:    p, r, f1, _ = precision_recall_fscore_support(
+./thesis_scripts/make_metrics_table.py:16:    return acc, p, r, f1
+./thesis_scripts/make_metrics_table.py:19:    # returns dict with per-class precision/recall/f1/support
+./thesis_scripts/make_metrics_table.py:30:            "f1": rep[lab]["f1-score"],
+./thesis_scripts/make_metrics_table.py:71:        ("RoBERTa (GoEmo→CONTARGA)", "supervised-transfer",
+./thesis_scripts/make_metrics_table.py:72:         f"{BASE}/thesis_results/mapped/roberta_contarga_eval_mapped.csv"),
+./thesis_scripts/make_metrics_table.py:73:        ("DeBERTa (GoEmo→CONTARGA)", "supervised-transfer",
+./thesis_scripts/make_metrics_table.py:74:         f"{BASE}/thesis_results/mapped/deberta_contarga_eval_mapped.csv"),
+./thesis_scripts/make_metrics_table.py:78:        ("Mistral-7B-Instruct", "zero-shot", f"{BASE}/thesis_results/llm/contarga/mistral_zero.csv"),
+./thesis_scripts/make_metrics_table.py:79:        ("Mistral-7B-Instruct", "few-shot",  f"{BASE}/thesis_results/llm/contarga/mistral_few.csv"),
+./thesis_scripts/make_metrics_table.py:80:        ("Mistral-7B-Instruct", "cot",       f"{BASE}/thesis_results/llm/contarga/mistral_cot.csv"),
+./thesis_scripts/make_metrics_table.py:90:        acc, mp, mr, mf1 = compute_summary(y_true, y_pred)
+./thesis_scripts/make_metrics_table.py:94:            "acc": acc, "macro_p": mp, "macro_r": mr, "macro_f1": mf1
+./thesis_scripts/make_metrics_table.py:109:        acc, mp, mr, mf1 = compute_summary(y_true, y_pred)
+./thesis_scripts/make_metrics_table.py:113:            "acc": acc, "macro_p": mp, "macro_r": mr, "macro_f1": mf1
+./thesis_scripts/make_metrics_table.py:127:    summary_path = f"{out_dir}/contarga_summary_table.csv"
+./thesis_scripts/make_metrics_table.py:128:    perclass_path = f"{out_dir}/contarga_per_class_table.csv"
+./thesis_scripts/make_contarga_fewshot_8labels.py:4:SRC = "/home/hpc/v121ca/v121ca21/thesis_data/contarga_llm/contarga_emotion_subset.csv"
+./thesis_scripts/make_contarga_fewshot_8labels.py:5:OUT = "/home/hpc/v121ca/v121ca21/thesis_results/llm/contarga/fewshot_balanced_k8.txt"
+./thesis_scripts/make_contarga_fewshot_unique_k8.py:4:SRC = "/home/hpc/v121ca/v121ca21/thesis_data/contarga_llm/contarga_emotion_subset.csv"
+./thesis_scripts/make_contarga_fewshot_unique_k8.py:5:OUT = "/home/hpc/v121ca/v121ca21/thesis_results/llm/contarga/fewshot_unique_k8.txt"
+./thesis_scripts/rq3_convincingness_corr.py:31:    ap.add_argument("--setting", required=True, help="e.g., supervised, mistral_zero, zephyr_cot, tfidf_k8")
+./thesis_scripts/rq3_convincingness_corr.py:33:    ap.add_argument("--labels", default="8", choices=["8"], help="label set (fixed to 8-label CONTARGA here)")
+./thesis_scripts/make_thesis_tables.py:16:df["macro_f1"] = df["macro_f1"].astype(float)
+./thesis_scripts/make_thesis_tables.py:19:# ---- Table 1: GoEmotions -> CONTARGA (8-label mapped) ----
+./thesis_scripts/make_thesis_tables.py:20:t1 = df[(df["source"]=="GoEmotions") & (df["target"]=="CONTARGA") & (df["eval_labels"]=="8-label CONTARGA (mapped)")].copy()
+./thesis_scripts/make_thesis_tables.py:21:t1 = t1[["model","accuracy","macro_f1","n_eval"]].sort_values("model")
+./thesis_scripts/make_thesis_tables.py:23:t1["macro_f1"] = t1["macro_f1"].map(fmt)
+./thesis_scripts/make_thesis_tables.py:25:t1_csv = OUT_DIR / "table_goemotions_to_contarga_8label.csv"
+./thesis_scripts/make_thesis_tables.py:28:# ---- Table 2: TweetEval -> CONTARGA (aligned labels) ----
+./thesis_scripts/make_thesis_tables.py:29:t2 = df[(df["source"]=="TweetEval") & (df["target"]=="CONTARGA")].copy()
+./thesis_scripts/make_thesis_tables.py:30:t2 = t2[["model","eval_labels","accuracy","macro_f1","n_eval"]].sort_values("model")
+./thesis_scripts/make_thesis_tables.py:32:t2["macro_f1"] = t2["macro_f1"].map(fmt)
+./thesis_scripts/make_thesis_tables.py:34:t2_csv = OUT_DIR / "table_tweeteval_to_contarga_aligned.csv"
+./thesis_scripts/make_thesis_tables.py:42:t1_tex = OUT_DIR / "table_goemotions_to_contarga_8label.tex"
+./thesis_scripts/make_thesis_tables.py:43:t1_tex.write_text(to_latex(t1, "GoEmotions → CONTARGA (8-label mapped).", "tab:goemotions_contarga_8"))
+./thesis_scripts/make_thesis_tables.py:45:t2_tex = OUT_DIR / "table_tweeteval_to_contarga_aligned.tex"
+./thesis_scripts/make_thesis_tables.py:46:t2_tex.write_text(to_latex(t2, "TweetEval → CONTARGA (aligned labels: anger,fear,joy,pride; love→{joy,pride}).", "tab:tweeteval_contarga_aligned"))
+./thesis_scripts/eval_tweeteval_to_contarga.py:8:from sklearn.metrics import accuracy_score, f1_score
+./thesis_scripts/eval_tweeteval_to_contarga.py:12:TWEETEVAL_LABELS = ["anger", "fear", "joy", "love"]
+./thesis_scripts/eval_tweeteval_to_contarga.py:13:CONTARGA_EVAL_LABELS = ["anger", "fear", "joy", "pride"]
+./thesis_scripts/eval_tweeteval_to_contarga.py:14:contarga_label2id = {l: i for i, l in enumerate(CONTARGA_EVAL_LABELS)}
+./thesis_scripts/eval_tweeteval_to_contarga.py:24:    For metrics, we must output a single CONTARGA label.
+./thesis_scripts/eval_tweeteval_to_contarga.py:44:    ap.add_argument("--model_dir", required=True, help="Path to TweetEval-trained model directory")
+./thesis_scripts/eval_tweeteval_to_contarga.py:45:    ap.add_argument("--contarga_csv", required=True, help="Filtered CONTARGA CSV (anger/fear/joy/pride)")
+./thesis_scripts/eval_tweeteval_to_contarga.py:54:    df = pd.read_csv(args.contarga_csv)
+./thesis_scripts/eval_tweeteval_to_contarga.py:56:    df = df[df["emotion"].isin(CONTARGA_EVAL_LABELS)].copy()
+./thesis_scripts/eval_tweeteval_to_contarga.py:87:    pred_te = [TWEETEVAL_LABELS[i] for i in all_pred_ids]
+./thesis_scripts/eval_tweeteval_to_contarga.py:92:    y_true = [contarga_label2id[g] for g in gold_ct]
+./thesis_scripts/eval_tweeteval_to_contarga.py:93:    y_pred = [contarga_label2id[m] for m in mapped_pred]
+./thesis_scripts/eval_tweeteval_to_contarga.py:96:    macro_f1 = f1_score(y_true, y_pred, average="macro", zero_division=0)
+./thesis_scripts/eval_tweeteval_to_contarga.py:98:    print({"accuracy": float(acc), "macro_f1": float(macro_f1), "n": int(len(df))}, flush=True)
+./thesis_scripts/eval_tweeteval_to_contarga.py:101:    out_df["pred_tweeteval"] = pred_te
+./thesis_scripts/eval_tweeteval_to_contarga.py:102:    out_df["pred_mapped_contarga"] = mapped_pred
+./thesis_scripts/eval_tweeteval_to_contarga.py:103:    out_df["correct_soft"] = (out_df["pred_mapped_contarga"] == out_df["emotion"]).astype(int)
+./thesis_scripts/eval_tweeteval_to_contarga.py:107:    for j, lab in enumerate(TWEETEVAL_LABELS):
+./thesis_scripts/roberta_tweets_eval.py:9:DATA_PATH = f"{BASE}/thesis_data/tweeteval_emotion/tweets_test.csv"
+./thesis_scripts/roberta_tweets_eval.py:28:print("Running RoBERTa on TweetEval test set...")
+./thesis_scripts/deberta_contarga_add_labels.py:12:IN_PATH = f"{BASE_DIR}/thesis_results/deberta/contarga_eval_probs.csv"
+./thesis_scripts/deberta_contarga_add_labels.py:13:OUT_PATH = f"{BASE_DIR}/thesis_results/deberta/deberta_contarga_eval_with_labels.csv"
+./thesis_scripts/train_deberta_goemo.py:5:Train DeBERTa on the GoEmotions dataset for multi-label emotion classification.
+./thesis_scripts/train_deberta_goemo.py:8:- This version uses a reduced subset of GoEmotions for faster experimentation.
+./thesis_scripts/train_deberta_goemo.py:13:    GoEmotions
+./thesis_scripts/train_deberta_goemo.py:33:from sklearn.metrics import f1_score
+./thesis_scripts/train_deberta_goemo.py:60:print("Loading GoEmotions dataset...")
+./thesis_scripts/train_deberta_goemo.py:116:    Compute macro-F1 for multi-label predictions.
+./thesis_scripts/train_deberta_goemo.py:121:    return {"macro_f1": f1_score(labels, preds, average="macro", zero_division=0)}
+./thesis_scripts/train_deberta_goemo.py:137:    metric_for_best_model="macro_f1",
+./thesis_scripts/train_deberta_contarga.py:2:Script: train_deberta_contarga.py
+./thesis_scripts/train_deberta_contarga.py:5:Fine-tune a DeBERTa model directly on the CONTARGA dataset for
+./thesis_scripts/train_deberta_contarga.py:12:- fine-tunes DeBERTa on CONTARGA
+./thesis_scripts/train_deberta_contarga.py:17:    --train      Path to CONTARGA training CSV
+./thesis_scripts/train_deberta_contarga.py:18:    --valid      Path to CONTARGA validation CSV
+./thesis_scripts/train_deberta_contarga.py:19:    --test       Path to CONTARGA test CSV
+./thesis_scripts/train_deberta_contarga.py:47:# Fixed CONTARGA label space used in thesis experiments
+./thesis_scripts/train_deberta_contarga.py:83:    - macro F1
+./thesis_scripts/train_deberta_contarga.py:88:    macro_p, macro_r, macro_f1, _ = precision_recall_fscore_support(
+./thesis_scripts/train_deberta_contarga.py:100:        "macro_f1": macro_f1,
+./thesis_scripts/train_deberta_contarga.py:114:    print("MAIN STARTED (DeBERTa CONTARGA)", flush=True)
+./thesis_scripts/train_deberta_contarga.py:214:        metric_for_best_model="macro_f1",
+./thesis_scripts/train_deberta_contarga.py:231:    print("=== TRAINING DeBERTa on CONTARGA ===", flush=True)
+./thesis_scripts/download_tweeteval.py:5:OUT_DIR = "/home/hpc/v121ca/v121ca21/thesis_data/tweeteval_emotion"
+./thesis_scripts/download_tweeteval.py:8:print("Loading TweetEval Emotion dataset...")
+./thesis_scripts/download_tweeteval.py:31:print("Saved TweetEval CSV files to:", OUT_DIR)
+./thesis_scripts/train_roberta_tweets.py:10:from sklearn.metrics import accuracy_score, f1_score
+./thesis_scripts/train_roberta_tweets.py:22:        "macro_f1": f1_score(labels, preds, average="macro", zero_division=0),
+./thesis_scripts/train_roberta_tweets.py:91:        metric_for_best_model="macro_f1",
+./thesis_scripts/train_roberta_tweets.py:118:    print("=== TRAINING RoBERTa on TweetEval ===", flush=True)
+./thesis_scripts/train_roberta_tweets.py:121:    print("=== EVALUATING on TweetEval test ===", flush=True)
+./thesis_scripts/make_thesis_plots.py:11:df["macro_f1"] = df["macro_f1"].astype(float)
+./thesis_scripts/make_thesis_plots.py:17:    plt.bar(x, sub["macro_f1"])
+./thesis_scripts/make_thesis_plots.py:19:    plt.ylabel("Macro-F1")
+./thesis_scripts/make_thesis_plots.py:26:# GoEmotions -> CONTARGA (8-label)
+./thesis_scripts/make_thesis_plots.py:27:g = df[(df["source"]=="GoEmotions") & (df["target"]=="CONTARGA") & (df["eval_labels"]=="8-label CONTARGA (mapped)")].copy()
+./thesis_scripts/make_thesis_plots.py:30:    "GoEmotions → CONTARGA (8-label mapped)",
+./thesis_scripts/make_thesis_plots.py:31:    OUT_DIR / "goemotions_to_contarga_8label_macro_f1.png",
+./thesis_scripts/make_thesis_plots.py:32:    OUT_DIR / "goemotions_to_contarga_8label_macro_f1.pdf",
+./thesis_scripts/make_thesis_plots.py:35:# TweetEval -> CONTARGA (aligned)
+./thesis_scripts/make_thesis_plots.py:36:t = df[(df["source"]=="TweetEval") & (df["target"]=="CONTARGA")].copy()
+./thesis_scripts/make_thesis_plots.py:39:    "TweetEval → CONTARGA (aligned labels)",
+./thesis_scripts/make_thesis_plots.py:40:    OUT_DIR / "tweeteval_to_contarga_aligned_macro_f1.png",
+./thesis_scripts/make_thesis_plots.py:41:    OUT_DIR / "tweeteval_to_contarga_aligned_macro_f1.pdf",
+./thesis_scripts/roberta_contarga_add_labels.py:7:IN_PATH    = f"{BASE_DIR}/thesis_data/contarga_llm/roberta_contarga_eval_hpc.csv"
+./thesis_scripts/roberta_contarga_add_labels.py:9:OUT_PATH = f"{RESULTS_DIR}/contarga_eval_with_labels.csv"
+./thesis_scripts/roberta_contarga_add_labels.py:13:# GoEmotions label names in correct order
+./thesis_scripts/make_wide_tables.py:5:INP  = f"{BASE}/thesis_results/tables/contarga_per_class_table.csv"
+./thesis_scripts/make_wide_tables.py:35:make_wide("f1",        "contarga_per_class_wide_f1.csv")
+./thesis_scripts/make_wide_tables.py:36:make_wide("precision", "contarga_per_class_wide_precision.csv")
+./thesis_scripts/make_wide_tables.py:37:make_wide("recall",    "contarga_per_class_wide_recall.csv")
+./thesis_scripts/eval_contarga_28labels.py:3:from sklearn.metrics import accuracy_score, f1_score, classification_report, confusion_matrix
+./thesis_scripts/eval_contarga_28labels.py:6:IN_PATH = "/home/hpc/v121ca/v121ca21/thesis_results/deberta/deberta_contarga_eval_with_labels.csv"
+./thesis_scripts/eval_contarga_28labels.py:14:# gold = contarga emotion column
+./thesis_scripts/eval_contarga_28labels.py:17:# predicted (top1) in GoEmotions space
+./thesis_scripts/eval_contarga_28labels.py:22:macro_f1 = f1_score(y_true, y_pred, average="macro")
+./thesis_scripts/eval_contarga_28labels.py:23:weighted_f1 = f1_score(y_true, y_pred, average="weighted")
+./thesis_scripts/eval_contarga_28labels.py:27:print("Macro-F1:", round(macro_f1, 4))
+./thesis_scripts/eval_contarga_28labels.py:28:print("Weighted-F1:", round(weighted_f1, 4))
+./thesis_scripts/eval_contarga_28labels.py:46:    "macro_f1": macro_f1,
+./thesis_scripts/eval_contarga_28labels.py:47:    "weighted_f1": weighted_f1
+./thesis_scripts/model_agreement.py:4:PATH = f"{BASE}/thesis_results/combined/roberta_vs_llm_contarga.csv"
+./thesis_scripts/combine_roberta_llm.py:7:ROBERTA_PATH = f"{BASE}/thesis_data/contarga_llm/roberta_contarga_eval_with_labels.csv"
+./thesis_scripts/combine_roberta_llm.py:8:LLM_PATH     = f"{BASE}/thesis_results/llm/mistral_contarga_multilabel_eval.csv"
+./thesis_scripts/combine_roberta_llm.py:10:OUT_PATH     = f"{OUT_DIR}/roberta_vs_llm_contarga.csv"
+./thesis_scripts/combine_roberta_llm.py:52:    "emotion",               # gold CONTARGA emotion
+./thesis_scripts/combine_roberta_llm.py:54:    "pred_top1_emotion",     # RoBERTa top-1 (GoEmotions mapped)
+./thesis_scripts/contarga_llm_mistral_modes.py:3:Script: contarga_llm_mistral_modes.py
+./thesis_scripts/contarga_llm_mistral_modes.py:6:Run prompt-based emotion classification on the CONTARGA dataset using
+./thesis_scripts/contarga_llm_mistral_modes.py:10:    - zero-shot
+./thesis_scripts/contarga_llm_mistral_modes.py:11:    - few-shot (static examples)
+./thesis_scripts/contarga_llm_mistral_modes.py:12:    - chain-of-thought (cot)
+./thesis_scripts/contarga_llm_mistral_modes.py:13:    - tf-idf retrieval-based few-shot prompting
+./thesis_scripts/contarga_llm_mistral_modes.py:16:    Default: Mistral-7B-Instruct (can be changed via --model_id)
+./thesis_scripts/contarga_llm_mistral_modes.py:19:    - CONTARGA dataset (CSV with text column)
+./thesis_scripts/contarga_llm_mistral_modes.py:20:    - optional few-shot examples or training data (for tf-idf mode)
+./thesis_scripts/contarga_llm_mistral_modes.py:36:# TF-IDF retrieval for dynamic few-shot prompting
+./thesis_scripts/contarga_llm_mistral_modes.py:43:DATA_PATH_DEFAULT = f"{BASE_DIR}/thesis_data/contarga_llm/contarga_emotion_subset.csv"
+./thesis_scripts/contarga_llm_mistral_modes.py:45:# Target label space (CONTARGA-compatible)
+./thesis_scripts/contarga_llm_mistral_modes.py:59:    Format few-shot examples into prompt-ready text.
+./thesis_scripts/contarga_llm_mistral_modes.py:93:    # Add few-shot examples if needed
+./thesis_scripts/contarga_llm_mistral_modes.py:97:    # Add CoT instruction if enabled
+./thesis_scripts/contarga_llm_mistral_modes.py:98:    if mode == "cot":
+./thesis_scripts/contarga_llm_mistral_modes.py:139:    Prepare TF-IDF vectorizer for retrieval-based few-shot selection.
+./thesis_scripts/contarga_llm_mistral_modes.py:204:        choices=["zero", "few", "cot", "tfidf"],
+./thesis_scripts/contarga_llm_mistral_modes.py:206:        help="Prompting mode: zero-shot, few-shot, chain-of-thought, or TF-IDF retrieval",
+./thesis_scripts/contarga_llm_mistral_modes.py:211:        help="Path to static few-shot examples file",
+./thesis_scripts/contarga_llm_mistral_modes.py:221:        help="Path to input CONTARGA CSV file",
+./thesis_scripts/contarga_llm_mistral_modes.py:225:        default="mistralai/Mistral-7B-Instruct-v0.1",
+./thesis_scripts/contarga_llm_mistral_modes.py:292:    # Setup few-shot sources
+./thesis_scripts/train_deberta_tweets.py:10:from sklearn.metrics import accuracy_score, f1_score
+./thesis_scripts/train_deberta_tweets.py:22:        "macro_f1": f1_score(labels, preds, average="macro", zero_division=0),
+./thesis_scripts/train_deberta_tweets.py:91:        metric_for_best_model="macro_f1",
+./thesis_scripts/train_deberta_tweets.py:118:    print("=== TRAINING DeBERTa on TweetEval ===", flush=True)
+./thesis_scripts/train_deberta_tweets.py:121:    print("=== EVALUATING on TweetEval test ===", flush=True)
+./thesis_scripts/roberta_contarga_eval.py:12:DATA_PATH  = f"{BASE_DIR}/thesis_data/contarga_llm/contarga_emotion_subset.csv"
+./thesis_scripts/roberta_contarga_eval.py:14:OUT_PATH = f"{RESULTS_DIR}/contarga_eval_probs.csv"
+./thesis_scripts/mapping/map_deberta_to_8labels.py:5:INP  = f"{BASE}/thesis_results/deberta/deberta_contarga_eval_with_labels.csv"
+./thesis_scripts/mapping/map_deberta_to_8labels.py:7:OUT  = f"{OUTD}/deberta_contarga_eval_mapped.csv"
+./thesis_scripts/mapping/map_deberta_to_8labels.py:10:# Map GoEmotions -> CONTARGA 8 labels (simple baseline mapping)
+./thesis_scripts/mapping/combine_roberta_llm_mapped.py:8:    "thesis_results/mapped/roberta_contarga_eval_mapped.csv"
+./thesis_scripts/mapping/combine_roberta_llm_mapped.py:12:    "thesis_results/llm/mistral_contarga_multilabel_eval.csv"
+./thesis_scripts/mapping/combine_roberta_llm_mapped.py:15:OUT_PATH = os.path.join(OUT_DIR, "roberta_vs_llm_contarga_mapped.csv")
+./thesis_scripts/mapping/roberta_contarga_eval_mapped.py:3:from mapping_dict import GOEMO_TO_CONTARGA
+./thesis_scripts/mapping/roberta_contarga_eval_mapped.py:8:    "thesis_data/contarga_llm/roberta_contarga_eval_with_labels.csv"
+./thesis_scripts/mapping/roberta_contarga_eval_mapped.py:11:OUT_PATH = os.path.join(OUT_DIR, "roberta_contarga_eval_mapped.csv")
+./thesis_scripts/mapping/roberta_contarga_eval_mapped.py:16:def map_goemo_to_contarga(label: str) -> str:
+./thesis_scripts/mapping/roberta_contarga_eval_mapped.py:20:    return GOEMO_TO_CONTARGA.get(label, "neutral")
+./thesis_scripts/mapping/roberta_contarga_eval_mapped.py:29:        m = map_goemo_to_contarga(lab)
+./thesis_scripts/mapping/roberta_contarga_eval_mapped.py:51:    out["roberta_top1_8"] = out["pred_top1_emotion"].apply(map_goemo_to_contarga)
+./thesis_scripts/mapping/model_agreement_mapped.py:7:    "thesis_results/mapped/roberta_vs_llm_contarga_mapped.csv"
+./thesis_scripts/mapping/agreement_deberta_llm_mapped.py:3:P = "/home/hpc/v121ca/v121ca21/thesis_results/combined/deberta_vs_llm_contarga_mapped.csv"
+./thesis_scripts/mapping/combine_deberta_llm_mapped.py:5:DEB  = f"{BASE}/thesis_results/mapped/deberta_contarga_eval_mapped.csv"
+./thesis_scripts/mapping/combine_deberta_llm_mapped.py:6:LLM  = f"{BASE}/thesis_results/llm/mistral_contarga_multilabel_eval.csv"
+./thesis_scripts/mapping/combine_deberta_llm_mapped.py:9:OUT  = f"{OUTD}/deberta_vs_llm_contarga_mapped.csv"
+./thesis_scripts/mapping/mapping_dict.py:2:# Mapping from GoEmotions 28-label space → CONTARGA 8-label space.
+./thesis_scripts/mapping/mapping_dict.py:3:# Anything mapped to "neutral" is treated as "other / not in CONTARGA".
+./thesis_scripts/mapping/mapping_dict.py:5:GOEMO_TO_CONTARGA = {
+./thesis_scripts/mapping/mapping_dict.py:54:#Now we have an explicit mapping for all 28 GoEmotions labels into:
+./thesis_scripts/contarga_llm_mistral_multilabel.py:2:Script: contarga_llm_mistral_multilabel.py
+./thesis_scripts/contarga_llm_mistral_multilabel.py:5:Run multi-label emotion inference on a subset of the CONTARGA dataset
+./thesis_scripts/contarga_llm_mistral_multilabel.py:6:using Mistral-7B-Instruct.
+./thesis_scripts/contarga_llm_mistral_multilabel.py:12:- CONTARGA CSV file with a 'text' column
+./thesis_scripts/contarga_llm_mistral_multilabel.py:19:- It is intended as an exploratory multi-label prompting setup.
+./thesis_scripts/contarga_llm_mistral_multilabel.py:31:DATA_PATH = f"{BASE_DIR}/thesis_data/contarga_llm/contarga_emotion_subset.csv"
+./thesis_scripts/contarga_llm_mistral_multilabel.py:33:OUT_PATH = f"{RESULTS_DIR}/mistral_contarga_multilabel_eval.csv"
+./thesis_scripts/contarga_llm_mistral_multilabel.py:35:MODEL_ID = "mistralai/Mistral-7B-Instruct-v0.1"
+./thesis_scripts/llm_contarga_metrics.py:2:from sklearn.metrics import f1_score, accuracy_score, classification_report
+./thesis_scripts/llm_contarga_metrics.py:5:IN_PATH = f"{BASE}/thesis_results/llm/mistral_contarga_multilabel_eval.csv"
+./thesis_scripts/llm_contarga_metrics.py:6:OUT_PATH = f"{BASE}/thesis_results/llm/contarga_metrics.txt"
+./thesis_scripts/llm_contarga_metrics.py:20:f1 = f1_score(gold, preds, average="macro")
+./thesis_scripts/llm_contarga_metrics.py:25:    f.write(f"Macro-F1: {f1:.4f}\n\n")
+./thesis_scripts/deberta_contarga_eval.py:11:DATA_PATH  = f"{BASE_DIR}/thesis_data/contarga_llm/contarga_emotion_subset.csv"
+./thesis_scripts/deberta_contarga_eval.py:14:OUT_PATH    = f"{RESULTS_DIR}/contarga_eval_probs.csv"

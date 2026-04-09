@@ -1,0 +1,23 @@
+Text: "I can’t believe they did this to us. It’s unfair and makes me furious."
+Emotion: anger
+
+Text: "That’s disgusting behavior and it makes my stomach turn."
+Emotion: disgust
+
+Text: "I’m terrified something bad will happen if we don’t act now."
+Emotion: fear
+
+Text: "This is wonderful news — I’m genuinely happy for you!"
+Emotion: joy
+
+Text: "I’m proud of what we achieved after all that work."
+Emotion: pride
+
+Text: "I was worried, but now I feel calm because there is a solution."
+Emotion: relief
+
+Text: "This is heartbreaking, and I feel deeply sad about it."
+Emotion: sadness
+
+Text: "Wow, I didn’t expect that at all!"
+Emotion: surprise

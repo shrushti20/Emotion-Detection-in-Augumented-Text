@@ -1,13 +1,13 @@
 """
-05_train_tweeteval_deberta.py
+04_train_goemotions_deberta.py
 
-Train DeBERTa-v3-large on the TweetEval Emotion dataset for single-label emotion classification.
+Train DeBERTa-v3-large on the GoEmotions dataset for multi-label emotion classification.
 
 Dataset:
-    TweetEval Emotion
+    GoEmotions
 
 Task type:
-    Single-label multiclass classification
+    Multi-label classification
 
 Outputs:
     - trained model checkpoints
@@ -16,8 +16,8 @@ Outputs:
 
 import os
 import numpy as np
-from datasets import load_dataset
-from sklearn.metrics import f1_score, accuracy_score
+from datasets import load_dataset, Sequence, Value
+from sklearn.metrics import f1_score
 from transformers import (
     DebertaV2Tokenizer,
     DebertaV2ForSequenceClassification,
@@ -27,54 +27,63 @@ from transformers import (
 
 os.environ["WANDB_DISABLED"] = "true"
 
-# ---------------- CONFIG ----------------
 MODEL_NAME = "microsoft/deberta-v3-large"
-OUTPUT_DIR = os.path.expanduser("~/thesis_models/deberta_tweets")
+OUTPUT_DIR = os.path.expanduser("~/thesis_models/deberta_goemo")
 MAX_LENGTH = 256
 BATCH_SIZE = 4
 LEARNING_RATE = 2e-5
 NUM_EPOCHS = 3
-# ----------------------------------------
 
 
 def build_label_mappings(dataset):
-    """Create label lookup dictionaries from the TweetEval dataset."""
-    label_names = dataset["train"].features["label"].names
+    """Create label lookup dictionaries from the GoEmotions dataset."""
+    label_names = dataset["train"].features["labels"].feature.names
     num_labels = len(label_names)
     id2label = {i: label for i, label in enumerate(label_names)}
     label2id = {label: i for i, label in enumerate(label_names)}
     return label_names, num_labels, id2label, label2id
 
 
-def preprocess_function(batch, tokenizer):
-    """Tokenize input text and keep the original single-label targets."""
+def preprocess_function(batch, tokenizer, num_labels):
+    """
+    Tokenize text and convert label lists into multi-hot vectors.
+    This is required because GoEmotions is a multi-label dataset.
+    """
     encodings = tokenizer(
         batch["text"],
         truncation=True,
         padding="max_length",
         max_length=MAX_LENGTH,
     )
-    encodings["labels"] = batch["label"]
+
+    labels = []
+    for sample_labels in batch["labels"]:
+        multi_hot = np.zeros(num_labels, dtype=np.float32)
+        for label_id in sample_labels:
+            multi_hot[label_id] = 1.0
+        labels.append(multi_hot.tolist())
+
+    encodings["labels"] = labels
     return encodings
 
 
 def compute_metrics(eval_pred):
-    """Compute accuracy and macro-F1 for single-label classification."""
+    """Compute macro-F1 for multi-label predictions."""
     logits, labels = eval_pred
-    preds = np.argmax(logits, axis=-1)
+    probs = 1.0 / (1.0 + np.exp(-logits))
+    preds = (probs >= 0.5).astype(int)
     macro_f1 = f1_score(labels, preds, average="macro", zero_division=0)
-    acc = accuracy_score(labels, preds)
-    return {"accuracy": acc, "macro_f1": macro_f1}
+    return {"macro_f1": macro_f1}
 
 
 def main():
-    print("Loading TweetEval Emotion dataset...")
-    raw = load_dataset("tweet_eval", "emotion")
+    print("Loading GoEmotions dataset...")
+    raw = load_dataset("go_emotions")
 
     label_names, num_labels, id2label, label2id = build_label_mappings(raw)
 
     print(f"Number of labels: {num_labels}")
-    print(f"Labels: {label_names}")
+    print(f"First 10 labels: {label_names[:10]}")
 
     print(f"Loading tokenizer and model: {MODEL_NAME}")
     tokenizer = DebertaV2Tokenizer.from_pretrained(MODEL_NAME)
@@ -83,21 +92,25 @@ def main():
         num_labels=num_labels,
         id2label=id2label,
         label2id=label2id,
+        problem_type="multi_label_classification",
     )
 
     print("Tokenizing dataset...")
     encoded = raw.map(
-        lambda batch: preprocess_function(batch, tokenizer),
+        lambda batch: preprocess_function(batch, tokenizer, num_labels),
         batched=True,
     )
 
-    # Remove raw text and original label column after creating the Trainer-ready labels field.
-    encoded = encoded.remove_columns(["text", "label"])
+    # Remove raw text after tokenization; keep encoded labels.
+    encoded = encoded.remove_columns(["text"])
+
+    # Cast labels to float32 because BCEWithLogitsLoss expects floating-point targets.
+    encoded = encoded.cast_column("labels", Sequence(Value("float32")))
     encoded.set_format("torch")
 
     os.makedirs(OUTPUT_DIR, exist_ok=True)
 
-# Configure training setup for Hugging Face Trainer
+# Configure Hugging Face Trainer settings for supervised training
     training_args = TrainingArguments(
         output_dir=OUTPUT_DIR,
         per_device_train_batch_size=BATCH_SIZE,
@@ -114,7 +127,7 @@ def main():
         fp16=False,
     )
 
-# Configure training setup for Hugging Face Trainer
+# Initialize Trainer with training and validation splits
     trainer = Trainer(
         model=model,
         args=training_args,

@@ -1,0 +1,7 @@
+You are an emotion classification system.
+Choose exactly one label from the following list:
+{labels}
+
+Text:
+{text}
+Answer:

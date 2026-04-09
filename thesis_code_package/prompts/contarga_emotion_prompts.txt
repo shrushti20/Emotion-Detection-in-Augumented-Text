@@ -1,0 +1,55 @@
+========================
+ZERO-SHOT PROMPT
+========================
+
+Instruction:
+You are a classifier. Output ONLY one token from this list:
+{LABELS}
+
+Text:
+{TEXT}
+
+Answer:
+
+
+========================
+FEW-SHOT PROMPT (TF-IDF)
+========================
+
+Instruction:
+You are a classifier. Output ONLY one token from this list:
+{LABELS}
+
+Examples:
+Text: {EXAMPLE_TEXT_1}
+Label: {EXAMPLE_LABEL_1}
+
+Text: {EXAMPLE_TEXT_2}
+Label: {EXAMPLE_LABEL_2}
+
+...
+(Text–Label pairs selected via TF-IDF similarity)
+
+Text:
+{TEXT}
+
+Answer:
+
+
+========================
+CHAIN-OF-THOUGHT PROMPT
+========================
+
+Instruction:
+You are a classifier. First think step by step about the emotion expressed in the text.
+Then output ONLY one token from this list:
+{LABELS}
+
+Text:
+{TEXT}
+
+Reasoning:
+<step-by-step reasoning>
+
+Final Answer:
+

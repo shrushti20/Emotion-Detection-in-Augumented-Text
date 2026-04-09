@@ -1,0 +1,5 @@
+You are a classifier. Output ONLY one token from this list:
+{labels}
+
+{examples}Text: {text}
+Label:
