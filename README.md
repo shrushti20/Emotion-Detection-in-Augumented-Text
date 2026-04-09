@@ -1,4 +1,4 @@
-# Emotion Detection in Augumented Text
+# Emotion Detection in Augumentative Text
 
 Repository for a master's thesis project on **emotion recognition in argumentative text under domain shift**. The work studies how emotion classifiers trained on general-domain corpora transfer to the argumentative **CONTARGA** setting, and compares those supervised models with prompt-based large language model inference. The thesis motivation and scope center on benchmarking cross-domain emotion recognition, analyzing errors, and relating predicted emotions to convincingness in arguments.
 
@@ -50,11 +50,6 @@ Core supervised training and zero-shot transfer scripts.
 - `01_train_goemotions_roberta.py` — trains **RoBERTa-base** for multi-label emotion classification on **GoEmotions**
 - `02_train_tweeteval_roberta.py` — trains **RoBERTa-base** on **TweetEval Emotion**
 - `03_eval_goemotions_on_contarga.py` — evaluates the GoEmotions-trained RoBERTa model on **CONTARGA**, exports probabilities, computes overlap-label metrics, and estimates correlations with convincingness
-### `thesis_training/experimental/`
-Exploratory training scripts (not part of final thesis results):
-- `04_train_goemotions_xlmr.py` — trains **XLM-R** on GoEmotions
-- `05_train_tweeteval_xlmr.py` — trains **XLM-R** on TweetEval Emotion
-- `train_deberta_goemo.py` — trains **DeBERTa** on GoEmotions
 
 ### `thesis_scripts/`
 Main research scripts used for downstream experimentation and thesis artifact generation.
@@ -62,7 +57,6 @@ Main research scripts used for downstream experimentation and thesis artifact ge
 #### LLM inference
 - `contarga_llm_mistral_modes.py` — runs **Mistral** on CONTARGA in `zero`, `few`, `cot`, or `tfidf` retrieval-augmented few-shot modes
 - `contarga_llm_mistral_multilabel.py` — Mistral-based LLM inference on CONTARGA using a multi-label prompting setup
-- `tweets_llm_mistral.py` — Mistral inference on TweetEval-style data
 
 #### Supervised evaluation and label augmentation
 - `deberta_contarga_add_labels.py`
@@ -104,7 +98,7 @@ A separate adaptation-oriented workspace with its own:
 - `logs/`
 - `prompts/`
 - `scripts/`
-- `data_bal_n95,`
+- `data_bal_n95`
 
 This directory appears to contain intermediate or domain-adaptation experiments organized separately from the main code paths.
 
