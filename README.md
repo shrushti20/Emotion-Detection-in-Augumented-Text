@@ -1,4 +1,4 @@
-# Emotion Detection in Augumentative Text
+# Emotion Detection in Argumentative Text
 
 Repository for a master's thesis project on **emotion recognition in argumentative text under domain shift**. The work studies how emotion classifiers trained on general-domain corpora transfer to the argumentative **CONTARGA** setting, and compares those supervised models with prompt-based large language model inference. The thesis motivation and scope center on benchmarking cross-domain emotion recognition, analyzing errors, and relating predicted emotions to convincingness in arguments.
 
